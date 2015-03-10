@@ -1,4 +1,4 @@
-/* Essentials */
+/* Essenaaials */
 
 html, div, map, dt, isindex, form, header, aside, section, section, article, footer {  
     display: block;  
@@ -196,7 +196,7 @@ aside#sidebar {
 width: 23%;
 background: #E0E0E3 url(../images/sidebar.png) repeat;
 float: left;
-min-height: 500px;
+min-height: 400px;
 margin-top: -4px;
 }
 
@@ -678,7 +678,7 @@ float: left;
 .message_list {
 height: 250px;
 overflow-x:hidden;
-overflow-y: scroll;
+overflow-y: auto;
 }
 
 /* New/Edit Article Module */
@@ -881,3 +881,10 @@ color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
+
+
+/*Tab_container*/
+.tab_container{	
+height: 420px;	
+overflow-y: auto;
+}
