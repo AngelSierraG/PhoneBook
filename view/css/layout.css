@@ -888,3 +888,9 @@ font-size: 14px;}
 height: 420px;	
 overflow-y: auto;
 }
+
+/* btn chats */
+.btnInvitRequest{
+    width: 100%;
+    background-color: white;
+}
