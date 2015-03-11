@@ -6,6 +6,7 @@
 	<title>Phonebook</title>
 		<link rel="stylesheet" href="view/css/layout.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="view/css/chat.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="view/css/form.css" type="text/css" media="screen" />
 	<script src="view/js/jquery-1.5.2.min.js" type="text/javascript"></script>
 	<script src="view/js/hideshow.js" type="text/javascript"></script>
 	<script src="view/js/jquery.tablesorter.min.js" type="text/javascript"></script>
@@ -94,33 +95,51 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	
-
-
-	<form id="form">
-  	<p><label>Titulo:</label><input type="text" value="Vendo Moto G barato"/></p>
-  	<label>Marca</label>
-			
-			<select id="Field9" name="Field9">
+	<form class="contact_form" action="#" method="post">
+    <ul>
+        <li>
+            <label for="name">Titulo:</label>
+            <input type="text"  value="Vendo MotoG barato" required />
+        </li>
+        <li>
+            <label for="email">Marca:</label>
+            <select id="Field9" name="Field9">
 									<option value="" selected="selected">Nokia</option>
 									<option value="W500" >Motorola</option>
 									<option value="W600" >Sony</option>
 							</select>
-				<label>Modelo</label>
-			
+        </li>
+        <li>
+            <label for="website">Modelo:</label>
 			<select id="Field9" name="Field9">
 									<option value="" selected="selected">W300</option>
 									<option value="W500" >W500</option>
 									<option value="W600" >W600</option>
 							</select>
-				<p><label>Fecha Inicio:</label><input type="date" name="fecha">
-				<label>Fecha Final:</label><input type="date" name="fecha2"></p>
-				<label>Descripcion:</label><input type="text" value="Vendo Moto G barato"/>
-	
+        </li>
+        <li>
 
+				<label>Fecha I.:</label><input type="date" name="fecha">
+			
+        </li>
+        <li>	
+        	<label>Fecha F.:</label><input type="date" name="fecha2">
+			
+        </li>
+        <li>
+            <label >Descripcion:</label>
+            <textarea name="descripcion" cols="40" rows="6" required >Lleveselo bara bara, super barato el cel
+            	y en excelente estado... escucho propuestas..</textarea>
+        </li>
+        <li>
+        	<label>Imagen:</label><input name="imagen" type="file"/>
+        </li>
+        <li>
+        	<button class="submit" type="submit">Guardar</button><button class="submit" type="reset">Reinicar</button>
+        </li>
+    </ul>
 </form>
-
-				
+			
 
 			</div><!-- end of #tab1 -->
 			

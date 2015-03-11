@@ -41,21 +41,18 @@
                               <h1>Iniciar Sesion</h1>
                               <p> 
                                 <label for="username" class="uname" data-icon="u" > Ingresa email </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="minombredeusuario o miemail@mail.com"/>
+                                    <input id="username" name="username" required="required" type="text" placeholder="miemail@mail.com"/>
                                 </p>
                                 <p> 
                                     <label for="password" class="youpasswd" data-icon="p"> Ingresa contraseña </label>
                                     <input id="password" name="password" required="required" type="password" placeholder="Ej. X8df!90EO" /> 
                                 </p>
                                
-                              	<p id="divAjaxLogin">Tres Lagunas Login</p>
                                 <p class="login button"> 
                                     <input type="submit" value="Iniciar sesion"  /> 
 								</p>
                                 <p class="change_link">
-									<a href="index.php" class="to_register">Ir a Inicio</a>
-                                    ¿Aún no estás registrado?
-									<a href="#toregister" class="to_register">Crear una cuenta</a>
+									
 								</p>
                             </form>
                         </div>
