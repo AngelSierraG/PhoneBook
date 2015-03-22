@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aC-Ma_000
  */
-public class GetAnuncios extends HttpServlet {
+public class GetModelos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,55 +38,27 @@ public class GetAnuncios extends HttpServlet {
             throws ServletException, IOException {
          response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String marca = new String(request.getParameter("marca").getBytes("ISO-8859-1"), "UTF-8");
         
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.misAnuncios();
-         String String_anuncios="";
+        ResultSet rs = admi.modelo(marca);
+         String String_modelos="";
          
             try {
                 
-            String_anuncios="<table class=\"tablesorter\" cellspacing=\"1\" cellpadding=\"1\" id=\"reservations\" > \n" +
-"			<thead> \n" +
-"				<tr> \n" +
-"   					\n" +
-"    				<th>ID</th> \n" +
-"    				<th>Imagen</th>\n" +
-"    				<th>Titulo del Anuncio</th> \n" +
-"    				<th>Precio</th> \n" +
-"    				<th>Fecha Inicio</th>\n" +
-"                    <th>Fecha Final</th>  \n" +
-"                    <th></th> \n" +
-"				</tr> \n" +
-"			</thead>     \n" +
-"            <tbody> ";    
+            String_modelos="<option value='0'>Selecciona un modelo</option>";    
                 while (rs.next()){
-                    
-                    int id = rs.getInt("id");
-                    String imagen = rs.getString("Imagen");
-                    String Tanuncio = rs.getString("Tanuncio");
-                    int Precio = rs.getInt("Precio");
-                    Date FechaI = rs.getDate("FechaI");
-                    Date FechaF = rs.getDate("FechaF");
-                    String_anuncios = String_anuncios + "<tr> \n" +
-"   					<td>"+id+"</td> \n" +
-"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\""+imagen+"\" title=\"MinImg\"></td>\n" +
-"    				<td>"+Tanuncio+"</td> \n" +
-"    				<td>"+Precio+"</td> \n" +
-"    				<td>"+FechaI+"</td> \n" +
-"                    <td>"+FechaF+"</td> \n" +
-"    				<td><input type=\"image\" src=\"images/icn_edit.png\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Trash\"></td> \n" +
-"				</tr> ";
+                  String modelo = rs.getString("modelo");
+                        String_modelos = String_modelos + "<option value='"+modelo+"'>"+modelo+"</option>";
                         }
                  rs.close();
-                String_anuncios = String_anuncios + "</tbody> \n" +
-"			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(GetAnuncios.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(GetModelos.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             
-            out.print(String_anuncios);
+            out.print(String_modelos);
             out.flush();
             out.close();
     }

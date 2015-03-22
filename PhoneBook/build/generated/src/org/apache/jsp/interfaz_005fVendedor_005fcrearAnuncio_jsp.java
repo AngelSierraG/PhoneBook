@@ -3,8 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import Servlets.AdministradorBD;
 
-public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class interfaz_005fVendedor_005fcrearAnuncio_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,6 +43,10 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write(" \r\n");
+      out.write(" \r\n");
       out.write("<!doctype html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("\r\n");
@@ -49,6 +55,7 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t<title>Phonebook</title>\r\n");
       out.write("\t\t<link rel=\"stylesheet\" href=\"view/css/layout.css\" type=\"text/css\" media=\"screen\" />\r\n");
       out.write("\t\t<link rel=\"stylesheet\" href=\"view/css/chat.css\" type=\"text/css\" media=\"screen\" />\r\n");
+      out.write("\t\t<link rel=\"stylesheet\" href=\"view/css/form.css\" type=\"text/css\" media=\"screen\" />\r\n");
       out.write("\t<script src=\"view/js/jquery-1.5.2.min.js\" type=\"text/javascript\"></script>\r\n");
       out.write("\t<script src=\"view/js/hideshow.js\" type=\"text/javascript\"></script>\r\n");
       out.write("\t<script src=\"view/js/jquery.tablesorter.min.js\" type=\"text/javascript\"></script>\r\n");
@@ -105,7 +112,7 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t</section><!-- end of secondary bar -->\r\n");
       out.write("\t\r\n");
       out.write("\t<aside id=\"sidebar\" class=\"column\">\r\n");
-      out.write("\t\t<h2>Menúº</h2>\r\n");
+      out.write("\t\t<h2>Menú</h2>\r\n");
       out.write("\t\t<hr/>\r\n");
       out.write("\t\t<h3>Compras</h3>\r\n");
       out.write("\t\t<ul class=\"toggle\">\r\n");
@@ -132,12 +139,71 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t\t\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t<article class=\"module width_3_quarter\">\r\n");
-      out.write("\t\t<header><h3 class=\"tabs_involved\">Mis Anuncios</h3>\r\n");
+      out.write("\t\t<header><h3 class=\"tabs_involved\">Crear Anuncio</h3>\r\n");
       out.write("\t\t</header>\r\n");
       out.write("\r\n");
       out.write("\t\t<div class=\"tab_container\" >\r\n");
       out.write("\t\t\t<div id=\"tab1\" class=\"tab_content\">\r\n");
+      out.write("         <form class=\"contact_form\" action=\"creaAnuncio.do\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
+      out.write("    <ul>\r\n");
+      out.write("        <li>\r\n");
+      out.write("            <label for=\"name\">Titulo:</label>\r\n");
+      out.write("            <input type=\"text\" name=\"titulo\" placeholder=\"Titulo de tu anuncio\" required />\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("        ");
+
+           AdministradorBD admi = new AdministradorBD();
+           ResultSet rs = admi.marcas();
+           
+        
+      out.write("    \r\n");
+      out.write("            \r\n");
+      out.write("            <label for=\"email\">Marca:</label>\r\n");
+      out.write("            <select id=\"Field9\" name=\"sel_marca\" onchange=\"seleccion_marca(this.value);\">\r\n");
+      out.write("                <option value='0'>Selecciona una marca</option>\r\n");
+      out.write("                ");
+
+                while (rs.next()){
+                String marca = rs.getString("marca");
+                out.println("<option value='"+marca+"'>"+marca+"</option>");
+                        }
+                rs.close();
+                
+      out.write("       \r\n");
+      out.write("\t\t</select>\r\n");
+      out.write("                                                    \r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("          \r\n");
+      out.write("            <label for=\"website\">Modelo:</label>\r\n");
+      out.write("\t\t\t<select id=\"sel_modelo\"  >\r\n");
+      out.write("                                <option value='0'>Selecciona un modelo</option>\r\n");
+      out.write("                       </select>\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t<label>Fecha I.:</label><input type=\"date\" name=\"fecha\">\r\n");
       out.write("\t\t\t\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\t\r\n");
+      out.write("        \t<label>Fecha F.:</label><input type=\"date\" name=\"fecha2\">\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("            <label >Descripcion:</label>\r\n");
+      out.write("            <textarea name=\"descripcion\" cols=\"40\" rows=\"6\" required placeholder=\"Una breve descripcion acerca de tu anuncio.\"></textarea>\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("        \t<label>Imagen:</label><input name=\"imagen\" type=\"file\"/>\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
+      out.write("        \t<button class=\"submit\" type=\"submit\">Crear</button><button class=\"submit\" type=\"reset\">Reinicar</button>\r\n");
+      out.write("        </li>\r\n");
+      out.write("    </ul>\r\n");
+      out.write("</form>\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("\r\n");
       out.write("\t\t\t</div><!-- end of #tab1 -->\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t\r\n");
@@ -166,25 +232,21 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t\t\t\r\n");
       out.write("\t\t</footer>\r\n");
       out.write("\t\t  <script type=\"text/javascript\" src=\"view/js/chat.js\"></script>   \r\n");
-      out.write("          \r\n");
-      out.write("</body>\r\n");
-      out.write("<script>\r\n");
-      out.write("   var misAnuncios = setInterval(function(){javascript:getAnuncios('');},2000);\r\n");
-      out.write("             \r\n");
-      out.write("                    \r\n");
-      out.write("                    function getAnuncios(message) {\r\n");
+      out.write("                  <script>\r\n");
+      out.write("                   function seleccion_marca(marca){\r\n");
       out.write("                        $.ajax({\r\n");
       out.write("                        type: 'POST',\r\n");
-      out.write("                        url: 'GetAnuncios.do',\r\n");
+      out.write("                        url: 'GetModelos.do',\r\n");
       out.write("                        data: {\r\n");
-      out.write("                        message: message\r\n");
+      out.write("                        marca: marca\r\n");
       out.write("                        }\r\n");
       out.write("                        }).done(function(resp){\r\n");
-      out.write("                        $('#tab1').html(resp);\r\n");
+      out.write("                        $('#sel_modelo').html(resp);\r\n");
       out.write("                        });\r\n");
-      out.write("                        }  \r\n");
+      out.write("                        } \r\n");
       out.write("    \r\n");
-      out.write("</script>\r\n");
+      out.write("                  </script>\r\n");
+      out.write("</body>\r\n");
       out.write("\r\n");
       out.write("</html>");
     } catch (Throwable t) {

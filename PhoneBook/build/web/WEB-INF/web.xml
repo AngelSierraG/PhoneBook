@@ -4,9 +4,13 @@
         <servlet-name>GetAnuncios</servlet-name>
         <servlet-class>Servlets.GetAnuncios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetModelos</servlet-name>
+        <servlet-class>Servlets.GetModelos</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>GetAnuncios</servlet-name>
-        <url-pattern>/GetAnuncios.do</url-pattern>
+        <servlet-name>GetModelos</servlet-name>
+        <url-pattern>/GetModelos.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

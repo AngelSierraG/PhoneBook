@@ -1,3 +1,7 @@
+
+<%@page import="java.sql.ResultSet"%>
+<%@ page language="java" %> 
+<%@ page import = "Servlets.AdministradorBD"%> 
 <!doctype html>
 <html lang="en">
 
@@ -63,7 +67,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
@@ -95,27 +99,38 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	<form class="contact_form" action="#" method="post">
+         <form class="contact_form" action="creaAnuncio.do" method="post" enctype="multipart/form-data">
     <ul>
         <li>
             <label for="name">Titulo:</label>
-            <input type="text"  placeholder="Titulo de tu anuncio" required />
+            <input type="text" name="titulo" placeholder="Titulo de tu anuncio" required />
         </li>
         <li>
+        <%
+           AdministradorBD admi = new AdministradorBD();
+           ResultSet rs = admi.marcas();
+           
+        %>    
+            
             <label for="email">Marca:</label>
-            <select id="Field9" name="Field9">
-									<option value="" selected="selected">Nokia</option>
-									<option value="W500" >Motorola</option>
-									<option value="W600" >Sony</option>
-							</select>
+            <select id="Field9" name="sel_marca" onchange="seleccion_marca(this.value);">
+                <option value='0'>Selecciona una marca</option>
+                <%
+                while (rs.next()){
+                String marca = rs.getString("marca");
+                out.println("<option value='"+marca+"'>"+marca+"</option>");
+                        }
+                rs.close();
+                %>       
+		</select>
+                                                    
         </li>
         <li>
+          
             <label for="website">Modelo:</label>
-			<select id="Field9" name="Field9">
-									<option value="" selected="selected">W300</option>
-									<option value="W500" >W500</option>
-									<option value="W600" >W600</option>
-							</select>
+			<select id="sel_modelo"  >
+                                <option value='0'>Selecciona un modelo</option>
+                       </select>
         </li>
         <li>
 
@@ -168,7 +183,20 @@
 			
 		</footer>
 		  <script type="text/javascript" src="view/js/chat.js"></script>   
-          
+                  <script>
+                   function seleccion_marca(marca){
+                        $.ajax({
+                        type: 'POST',
+                        url: 'GetModelos.do',
+                        data: {
+                        marca: marca
+                        }
+                        }).done(function(resp){
+                        $('#sel_modelo').html(resp);
+                        });
+                        } 
+    
+                  </script>
 </body>
 
 </html>

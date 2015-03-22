@@ -35,4 +35,39 @@ public class AdministradorBD {
         }
         return rs;
     }
+    
+    public ResultSet marcas(){
+        
+            ResultSet rs=null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "SELECT * FROM marcas";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+    
+    public ResultSet modelo(String marca){
+        
+            ResultSet rs = null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "SELECT * FROM modelos WHERE marca = '"+ marca+"'";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            return rs;
+    }
 }

@@ -73,8 +73,8 @@
         
         
         	<ul class="toggle">
-			<li class="icn_categories"><a href="#">Mis Anuncios</a></li>
-            <li class="icn_new_article"><a href="#">Crear Anuncio</a></li>
+			<li class="icn_categories"><a href="http://localhost:8080/PhoneBook/interfaz_Vendedor.jsp">Mis Anuncios</a></li>
+            <li class="icn_new_article"><a href="http://localhost:8080/PhoneBook/interfaz_Vendedor_crearAnuncio.jsp">Crear Anuncio</a></li>
 			
 			
 		</ul>
@@ -126,7 +126,7 @@
           
 </body>
 <script>
-   var misAnuncios = setInterval(function(){javascript:getAnuncios('');},2000);
+   var misAnuncios = getAnuncios('');
              
                     
                     function getAnuncios(message) {
