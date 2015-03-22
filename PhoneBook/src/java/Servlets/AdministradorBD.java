@@ -30,19 +30,6 @@ public class AdministradorBD {
             String query= "SELECT * FROM VentasPrueba";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
-            
-            while (rs.next()){
-                int id = rs.getInt("id");
-                String imagen = rs.getString("Imagen");
-                String Tanuncio = rs.getString("Tanuncio");
-                int Precio = rs.getInt("Precio");
-                Date FechaI = rs.getDate("FechaI");
-                Date FechaF = rs.getDate("FechaF");
-
-                System.out.format("%s, %s, %s, %s, %s, %s\n", id, imagen, Tanuncio, Precio, FechaI, FechaF);    
-            }
-            st.close();
-            
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }

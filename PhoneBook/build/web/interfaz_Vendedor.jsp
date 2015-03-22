@@ -62,7 +62,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
@@ -94,87 +94,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="1" cellpadding="1" id="reservations" > 
-			<thead> 
-				<tr> 
-   					
-    				<th>ID</th> 
-    				<th>Imagen</th>
-    				<th>Titulo del Anuncio</th> 
-    				<th>Precio</th> 
-    				<th>Fecha Inicio</th>
-                    <th>Fecha Final</th>  
-                    <th></th> 
-				</tr> 
-			</thead>     
-            <tbody> 
-				<tr> 
-   					<td>1</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$200</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-					<tr> 
-   					<td>2</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-					<tr> 
-   					<td>3</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr>
-				<tr> 
-   					<td>4</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				<tr> 
-   					<td>5</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				<tr> 
-   					<td>6</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				<tr> 
-   					<td>6</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/motoG.jpg" title="MinImg"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    <td>2-03-2015</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-			</tbody>  
-              
-			</tbody> 
-			</table>
+			
 			</div><!-- end of #tab1 -->
 			
 			
@@ -206,18 +126,18 @@
           
 </body>
 <script>
-   var misAnuncios = setInterval(function(){javascript:getAnuncios('');},5000);
+   var misAnuncios = setInterval(function(){javascript:getAnuncios('');},2000);
              
                     
                     function getAnuncios(message) {
                         $.ajax({
                         type: 'POST',
-                        url: 'GetUsers.do',
+                        url: 'GetAnuncios.do',
                         data: {
                         message: message
                         }
                         }).done(function(resp){
-                        $('#divUsers').html(resp);
+                        $('#tab1').html(resp);
                         });
                         }  
     
