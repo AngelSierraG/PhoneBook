@@ -83,10 +83,13 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-		
-		<h4 class="alert_info">Bienvenido a Phonebook</h4>
-		
-		
+            <%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }else{
+                  out.println("<h4 class='alert_info'>Bienvenido a PhoneBook</h4>");
+              }  
+            %>
 		
 		<article class="module width_3_quarter">
 		<header><h3 class="tabs_involved">Mis Anuncios</h3>

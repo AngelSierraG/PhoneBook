@@ -70,4 +70,10 @@ public class AdministradorBD {
             
             return rs;
     }
+    
+    public void agregaAnuncio(String titulo,String url, String marca, String modelo, String fechaI, String fechaF, String descripcion){
+        Connection con;
+        con = ConexionBD.GetConnection();
+        
+    }
 }

@@ -8,9 +8,21 @@
         <servlet-name>GetModelos</servlet-name>
         <servlet-class>Servlets.GetModelos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>creaAnuncio</servlet-name>
+        <servlet-class>Servlets.creaAnuncio</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAnuncios</servlet-name>
+        <url-pattern>/GetAnuncios.do</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetModelos</servlet-name>
         <url-pattern>/GetModelos.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>creaAnuncio</servlet-name>
+        <url-pattern>/creaAnuncio.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

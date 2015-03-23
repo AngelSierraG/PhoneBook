@@ -128,17 +128,17 @@
         <li>
           
             <label for="website">Modelo:</label>
-			<select id="sel_modelo"  >
+			<select id="sel_modelo" name="sel_modelo" >
                                 <option value='0'>Selecciona un modelo</option>
                        </select>
         </li>
         <li>
 
-				<label>Fecha I.:</label><input type="date" name="fecha">
+				<label>Fecha I.:</label><input type="date" name="fechaI">
 			
         </li>
         <li>	
-        	<label>Fecha F.:</label><input type="date" name="fecha2">
+        	<label>Fecha F.:</label><input type="date" name="fechaF">
 			
         </li>
         <li>
