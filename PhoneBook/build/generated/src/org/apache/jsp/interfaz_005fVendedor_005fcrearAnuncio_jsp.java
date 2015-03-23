@@ -182,6 +182,10 @@ public final class interfaz_005fVendedor_005fcrearAnuncio_jsp extends org.apache
       out.write("                       </select>\r\n");
       out.write("        </li>\r\n");
       out.write("        <li>\r\n");
+      out.write("             <label for=\"name\">Precio:</label>\r\n");
+      out.write("            <input type=\"text\" name=\"precio\" placeholder=\"Ejemp: 100\" required />\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t<label>Fecha I.:</label><input type=\"date\" name=\"fechaI\">\r\n");
       out.write("\t\t\t\r\n");

@@ -37,8 +37,8 @@ public class creaAnuncio extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-              String titulo="",sel_marca="",sel_modelo="",fechaI="",fechaF="",descripcion="";
-        
+              String url="",titulo="",precio="",sel_marca="",sel_modelo="",fechaI="",fechaF="",descripcion="";
+              
         if(ServletFileUpload.isMultipartContent(request)){
             try {
                 List<FileItem> multiparts = new ServletFileUpload(
@@ -48,9 +48,13 @@ public class creaAnuncio extends HttpServlet {
                     if(!item.isFormField()){
                         String name = new File(item.getName()).getName();
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                        url = UPLOAD_DIRECTORY + File.separator + name;    
                     }else{
                         if("titulo".equals(item.getFieldName())){
                             titulo = item.getString();
+                        }
+                        if("precio".equals(item.getFieldName())){
+                            precio = item.getString();
                         }
                         if("sel_marca".equals(item.getFieldName())){
                             sel_marca = item.getString();
@@ -70,6 +74,8 @@ public class creaAnuncio extends HttpServlet {
                     }
                 }
                 
+               AdministradorBD admi = new AdministradorBD();
+               admi.agregaAnuncio(url, titulo, sel_marca, sel_modelo, precio, fechaI, fechaF, descripcion);
       
                //File uploaded successfully
                request.setAttribute("message", "Publicacion \""+titulo+"\" Exitosa.");

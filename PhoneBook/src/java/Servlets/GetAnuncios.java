@@ -62,7 +62,7 @@ public class GetAnuncios extends HttpServlet {
                 while (rs.next()){
                     
                     int id = rs.getInt("id");
-                    String imagen = rs.getString("Imagen");
+                    String imagen = rs.getString("url");
                     String Tanuncio = rs.getString("Tanuncio");
                     int Precio = rs.getInt("Precio");
                     Date FechaI = rs.getDate("FechaI");

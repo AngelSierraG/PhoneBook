@@ -133,6 +133,10 @@
                        </select>
         </li>
         <li>
+             <label for="name">Precio:</label>
+            <input type="text" name="precio" placeholder="Ejemp: 100" required />
+        </li>
+        <li>
 
 				<label>Fecha I.:</label><input type="date" name="fechaI">
 			

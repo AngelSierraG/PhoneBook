@@ -8,6 +8,7 @@ package Servlets;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -27,7 +28,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query= "SELECT * FROM VentasPrueba";
+            String query= "SELECT id,url, tanuncio,precio, fechaI, fechaF FROM VentasPrueba";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
         } catch (SQLException ex) {
@@ -71,9 +72,28 @@ public class AdministradorBD {
             return rs;
     }
     
-    public void agregaAnuncio(String titulo,String url, String marca, String modelo, String fechaI, String fechaF, String descripcion){
-        Connection con;
-        con = ConexionBD.GetConnection();
+    public void agregaAnuncio(String url,String titulo,String marca, String modelo, String precio, String fechaI, String fechaF, String descripcion){
+        try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query="INSERT INTO ventasprueba (url,Tanuncio,marca,modelo,Precio,FechaI,FechaF,Desccripcion) VALUES(?,?,?,?,?,?,?,?)";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, url);
+                    ps.setString(2, titulo);
+                    ps.setString(3, marca);
+                    ps.setString(4, modelo);
+                    ps.setString(5, precio);
+                    ps.setString(6, fechaI);
+                    ps.setString(7, fechaF);
+                    ps.setString(8, descripcion);
+                    ps.executeUpdate(); 
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 }
