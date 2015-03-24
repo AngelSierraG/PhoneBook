@@ -34,7 +34,7 @@ public class GetModelos extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void todoModelos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -63,11 +63,54 @@ public class GetModelos extends HttpServlet {
             out.flush();
             out.close();
     }
+    
+    
+    protected void modeloSelec(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String idmarca = new String(request.getParameter("idmarca").getBytes("ISO-8859-1"), "UTF-8");
+        String modelo_sel = new String(request.getParameter("modelo").getBytes("ISO-8859-1"), "UTF-8");
+        
+        System.out.print("modelo_sel: "+modelo_sel + "idmarca: "+idmarca);
+        
+        AdministradorBD admi =new AdministradorBD();
+        ResultSet rs = admi.modelo(idmarca);
+         String String_sel_modelo="";
+         
+            try {
+                
+            String_sel_modelo="<option value='0'>Selecciona un modelo</option>";    
+                while (rs.next()){
+                    int idmodelo = rs.getInt("idmodelo");
+                    String modelo = rs.getString("NombreModelo");
+                        if(!modelo.equals(modelo_sel)){
+                        String_sel_modelo = String_sel_modelo + "<option value='"+idmodelo+"'>"+modelo+"</option>";
+                        }else{
+                          String_sel_modelo = String_sel_modelo + "<option value='"+idmodelo+"' selected=\"selected\">"+modelo+"</option>";  
+                        }
+                        }
+                 rs.close();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(GetModelos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            out.print(String_sel_modelo);
+            out.flush();
+            out.close();
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        todoModelos(request, response);
+    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        modeloSelec(request, response);
     }
 
 }

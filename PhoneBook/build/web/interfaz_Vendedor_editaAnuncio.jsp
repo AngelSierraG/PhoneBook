@@ -124,7 +124,7 @@
            
         %>
             <label for="email">Marca:</label>
-            <select id="Field9" name="sel_marca">
+            <select id="sel_marca" name="sel_marca" onchange="seleccion_marca(this.value);">
                 <%
                 while (rs2.next()){
                 int idMarca = rs2.getInt("idMarca");
@@ -142,10 +142,8 @@
         </li>
         <li>
             <label for="website">Modelo:</label>
-			<select id="Field9" name="Field9">
-									<option value="" selected="selected">W300</option>
-									<option value="W500" >W500</option>
-									<option value="W600" >W600</option>
+			<select id="sel_modelo" name="sel_modelo">
+								
 							</select>
         </li>
         <li>
@@ -200,6 +198,21 @@
 		</footer>
 		  <script type="text/javascript" src="view/js/chat.js"></script> 
                   <script>
+                      var sel_marca =  seleccion_marca_Inicio(document.getElementById("sel_marca").value,'<%=modelo%>');  
+    
+                function seleccion_marca_Inicio(idmarca,modelo){
+                        $.ajax({
+                        type: 'GET',
+                        url: 'GetModelos.do',
+                        data: {
+                        idmarca: idmarca,
+                        modelo: modelo
+                        }
+                        }).done(function(resp){
+                        $('#sel_modelo').html(resp);
+                        });
+                        } 
+                        
                    function seleccion_marca(idmarca){
                         $.ajax({
                         type: 'POST',
@@ -210,7 +223,7 @@
                         }).done(function(resp){
                         $('#sel_modelo').html(resp);
                         });
-                        } 
+                        }      
     
                   </script>
           
