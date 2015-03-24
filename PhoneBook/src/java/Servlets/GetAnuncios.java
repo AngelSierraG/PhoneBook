@@ -73,7 +73,7 @@ public class GetAnuncios extends HttpServlet {
 "    				<td>"+Precio+"</td> \n" +
 "    				<td>"+FechaI+"</td> \n" +
 "                    <td>"+FechaF+"</td> \n" +
-"    				<td><input type=\"image\" src=\"images/icn_edit.png\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Trash\"></td> \n" +
+"    				<td><input type=\"image\" src=\"images/icn_edit.png\" onclick=\"redireccion("+id+");\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Trash\"></td> \n" +
 "				</tr> ";
                         }
                  rs.close();

@@ -142,7 +142,11 @@
                         }).done(function(resp){
                         $('#tab1').html(resp);
                         });
-                        }  
+                        }
+                        
+                   function redireccion(x){
+                       window.location="http://localhost:8080/PhoneBook/interfaz_Vendedor_editaAnuncio.jsp?id="+x;
+                   }     
     
 </script>
 

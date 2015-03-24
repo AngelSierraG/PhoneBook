@@ -24,7 +24,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 public class creaAnuncio extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\web\\BDImagenes";
+    private final String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios\\";
   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,8 +37,8 @@ public class creaAnuncio extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-              String url="",titulo="",precio="",sel_marca="",sel_modelo="",fechaI="",fechaF="",descripcion="";
-              
+              String url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
+              AdministradorBD admi = new AdministradorBD();
         if(ServletFileUpload.isMultipartContent(request)){
             try {
                 List<FileItem> multiparts = new ServletFileUpload(
@@ -46,9 +46,10 @@ public class creaAnuncio extends HttpServlet {
               
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
-                        String name = new File(item.getName()).getName();
+                        
+                        String name = "Img_"+admi.NumeroAnuncios()+".jpg";
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
-                        url = UPLOAD_DIRECTORY + File.separator + name;    
+                        url = name;    
                     }else{
                         if("titulo".equals(item.getFieldName())){
                             titulo = item.getString();
@@ -56,9 +57,7 @@ public class creaAnuncio extends HttpServlet {
                         if("precio".equals(item.getFieldName())){
                             precio = item.getString();
                         }
-                        if("sel_marca".equals(item.getFieldName())){
-                            sel_marca = item.getString();
-                        }
+                       
                         if("sel_modelo".equals(item.getFieldName())){
                             sel_modelo = item.getString();
                         }
@@ -74,8 +73,8 @@ public class creaAnuncio extends HttpServlet {
                     }
                 }
                 
-               AdministradorBD admi = new AdministradorBD();
-               admi.agregaAnuncio(url, titulo, sel_marca, sel_modelo, precio, fechaI, fechaF, descripcion);
+               
+               admi.agregaAnuncio(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
       
                //File uploaded successfully
                request.setAttribute("message", "Publicacion \""+titulo+"\" Exitosa.");

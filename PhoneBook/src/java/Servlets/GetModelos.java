@@ -38,18 +38,19 @@ public class GetModelos extends HttpServlet {
             throws ServletException, IOException {
          response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String marca = new String(request.getParameter("marca").getBytes("ISO-8859-1"), "UTF-8");
-        
+        String idmarca = new String(request.getParameter("idmarca").getBytes("ISO-8859-1"), "UTF-8");
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.modelo(marca);
+        ResultSet rs = admi.modelo(idmarca);
          String String_modelos="";
          
             try {
                 
             String_modelos="<option value='0'>Selecciona un modelo</option>";    
                 while (rs.next()){
-                  String modelo = rs.getString("modelo");
-                        String_modelos = String_modelos + "<option value='"+modelo+"'>"+modelo+"</option>";
+                    int idmodelo = rs.getInt("idmodelo");
+                    String modelo = rs.getString("NombreModelo");
+                  
+                        String_modelos = String_modelos + "<option value='"+idmodelo+"'>"+modelo+"</option>";
                         }
                  rs.close();
                 

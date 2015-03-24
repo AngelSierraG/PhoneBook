@@ -117,8 +117,9 @@
                 <option value='0'>Selecciona una marca</option>
                 <%
                 while (rs.next()){
-                String marca = rs.getString("marca");
-                out.println("<option value='"+marca+"'>"+marca+"</option>");
+                int idMarca = rs.getInt("idMarca");
+                String marca = rs.getString("NombreMarca");
+                out.println("<option value='"+idMarca+"'>"+marca+"</option>");
                         }
                 rs.close();
                 %>       
@@ -188,12 +189,12 @@
 		</footer>
 		  <script type="text/javascript" src="view/js/chat.js"></script>   
                   <script>
-                   function seleccion_marca(marca){
+                   function seleccion_marca(idmarca){
                         $.ajax({
                         type: 'POST',
                         url: 'GetModelos.do',
                         data: {
-                        marca: marca
+                        idmarca: idmarca
                         }
                         }).done(function(resp){
                         $('#sel_modelo').html(resp);

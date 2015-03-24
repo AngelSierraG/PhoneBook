@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Servlets.AdministradorBD"%>
 <!doctype html>
 <html lang="en">
 
@@ -45,6 +47,21 @@
 </script>
 
 <body>
+    <%
+        String id = request.getParameter("id");
+            AdministradorBD admi = new AdministradorBD();
+            ResultSet rs = admi.editarAnuncio(id);
+           rs.next();
+            String titulo = rs.getString("titulo");
+            String FechaI = rs.getString("FechaInicio");
+            String FechaF = rs.getString("FechaFinal");
+            int Precio = rs.getInt("Precio");
+            String Descripcion = rs.getString("Descripcion");
+            String urlImage = rs.getString("urlImage");
+            String modelo = rs.getString("nombremodelo");
+            String marca = rs.getString("nombremarca");
+            
+         %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
@@ -63,7 +80,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
@@ -99,14 +116,28 @@
     <ul>
         <li>
             <label for="name">Titulo:</label>
-            <input type="text"  value="Vendo MotoG barato" required />
+            <input type="text"  value="<%=titulo%>" required />
         </li>
         <li>
+        <%
+           ResultSet rs2 = admi.marcas();
+           
+        %>
             <label for="email">Marca:</label>
-            <select id="Field9" name="Field9">
-									<option value="" selected="selected">Nokia</option>
-									<option value="W500" >Motorola</option>
-									<option value="W600" >Sony</option>
+            <select id="Field9" name="sel_marca">
+                <%
+                while (rs2.next()){
+                int idMarca = rs2.getInt("idMarca");
+                String sel_marca = rs2.getString("NombreMarca");
+                if(!sel_marca.equals(marca)){
+                out.println("<option value='"+idMarca+"'>"+sel_marca+"</option>");
+                }else{
+                    out.println("<option value='"+idMarca+"' selected=\"selected\">"+sel_marca+"</option>");
+                }
+                
+                        }
+                rs.close();
+                %>       
 							</select>
         </li>
         <li>
@@ -119,17 +150,16 @@
         </li>
         <li>
 
-				<label>Fecha I.:</label><input type="date" name="fecha">
+				<label>Fecha I.:</label><input type="date" name="fechaI" value="<%=FechaI%>">
 			
         </li>
         <li>	
-        	<label>Fecha F.:</label><input type="date" name="fecha2">
+            <label>Fecha F.:</label><input type="date" name="fechaF" value="<%=FechaF%>">
 			
         </li>
         <li>
             <label >Descripcion:</label>
-            <textarea name="descripcion" cols="40" rows="6" required >Lleveselo bara bara, super barato el cel
-            	y en excelente estado... escucho propuestas..</textarea>
+            <textarea name="descripcion" cols="40" rows="6" required ><%=Descripcion%></textarea>
         </li>
         <li>
         	<label>Imagen:</label><input name="imagen" type="file"/>
@@ -168,7 +198,21 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
-		  <script type="text/javascript" src="view/js/chat.js"></script>   
+		  <script type="text/javascript" src="view/js/chat.js"></script> 
+                  <script>
+                   function seleccion_marca(idmarca){
+                        $.ajax({
+                        type: 'POST',
+                        url: 'GetModelos.do',
+                        data: {
+                        idmarca: idmarca
+                        }
+                        }).done(function(resp){
+                        $('#sel_modelo').html(resp);
+                        });
+                        } 
+    
+                  </script>
           
 </body>
 
