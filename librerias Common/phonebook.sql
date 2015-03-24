@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-03-2015 a las 01:11:51
+-- Tiempo de generación: 24-03-2015 a las 17:39:54
 -- Versión del servidor: 5.5.8
 -- Versión de PHP: 5.3.5
 
@@ -56,12 +56,18 @@ CREATE TABLE IF NOT EXISTS `marcas` (
   `NombreMarca` varchar(45) DEFAULT NULL,
   `urlImage` varchar(50) NOT NULL,
   PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `marcas`
 --
 
+INSERT INTO `marcas` (`idMarca`, `NombreMarca`, `urlImage`) VALUES
+(1, 'Modorola', 'img_1'),
+(2, 'Samsung', 'img_2'),
+(3, 'LG', 'img_3'),
+(4, 'Nokia', 'img_4'),
+(5, 'Sony Ericsson ', 'img_5');
 
 -- --------------------------------------------------------
 
@@ -70,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `marcas` (
 --
 
 CREATE TABLE IF NOT EXISTS `modelos` (
-  `idModelo` int(11) NOT NULL,
+  `idModelo` int(11) NOT NULL AUTO_INCREMENT,
   `NombreModelo` varchar(45) NOT NULL,
   `PrecioNuevo` int(11) NOT NULL COMMENT 'Precio actual del celular nuevo, actualizado',
   `SisOperativo` varchar(45) NOT NULL,
@@ -91,12 +97,17 @@ CREATE TABLE IF NOT EXISTS `modelos` (
   `Bloetooth` tinyint(1) NOT NULL,
   PRIMARY KEY (`idModelo`,`Marcas_idMarca`),
   KEY `fk_Modelos_Marcas1` (`Marcas_idMarca`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `modelos`
 --
 
+INSERT INTO `modelos` (`idModelo`, `NombreModelo`, `PrecioNuevo`, `SisOperativo`, `VidaUtil`, `Marcas_idMarca`, `Camara`, `ResolucionC`, `Cfrontal`, `ResolucionCF`, `Touch`, `Dimensiones`, `PesoGR`, `GPS`, `Procesador`, `MemoriaInterna`, `WIFI`, `Colores`, `Bloetooth`) VALUES
+(1, 'Moto G', 3000, 'Android', 3, 1, 1, '5 Megapixeles', 1, '2.5 Megapixeles', 1, '9 x 5 cm', 300, 1, 'I-Core', '4GB', 1, 'Negro', 1),
+(2, 'Samsung Galaxy Express', 2500, 'Android', 3, 2, 1, '3 Megapixeles', 0, '', 1, '9 x 5 cm', 300, 1, 'I-Core', '4GB', 1, 'Blanco', 1),
+(3, 'LG7', 5000, 'Android', 3, 3, 1, '5 Megapixeles', 1, '3 Megapixeles', 1, '9 x 5 cm', 350, 1, 'I-Core', '5GB', 1, 'Blanco, Negro', 1),
+(4, 'Lumia 520', 3500, 'Windows Phone', 3, 4, 1, '8 Megapixeles', 1, '1', 1, '6 x 8 cm', 250, 1, 'Intel', '5GB', 1, 'Blanco, Negro, Rosa', 1);
 
 -- --------------------------------------------------------
 
