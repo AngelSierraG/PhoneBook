@@ -28,7 +28,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query= "SELECT id,url, tanuncio,precio, fechaI, fechaF FROM VentasPrueba";
+            String query= "select idAnuncio,urlImage, titulo, precio, fechainicio, fechafinal from anuncios";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
         } catch (SQLException ex) {

@@ -60,16 +60,15 @@ public class GetAnuncios extends HttpServlet {
 "			</thead>     \n" +
 "            <tbody> ";    
                 while (rs.next()){
-                    
-                    int id = rs.getInt("id");
-                    String imagen = rs.getString("url");
-                    String Tanuncio = rs.getString("Tanuncio");
-                    int Precio = rs.getInt("Precio");
-                    Date FechaI = rs.getDate("FechaI");
-                    Date FechaF = rs.getDate("FechaF");
+                    int id = rs.getInt("idAnuncio");
+                    String imagen = rs.getString("urlImage");
+                    String Tanuncio = rs.getString("titulo");
+                    int Precio = rs.getInt("precio");
+                    Date FechaI = rs.getDate("fechainicio");
+                    Date FechaF = rs.getDate("fechafinal");
                     String_anuncios = String_anuncios + "<tr> \n" +
 "   					<td>"+id+"</td> \n" +
-"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\""+imagen+"\" title=\"MinImg\"></td>\n" +
+"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tanuncio+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +
 "    				<td>"+FechaI+"</td> \n" +
