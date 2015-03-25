@@ -112,7 +112,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	<form class="contact_form" action="#" method="post">
+	<form class="contact_form" action="" method="post">
     <ul>
         <li>
             <label for="name">Titulo:</label>
@@ -163,7 +163,7 @@
         	<label>Imagen:</label><input name="imagen" type="file"/>
         </li>
         <li>
-        	<button class="submit" type="submit">Guardar</button><button class="submit" type="reset">Reinicar</button>
+        	<button class="submit" type="submit">Editar</button><button type="button" class="submit" onclick="href();">Salir</button>
         </li>
     </ul>
 </form>
@@ -223,7 +223,11 @@
                         }).done(function(resp){
                         $('#sel_modelo').html(resp);
                         });
-                        }      
+                        } 
+                        
+                  function href(){
+                      window.location="http://localhost:8080/PhoneBook/interfaz_Vendedor.jsp";
+                  }      
     
                   </script>
           
