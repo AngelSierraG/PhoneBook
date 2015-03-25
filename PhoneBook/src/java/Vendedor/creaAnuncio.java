@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Comprador;
+package Vendedor;
 
 import BaseDatos.AdministradorBD;
 import java.io.File;
@@ -23,26 +23,35 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  *
  * @author aC-Ma_000
  */
-public class editarPublicacion extends HttpServlet {
+public class creaAnuncio extends HttpServlet {
 
-   private final String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios\\";
+    private final String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios\\";
   
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-       String id="",url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="",Aux="";
-       int cont=0;
+              String url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
               AdministradorBD admi = new AdministradorBD();
-              System.out.println("Llego aquiaaa....");
         if(ServletFileUpload.isMultipartContent(request)){
             try {
-                System.out.println("Llego aqui....");
                 List<FileItem> multiparts = new ServletFileUpload(
                                          new DiskFileItemFactory()).parseRequest(request);
               
-                System.out.println("aqui Nooo....");
-               for(FileItem item : multiparts){
-                    if(item.isFormField()){
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                        
+                        String name = "Img_"+admi.NumeroPublicaciones()+".jpg";
+                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                        url = name;    
+                    }else{
                         if("titulo".equals(item.getFieldName())){
                             titulo = item.getString();
                         }
@@ -62,45 +71,31 @@ public class editarPublicacion extends HttpServlet {
                         if("descripcion".equals(item.getFieldName())){
                             descripcion = item.getString();
                         }
-                        if("Aux".equals(item.getFieldName())){
-                            Aux = item.getString();
-                        }
-                    }
-                }
-                for(FileItem item : multiparts){
-                    if(!item.isFormField()){
-                         String name = "Img_"+id+".jpg";
-                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
-                          url=name;
-                        cont++;
                     }
                 }
                 
-//               if(cont!=0){
-               admi.editarPublicacion(id,url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
-//               }else{
-//                 admi.editarPublicacion(id,Aux, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);  
-//               }
+               
+               admi.agregaPublicacion(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
+      
                //File uploaded successfully
-               request.setAttribute("message", "Publicacion editada \""+titulo+"\" exitosamente.");
+               request.setAttribute("message", "Publicacion \""+titulo+"\" Exitosa.");
             } catch (Exception ex) {
                request.setAttribute("message", "File Upload Failed due to " + ex);
             }          
          
         }else{
             request.setAttribute("message",
-                                 "Sorry this Servlet only handles file upload url: "+url+" aux:"+Aux );
+                                 "Sorry this Servlet only handles file upload request");
         }
     
-        request.getRequestDispatcher("/interfaz_Vendedor.jsp").forward(request, response); 
+        request.getRequestDispatcher("/interfaz_Vendedor.jsp").forward(request, response);
+     
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
 
 }

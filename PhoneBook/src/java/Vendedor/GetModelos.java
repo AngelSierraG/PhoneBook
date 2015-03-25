@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Comprador;
+package Vendedor;
 
 import BaseDatos.AdministradorBD;
 import java.io.IOException;
