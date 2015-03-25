@@ -47,7 +47,7 @@ public class creaAnuncio extends HttpServlet {
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
                         
-                        String name = "Img_"+admi.NumeroAnuncios()+".jpg";
+                        String name = "Img_"+admi.NumeroPublicaciones()+".jpg";
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
                         url = name;    
                     }else{
@@ -74,7 +74,7 @@ public class creaAnuncio extends HttpServlet {
                 }
                 
                
-               admi.agregaAnuncio(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
+               admi.agregaPublicacion(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
       
                //File uploaded successfully
                request.setAttribute("message", "Publicacion \""+titulo+"\" Exitosa.");

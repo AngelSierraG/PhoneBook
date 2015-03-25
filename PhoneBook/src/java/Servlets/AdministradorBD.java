@@ -73,14 +73,14 @@ public class AdministradorBD {
             return rs;
     }
     
-    public void agregaAnuncio(String url,String titulo, String modelo, String precio, String fechaI, String fechaF, String descripcion){
+    public void agregaPublicacion(String url,String titulo, String modelo, String precio, String fechaI, String fechaF, String descripcion){
         try {
             ResultSet rs = null;
             Connection con;
             con = ConexionBD.GetConnection();
             String usuarii="Usuario";
             
-            String query="INSERT INTO anuncios (Titulo,FechaInicio,FechaFinal,Precio,Descripcion,urlImage,Usuario,Modelos_idModelo) VALUES(?,?,?,?,?,?,?,?)";
+            String query="INSERT INTO publicaciones (Titulo,FechaInicio,FechaFinal,Precio,Descripcion,urlImage,Usuario,Modelos_idModelo) VALUES(?,?,?,?,?,?,?,?)";
             
             PreparedStatement  ps = con.prepareStatement(query);
                     ps.setString(1, titulo);
@@ -101,23 +101,23 @@ public class AdministradorBD {
 
     }
     
-    public int NumeroAnuncios(){
-        int totalAnuncios=0;
+    public int NumeroPublicaciones(){
+        int totalPublicaciones=0;
          try {
             
             Connection con;
             con = ConexionBD.GetConnection();
              
-            String query = "SELECT Count(idAnuncio) as \"contador\" FROM anuncios";
+            String query = "SELECT Count(idPublicacion) as \"contador\" FROM publicaciones";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()){
-                totalAnuncios = rs.getInt("contador");
+                totalPublicaciones = rs.getInt("contador");
             }
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-         return totalAnuncios;
+         return totalPublicaciones;
      }
     
     public ResultSet editarAnuncio(String idanuncio){
