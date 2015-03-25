@@ -6,43 +6,26 @@
 
 package Vendedor;
 
+import Servlets.Publicaciones;
 import BaseDatos.AdministradorBD;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 
 /**
  *
  * @author aC-Ma_000
  */
-public class Publicaciones extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+public class Crear_Publicaciones {
+    
+    
+    public String listar_publicaciones(){
         
         AdministradorBD admi =new AdministradorBD();
         ResultSet rs = admi.misPublicaciones();
-         String String_publicaciones="";
+        String String_publicaciones="";
          
             try {
                 
@@ -84,17 +67,13 @@ public class Publicaciones extends HttpServlet {
             } catch (SQLException ex) {
                 Logger.getLogger(Publicaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-            out.print(String_publicaciones);
-            out.flush();
-            out.close();
+            return String_publicaciones;
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    
+    public void editar_publicacion(){
+        
     }
-
+    public void eliminar_publicacion(){
+        
+    }
 }
