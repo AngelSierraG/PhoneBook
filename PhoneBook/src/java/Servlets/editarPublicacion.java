@@ -40,21 +40,11 @@ public class editarPublicacion extends HttpServlet {
                                          new DiskFileItemFactory()).parseRequest(request);
               
                 System.out.println("aqui Nooo....");
-                for(FileItem item : multiparts){
-                    if(!item.isFormField()){
-                        for(FileItem item2 : multiparts){
-                         if(("id").equals(item2.getFieldName())){
-                            id = item2.getString();
-                            break;
+               for(FileItem item : multiparts){
+                    if(item.isFormField()){
+                        if("titulo".equals(item.getFieldName())){
+                            titulo = item.getString();
                         }
-                        }
-                         String name = "Img_"+id+".jpg";
-                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
-                          url=name;
-                        cont++;
-                    }else{
-                    
-                        
                         if("precio".equals(item.getFieldName())){
                             precio = item.getString();
                         }
@@ -74,6 +64,14 @@ public class editarPublicacion extends HttpServlet {
                         if("Aux".equals(item.getFieldName())){
                             Aux = item.getString();
                         }
+                    }
+                }
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                         String name = "Img_"+id+".jpg";
+                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                          url=name;
+                        cont++;
                     }
                 }
                 
