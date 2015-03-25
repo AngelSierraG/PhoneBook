@@ -120,7 +120,7 @@ public class AdministradorBD {
          return totalPublicaciones;
      }
     
-    public ResultSet editarAnuncio(String idanuncio){
+    public ResultSet Publicacion_a_editar(String idanuncio){
             
             int id = Integer.parseInt(idanuncio);
         
@@ -129,8 +129,8 @@ public class AdministradorBD {
             
             Connection con;
             con = ConexionBD.GetConnection();
-            String query = "select titulo, FechaInicio, FechaFinal, Precio, Descripcion, anuncios.urlImage, nombremodelo, nombremarca from anuncios"
-                    + " inner join modelos on modelos_idmodelo = idmodelo inner join marcas on idmarca = marcas_idmarca where idanuncio ="+id;
+            String query = "select titulo, FechaInicio, FechaFinal, Precio, Descripcion, publicaciones.urlImage, nombremodelo, nombremarca from publicaciones"
+                    + " inner join modelos on modelos_idmodelo = idmodelo inner join marcas on idmarca = marcas_idmarca where idpublicacion ="+id;
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
        
@@ -138,5 +138,31 @@ public class AdministradorBD {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
             return rs;
+    }
+    
+    public void editarPublicacion(String id,String url,String titulo,String sel_modelo,String precio,String fechaI,String fechaF,String descripcion){
+         try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            String usuarii="Usuario";
+            
+            String query="UPDATE publicaciones SET titulo=?,FechaInicio=?, FechaFinal=?"
+                    + ", Precio=?, Descripcion=?, urlImage=?, Modelos_idModelo=? WHERE idPublicacion=?";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, titulo);
+                    ps.setString(2, fechaI);
+                    ps.setString(3, fechaF);
+                    ps.setInt(4, Integer.parseInt(precio));
+                    ps.setString(5, descripcion);
+                    ps.setString(6, url);
+                    ps.setInt(7, Integer.parseInt(sel_modelo));
+                    ps.setInt(8, Integer.parseInt(id));
+                    ps.executeUpdate(); 
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -50,7 +50,7 @@
     <%
         String id = request.getParameter("id");
             AdministradorBD admi = new AdministradorBD();
-            ResultSet rs = admi.editarAnuncio(id);
+            ResultSet rs = admi.Publicacion_a_editar(id);
            rs.next();
             String titulo = rs.getString("titulo");
             String FechaI = rs.getString("FechaInicio");
@@ -112,11 +112,12 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	<form class="contact_form" action="editarPublicaciones.do" method="post">
+	<form class="contact_form" action="editarPublicacion.do" method="post" enctype="multipart/form-data">
     <ul>
         <li>
+            <input type="hidden" name="id" value="<%=id%>">
             <label for="name">Titulo:</label>
-            <input type="text"  value="<%=titulo%>" required />
+            <input type="text" nameO="titulo" value="<%=titulo%>" required />
         </li>
         <li>
         <%
@@ -147,6 +148,10 @@
 							</select>
         </li>
         <li>
+             <label for="name">Precio:</label>
+            <input type="text" name="precio" placeholder="Ejemp: 100" required value="<%=Precio%>"/>
+        </li>
+        <li>
 
 				<label>Fecha I.:</label><input type="date" name="fechaI" value="<%=FechaI%>">
 			
@@ -160,7 +165,9 @@
             <textarea name="descripcion" cols="40" rows="6" required ><%=Descripcion%></textarea>
         </li>
         <li>
-        	<label>Imagen:</label><input name="imagen" type="file"/>
+            <input style="margin-left: 50px;" width="150px" height="150px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg">
+            <input type="hidden" value="<%=urlImage%>" name="Aux" />
+            <label>Imagen:</label><p><input style="margin-left: 100px;" name="imagen" type="file" value="C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/BDImagenes_Usuarios/<%=urlImage%>" /></p>
         </li>
         <li>
         	<button class="submit" type="submit">Editar</button><button type="button" class="submit" onclick="href();">Salir</button>

@@ -12,6 +12,10 @@
         <servlet-name>creaAnuncio</servlet-name>
         <servlet-class>Servlets.creaAnuncio</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>editarPublicacion</servlet-name>
+        <servlet-class>Servlets.editarPublicacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetAnuncios</servlet-name>
         <url-pattern>/GetAnuncios.do</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>creaAnuncio</servlet-name>
         <url-pattern>/creaAnuncio.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editarPublicacion</servlet-name>
+        <url-pattern>/editarPublicacion.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

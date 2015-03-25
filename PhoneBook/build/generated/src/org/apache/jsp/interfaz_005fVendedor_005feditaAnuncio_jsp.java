@@ -96,7 +96,7 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
 
         String id = request.getParameter("id");
             AdministradorBD admi = new AdministradorBD();
-            ResultSet rs = admi.editarAnuncio(id);
+            ResultSet rs = admi.Publicacion_a_editar(id);
            rs.next();
             String titulo = rs.getString("titulo");
             String FechaI = rs.getString("FechaInicio");
@@ -159,11 +159,14 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
       out.write("\r\n");
       out.write("\t\t<div class=\"tab_container\" >\r\n");
       out.write("\t\t\t<div id=\"tab1\" class=\"tab_content\">\r\n");
-      out.write("\t<form class=\"contact_form\" action=\"#\" method=\"post\">\r\n");
+      out.write("\t<form class=\"contact_form\" action=\"editarPublicacion.do\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
       out.write("    <ul>\r\n");
       out.write("        <li>\r\n");
+      out.write("            <input type=\"hidden\" name=\"id\" value=\"");
+      out.print(id);
+      out.write("\">\r\n");
       out.write("            <label for=\"name\">Titulo:</label>\r\n");
-      out.write("            <input type=\"text\"  value=\"");
+      out.write("            <input type=\"text\" nameO=\"titulo\" value=\"");
       out.print(titulo);
       out.write("\" required />\r\n");
       out.write("        </li>\r\n");
@@ -175,7 +178,7 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
         
       out.write("\r\n");
       out.write("            <label for=\"email\">Marca:</label>\r\n");
-      out.write("            <select id=\"Field9\" name=\"sel_marca\" onchange=\"seleccion_marca(this.value,1);\">\r\n");
+      out.write("            <select id=\"sel_marca\" name=\"sel_marca\" onchange=\"seleccion_marca(this.value);\">\r\n");
       out.write("                ");
 
                 while (rs2.next()){
@@ -200,6 +203,12 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
       out.write("\t\t\t\t\t\t\t</select>\r\n");
       out.write("        </li>\r\n");
       out.write("        <li>\r\n");
+      out.write("             <label for=\"name\">Precio:</label>\r\n");
+      out.write("            <input type=\"text\" name=\"precio\" placeholder=\"Ejemp: 100\" required value=\"");
+      out.print(Precio);
+      out.write("\"/>\r\n");
+      out.write("        </li>\r\n");
+      out.write("        <li>\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t<label>Fecha I.:</label><input type=\"date\" name=\"fechaI\" value=\"");
       out.print(FechaI);
@@ -219,10 +228,18 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
       out.write("</textarea>\r\n");
       out.write("        </li>\r\n");
       out.write("        <li>\r\n");
-      out.write("        \t<label>Imagen:</label><input name=\"imagen\" type=\"file\"/>\r\n");
+      out.write("            <input style=\"margin-left: 50px;\" width=\"150px\" height=\"150px\" type=\"image\" src=\"BDImagenes_Usuarios/");
+      out.print(urlImage);
+      out.write("\" title=\"MaxImg\">\r\n");
+      out.write("            <input type=\"hidden\" value=\"");
+      out.print(urlImage);
+      out.write("\" name=\"Aux\" />\r\n");
+      out.write("            <label>Imagen:</label><p><input style=\"margin-left: 100px;\" name=\"imagen\" type=\"file\" value=\"C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/BDImagenes_Usuarios/");
+      out.print(urlImage);
+      out.write("\" /></p>\r\n");
       out.write("        </li>\r\n");
       out.write("        <li>\r\n");
-      out.write("        \t<button class=\"submit\" type=\"submit\">Guardar</button><button class=\"submit\" type=\"reset\">Reinicar</button>\r\n");
+      out.write("        \t<button class=\"submit\" type=\"submit\">Editar</button><button type=\"button\" class=\"submit\" onclick=\"href();\">Salir</button>\r\n");
       out.write("        </li>\r\n");
       out.write("    </ul>\r\n");
       out.write("</form>\r\n");
@@ -257,7 +274,11 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
       out.write("\t\t</footer>\r\n");
       out.write("\t\t  <script type=\"text/javascript\" src=\"view/js/chat.js\"></script> \r\n");
       out.write("                  <script>\r\n");
-      out.write("                   function seleccion_marca(idmarca,modelo){\r\n");
+      out.write("                      var sel_marca =  seleccion_marca_Inicio(document.getElementById(\"sel_marca\").value,'");
+      out.print(modelo);
+      out.write("');  \r\n");
+      out.write("    \r\n");
+      out.write("                function seleccion_marca_Inicio(idmarca,modelo){\r\n");
       out.write("                        $.ajax({\r\n");
       out.write("                        type: 'GET',\r\n");
       out.write("                        url: 'GetModelos.do',\r\n");
@@ -269,6 +290,22 @@ public final class interfaz_005fVendedor_005feditaAnuncio_jsp extends org.apache
       out.write("                        $('#sel_modelo').html(resp);\r\n");
       out.write("                        });\r\n");
       out.write("                        } \r\n");
+      out.write("                        \r\n");
+      out.write("                   function seleccion_marca(idmarca){\r\n");
+      out.write("                        $.ajax({\r\n");
+      out.write("                        type: 'POST',\r\n");
+      out.write("                        url: 'GetModelos.do',\r\n");
+      out.write("                        data: {\r\n");
+      out.write("                        idmarca: idmarca\r\n");
+      out.write("                        }\r\n");
+      out.write("                        }).done(function(resp){\r\n");
+      out.write("                        $('#sel_modelo').html(resp);\r\n");
+      out.write("                        });\r\n");
+      out.write("                        } \r\n");
+      out.write("                        \r\n");
+      out.write("                  function href(){\r\n");
+      out.write("                      window.location=\"http://localhost:8080/PhoneBook/interfaz_Vendedor.jsp\";\r\n");
+      out.write("                  }      \r\n");
       out.write("    \r\n");
       out.write("                  </script>\r\n");
       out.write("          \r\n");

@@ -887,7 +887,9 @@ font-size: 14px;}
 .tab_container{	
 height: 420px;	
 overflow-y: auto;
+overflow-x: hidden;
 }
+
 
 /* btn chats */
 .btnInvitRequest{
