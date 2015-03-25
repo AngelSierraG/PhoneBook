@@ -47,7 +47,7 @@
 <body onload="listarMarcas()">
 	<header id="header">
 		<hgroup>
-			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
+			<h1 class="site_title"><a href="index.jsp"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
 			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#"><img src="images/angel.jpg" width="20" height="20"> Ángel Sierra</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
@@ -68,15 +68,15 @@
 		
         <h3>Gestor_Marcas</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="Gestor_Marcas_Crear_Marcas.html">Crear_Marcas</a></li>
-            <li class="icn_categories"><a href="Gestor_Marcas_Lista_Marcas.html">Lista_Marcas</a></li>
+			<li class="icn_new_article"><a href="Gestor_Marcas_Crear_Marcas.jsp">Crear_Marcas</a></li>
+            <li class="icn_categories"><a href="Gestor_Marcas_Lista_Marcas.jsp">Lista_Marcas</a></li>
             
 		</ul>
         
 		<h3>Gestor_Modelos</h3>
         	<ul class="toggle">
-			<li class="icn_new_article"><a href="Gestor_Modelos_Crear_Modelo.html">Crear_Modelo</a></li>
-            <li class="icn_categories"><a href="Gestor_Modelos_Lista_Modelos.html">Lista_Modelos</a></li>
+			<li class="icn_new_article"><a href="Gestor_Modelos_Crear_Modelo.jsp">Crear_Modelo</a></li>
+            <li class="icn_categories"><a href="Gestor_Modelos_Lista_Modelos.jsp">Lista_Modelos</a></li>
 			
 			
 		</ul>
@@ -84,7 +84,7 @@
         <h3>Gestor_Anuncios</h3>
         	<ul class="toggle">
 			
-            <li class="icn_categories"><a href="Gestor_Anuncios_Lista_Anuncios.html">Lista_Anuncios</a></li>
+            <li class="icn_categories"><a href="Gestor_Anuncios_Lista_Anuncios.jsp">Lista_Anuncios</a></li>
 			
 			
 		</ul>
@@ -94,7 +94,7 @@
 	
 	<section id="main" class="column">
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Marcas</h4>
 		
 		
 		

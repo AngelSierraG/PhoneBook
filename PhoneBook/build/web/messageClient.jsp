@@ -46,9 +46,12 @@ b = new BufferedReader ( new InputStreamReader ( s.getInputStream() ) );
 // write 4 parameters; nameRoom, nameUser, message and kind of ation 
 //actions; login, chating 
 
+String action =  request.getParameter("action"); 
+String dato1 =  request.getParameter("dato1"); 
+String dato2 =  request.getParameter("dato2"); 
+String dato3 =  request.getParameter("dato3"); 
 
-
-p.println(request.getParameter("action"));
+p.println(action + ","+ dato1 +"," + dato2);
 
 respuesta = b.readLine();
 

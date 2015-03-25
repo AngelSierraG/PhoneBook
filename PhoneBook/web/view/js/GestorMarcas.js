@@ -2,8 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-function listarMarcas()
-{
+
  var xmlhttpSM;
                 if (window.XMLHttpRequest){
                     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -17,11 +16,38 @@ function listarMarcas()
                         document.getElementById("tab1").innerHTML=xmlhttpSM.responseText;
                     }
                 }
-                //send a request to a server
-                //var valor;
-                
+
+function listarMarcas()
+{
+
                 xmlhttpSM.open("GET","messageClient.jsp?action=1",false);
-                xmlhttpSM.send();  
+                xmlhttpSM.send(); 
     
 }
+
+function crearMarcas()
+{
+    marca = document.getElementById("nombreMarca").value; 
+    urlImage = document.getElementById("urlImage").value
+    
+                xmlhttpSM.open("GET","messageClient.jsp?action=2&dato1="+marca+"&dato2="+urlImage+"",false);
+                xmlhttpSM.send(); 
+
+}
+
+function editarMarca(id)
+{
+    
+                xmlhttpSM.open("GET","messageClient.jsp?action=3",false);
+                xmlhttpSM.send(); 
+
+}
+
+function eliminarMarca(id)
+{               
+                xmlhttpSM.open("GET","messageClient.jsp?action=4",false);
+                xmlhttpSM.send(); 
+}
+
+
 

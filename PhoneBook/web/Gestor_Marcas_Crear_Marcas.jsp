@@ -100,19 +100,19 @@
 				<div class="module_content">
 						<fieldset>
 							<label>Nombre Marca</label>
-							<input type="text">
+                                                        <input type="text" id="nombreMArca">
 						</fieldset>
 
 						<fieldset>
 							<label>Imagen</label>
-							<input type="file">
+							<input type="file" id="urlImage">
 						</fieldset>
 					
 				
 			<footer>
 				<div class="submit_link">
 					
-					<input type="submit" value="Crear_Marca" class="alt_btn">
+                                    <input type="button" value="Crear_Marca" class="alt_btn" onclick="crearMarcas()">
 				
 				</div>
 			</footer>

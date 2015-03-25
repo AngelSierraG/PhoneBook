@@ -40,8 +40,8 @@ public class RoomServer2 extends Thread {
     }
    
     public void run() {
-        
-        String mensaje = null;
+        String peticion = null; 
+        String mensaje[] = null;
         int action = 0;
         String strChating = "";
 
@@ -53,24 +53,24 @@ public class RoomServer2 extends Thread {
             b = new BufferedReader(new InputStreamReader(sc.getInputStream()));
             p = new PrintStream(sc.getOutputStream());
             //Escribo en canal de escritura el mismo mensaje recibido
-            mensaje = b.readLine();//peticion
+            peticion = b.readLine();//peticion
         } catch (IOException ex) {
             Logger.getLogger(RoomServer2.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (mensaje != null) {
-            System.out.println("Petition(hilo:" + i + "): " + mensaje);
+        if (peticion != null) {
+            System.out.println("Petition(hilo:" + i + "): " + peticion);
 
 // split mensaje
            
 
 
-
-            action = Integer.parseInt(mensaje);
+            mensaje =  peticion.split(",");
+            action = Integer.parseInt(mensaje[0]);
 
             /**
-             ***********************************************************************************************************
-             *******************************************Chating(action=1)***********************************************
-                 * **********************************************************************************************************
+             *****************************************************************************************************************
+             *******************************************Listar_Marcas(action=1)***********************************************
+             *****************************************************************************************************************
                  */
                 GestorMarcas gm = new GestorMarcas();
                  
@@ -84,10 +84,46 @@ public class RoomServer2 extends Thread {
 
                 } /**
                  ***********************************************************************************************************
-                 *******************************************Login(action=2)*************************************************
+                 *******************************************Crear_Marcas(action=2)*************************************************
                  * **********************************************************************************************************
                  */
-        
+                else if (action == 2) {
+
+                  
+                  
+                    
+                    
+                    p.println(""+ mensaje[1]+","+ mensaje[2]);
+                    System.out.println("answer:" +"crearMarcas() succesfull");
+
+                }/**
+                 ***********************************************************************************************************
+                 *******************************************Crear_Marcas(action=3)*************************************************
+                 * **********************************************************************************************************
+                 */
+                else if (action == 3) {
+
+                  
+                    
+                    
+                    p.println(""+ gm.listaMarcas());
+                    System.out.println("answer:" +"editarMarcas() succesfull");
+
+                }/**
+                 ***********************************************************************************************************
+                 *******************************************Crear_Marcas(action=4)*************************************************
+                 * **********************************************************************************************************
+                 */
+                else if (action == 4) {
+
+                  
+                    
+                    
+                    p.println(""+ gm.listaMarcas());
+                    System.out.println("answer:" +"eliminarMarca() succesfull");
+
+                }
+                
                 
             }
         
