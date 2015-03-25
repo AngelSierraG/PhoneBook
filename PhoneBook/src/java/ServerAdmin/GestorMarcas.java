@@ -5,6 +5,7 @@
  */
 package ServerAdmin;
 
+import Servlets.AdministradorBD;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,17 +15,19 @@ import java.sql.Statement;
  * @author Angel Sierra
  */
 public class GestorMarcas {
-    Connection conexion =  new ConexionBD().GetConnection();
+//    Connection conexion =  new ConexionBD().GetConnection();
     
     public String listaMarcas(){
         String listaMarca = null;
-        Statement stmt=null;
+//        Statement stmt=null;
         ResultSet rst=null;
         try{
         //conectándose a la base de datos
      
-        stmt = conexion.createStatement();
-            rst = stmt.executeQuery("SELECT * FROM  `marcas` ");
+//        stmt = conexion.createStatement();
+//            rst = stmt.executeQuery("SELECT * FROM  `marcas` ");
+            AdministradorBD admi = new AdministradorBD();
+            rst = admi.marcas_Imagen();
             //out.println(value);
             
             listaMarca = "<table class=\"tablesorter\" cellspacing=\"1\" cellpadding=\"1\" id=\"reservations\" ><thead><tr><th>ID</th><th>Imagen</th><th>Nombre Marca</th><th></th></tr></thead><tbody> ";
@@ -37,7 +40,8 @@ public class GestorMarcas {
                 listaMarca =  listaMarca +"<tr><td>"+idMarca+"</td><td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"images/Marcas/"+urlImage+"\" title=\"MinImg\"></td><td>"+NombreMarca+"</td><td><a href=\"Gestor_Marcas_Crear_Marcas.jsp?idMarca="+idMarca+"\"><input type=\"image\" src=\"images/icn_edit.png\" title=\"Editar_Marca\"></a><a onclick=\"eliminarMarca("+idMarca+")\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Eliminar_Marca\"></a></td></tr>";
                
             }
-            conexion.close();
+            //Conexion.close
+            rst.close();
     }catch(Exception e){
         listaMarca= "Error en Consulta: "+ e.getMessage();
     }

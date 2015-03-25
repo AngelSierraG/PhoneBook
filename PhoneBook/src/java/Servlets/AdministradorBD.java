@@ -165,4 +165,22 @@ public class AdministradorBD {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public ResultSet marcas_Imagen(){
+         ResultSet rs=null;
+        try {
+            Connection con;
+            
+            con = ConexionBD.GetConnection();
+            String query = "SELECT * FROM  marcas";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+    
 }
