@@ -42,12 +42,17 @@ public class editarPublicacion extends HttpServlet {
               
                 System.out.println("aqui Nooo....");
                for(FileItem item : multiparts){
+                   
+               System.out.println("ASDASDASDASDASDDASDDa");
                     if(item.isFormField()){
                         if("titulo".equals(item.getFieldName())){
                             titulo = item.getString();
                         }
                         if("precio".equals(item.getFieldName())){
                             precio = item.getString();
+                        }
+                        if("id".equals(item.getFieldName())){
+                            id = item.getString();
                         }
                        
                         if("sel_modelo".equals(item.getFieldName())){
@@ -67,12 +72,13 @@ public class editarPublicacion extends HttpServlet {
                         }
                     }
                 }
+               System.out.println("Siiii");
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
+                        System.out.println("titulo: "+titulo);
                          String name = "Img_"+id+".jpg";
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
                           url=name;
-                        cont++;
                     }
                 }
                 

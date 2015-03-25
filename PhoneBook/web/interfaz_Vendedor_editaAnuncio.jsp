@@ -1,5 +1,5 @@
+<%@page import="BaseDatos.AdministradorBD"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="Servlets.AdministradorBD"%>
 <!doctype html>
 <html lang="en">
 
@@ -117,7 +117,7 @@
         <li>
             <input type="hidden" name="id" value="<%=id%>">
             <label for="name">Titulo:</label>
-            <input type="text" nameO="titulo" value="<%=titulo%>" required />
+            <input type="text" name="titulo" value="<%=titulo%>" required />
         </li>
         <li>
         <%
