@@ -72,13 +72,15 @@ public class RoomServer2 extends Thread {
              *******************************************Chating(action=1)***********************************************
                  * **********************************************************************************************************
                  */
+                GestorMarcas gm = new GestorMarcas();
+                 
                 if (action == 1) {
 
                   
                     
                     
-                    p.println("Lista");
-                    System.out.println("answer:" +"Lista");
+                    p.println(""+ gm.listaMarcas());
+                    System.out.println("answer:" +"listaMarcas() succesfull");
 
                 } /**
                  ***********************************************************************************************************
