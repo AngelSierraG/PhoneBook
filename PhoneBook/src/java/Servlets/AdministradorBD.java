@@ -22,13 +22,13 @@ import java.util.logging.Logger;
 public class AdministradorBD {
     
     
-    public ResultSet misAnuncios(){
+    public ResultSet misPublicaciones(){
         ResultSet rs=null;
         try {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query= "select idAnuncio,urlImage, titulo, precio, fechainicio, fechafinal from anuncios";
+            String query= "select idpublicacion,urlImage, titulo, precio, fechainicio, fechafinal from publicaciones";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
         } catch (SQLException ex) {

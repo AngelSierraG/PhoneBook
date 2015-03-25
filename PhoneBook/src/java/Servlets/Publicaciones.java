@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author aC-Ma_000
  */
-public class GetAnuncios extends HttpServlet {
+public class Publicaciones extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,12 +40,12 @@ public class GetAnuncios extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.misAnuncios();
-         String String_anuncios="";
+        ResultSet rs = admi.misPublicaciones();
+         String String_publicaciones="";
          
             try {
                 
-            String_anuncios="<table class=\"tablesorter\" cellspacing=\"1\" cellpadding=\"1\" id=\"reservations\" > \n" +
+            String_publicaciones="<table class=\"tablesorter\" cellspacing=\"1\" cellpadding=\"1\" id=\"reservations\" > \n" +
 "			<thead> \n" +
 "				<tr> \n" +
 "   					\n" +
@@ -60,16 +60,16 @@ public class GetAnuncios extends HttpServlet {
 "			</thead>     \n" +
 "            <tbody> ";    
                 while (rs.next()){
-                    int id = rs.getInt("idAnuncio");
+                    int id = rs.getInt("idPublicacion");
                     String imagen = rs.getString("urlImage");
-                    String Tanuncio = rs.getString("titulo");
+                    String Tpublicacion = rs.getString("titulo");
                     int Precio = rs.getInt("precio");
                     Date FechaI = rs.getDate("fechainicio");
                     Date FechaF = rs.getDate("fechafinal");
-                    String_anuncios = String_anuncios + "<tr> \n" +
+                    String_publicaciones = String_publicaciones + "<tr> \n" +
 "   					<td>"+id+"</td> \n" +
 "   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
-"    				<td>"+Tanuncio+"</td> \n" +
+"    				<td>"+Tpublicacion+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +
 "    				<td>"+FechaI+"</td> \n" +
 "                    <td>"+FechaF+"</td> \n" +
@@ -77,15 +77,15 @@ public class GetAnuncios extends HttpServlet {
 "				</tr> ";
                         }
                  rs.close();
-                String_anuncios = String_anuncios + "</tbody> \n" +
+                String_publicaciones = String_publicaciones + "</tbody> \n" +
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(GetAnuncios.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Publicaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             
-            out.print(String_anuncios);
+            out.print(String_publicaciones);
             out.flush();
             out.close();
     }
