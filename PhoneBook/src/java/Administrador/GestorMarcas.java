@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ServerAdmin;
+package Administrador;
 
-import Servlets.AdministradorBD;
-import java.sql.Connection;
+import BaseDatos.AdministradorBD;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 /**
  *

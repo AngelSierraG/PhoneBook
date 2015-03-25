@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package Servlets;
+package Comprador;
 
+import BaseDatos.AdministradorBD;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;

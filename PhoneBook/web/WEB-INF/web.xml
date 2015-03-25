@@ -2,19 +2,19 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
         <servlet-name>GetAnuncios</servlet-name>
-        <servlet-class>Servlets.Publicaciones</servlet-class>
+        <servlet-class>Comprador.Publicaciones</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetModelos</servlet-name>
-        <servlet-class>Servlets.GetModelos</servlet-class>
+        <servlet-class>Comprador.GetModelos</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>creaAnuncio</servlet-name>
-        <servlet-class>Servlets.creaAnuncio</servlet-class>
+        <servlet-class>Comprador.creaAnuncio</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>editarPublicacion</servlet-name>
-        <servlet-class>Servlets.editarPublicacion</servlet-class>
+        <servlet-class>Comprador.editarPublicacion</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAnuncios</servlet-name>
