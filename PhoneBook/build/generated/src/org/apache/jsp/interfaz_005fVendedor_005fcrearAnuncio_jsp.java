@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.ResultSet;
-import Servlets.AdministradorBD;
+import BaseDatos.AdministradorBD;
 
 public final class interfaz_005fVendedor_005fcrearAnuncio_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {

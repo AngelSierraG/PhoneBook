@@ -1,7 +1,7 @@
 
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" %> 
-<%@ page import = "Servlets.AdministradorBD"%> 
+<%@ page import = "BaseDatos.AdministradorBD"%> 
 <!doctype html>
 <html lang="en">
 
