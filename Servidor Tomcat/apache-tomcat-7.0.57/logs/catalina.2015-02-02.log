@@ -1,0 +1,16 @@
+feb 02, 2015 11:34:16 PM org.apache.catalina.core.StandardServer await
+INFORMACIÓN: Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-apr-8080"]
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-apr-8009"]
+feb 02, 2015 11:34:16 PM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-apr-8080"]
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-apr-8009"]
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-apr-8080"]
+feb 02, 2015 11:34:16 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-apr-8009"]

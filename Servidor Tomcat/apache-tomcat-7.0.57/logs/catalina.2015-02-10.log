@@ -1,0 +1,508 @@
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.57
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Nov 3 2014 08:39:16 UTC
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.57.0
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JAVA_HOME:             C:\Program Files\Java\jdk1.8.0_05\jre
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_05-b13
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\logging.properties
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\endorsed
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:17:14 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\temp
+feb 10, 2015 11:17:14 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.32 con la versión APR 1.5.1.
+feb 10, 2015 11:17:14 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+feb 10, 2015 11:17:15 AM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente (OpenSSL 1.0.1j 15 Oct 2014)
+feb 10, 2015 11:17:16 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:17:16 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:17:16 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 3134 ms
+feb 10, 2015 11:17:17 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+feb 10, 2015 11:17:17 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.57
+feb 10, 2015 11:17:17 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml
+feb 10, 2015 11:17:18 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [425] milliseconds.
+feb 10, 2015 11:17:18 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml has finished in 1.338 ms
+feb 10, 2015 11:17:18 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml
+feb 10, 2015 11:17:18 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml has finished in 383 ms
+feb 10, 2015 11:17:18 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml
+feb 10, 2015 11:17:19 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml has finished in 470 ms
+feb 10, 2015 11:17:19 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs de la aplicación web
+feb 10, 2015 11:17:19 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs has finished in 139 ms
+feb 10, 2015 11:17:19 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples de la aplicación web
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples has finished in 1.870 ms
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager de la aplicación web
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager has finished in 216 ms
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager de la aplicación web
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager has finished in 237 ms
+feb 10, 2015 11:17:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT de la aplicación web
+feb 10, 2015 11:17:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT has finished in 256 ms
+feb 10, 2015 11:17:22 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:17:22 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:17:22 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 5101 ms
+feb 10, 2015 11:17:25 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:17:25 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:27:02 AM org.apache.catalina.core.StandardServer await
+INFORMACIÓN: Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:27:02 AM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:27:02 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.57
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Nov 3 2014 08:39:16 UTC
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.57.0
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JAVA_HOME:             C:\Program Files\Java\jdk1.8.0_05\jre
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_05-b13
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\logging.properties
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\endorsed
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:29:21 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\temp
+feb 10, 2015 11:29:21 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.32 con la versión APR 1.5.1.
+feb 10, 2015 11:29:21 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+feb 10, 2015 11:29:22 AM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente (OpenSSL 1.0.1j 15 Oct 2014)
+feb 10, 2015 11:29:22 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:29:22 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:29:22 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 2041 ms
+feb 10, 2015 11:29:22 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+feb 10, 2015 11:29:22 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.57
+feb 10, 2015 11:29:22 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml
+feb 10, 2015 11:29:24 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [328] milliseconds.
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml has finished in 1.172 ms
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml has finished in 237 ms
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml has finished in 255 ms
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs de la aplicación web
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs has finished in 133 ms
+feb 10, 2015 11:29:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples de la aplicación web
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples has finished in 833 ms
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager de la aplicación web
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager has finished in 172 ms
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager de la aplicación web
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager has finished in 132 ms
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT de la aplicación web
+feb 10, 2015 11:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT has finished in 93 ms
+feb 10, 2015 11:29:25 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:29:26 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:29:26 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 3169 ms
+feb 10, 2015 11:37:03 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:37:03 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:37:12 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:37:12 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:37:25 AM org.apache.catalina.core.StandardServer await
+INFORMACIÓN: Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:37:25 AM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:37:25 AM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.57
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Nov 3 2014 08:39:16 UTC
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.57.0
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JAVA_HOME:             C:\Program Files\Java\jdk1.8.0_05\jre
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_05-b13
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\logging.properties
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\endorsed
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+feb 10, 2015 11:37:51 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\temp
+feb 10, 2015 11:37:51 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.32 con la versión APR 1.5.1.
+feb 10, 2015 11:37:51 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+feb 10, 2015 11:37:52 AM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente (OpenSSL 1.0.1j 15 Oct 2014)
+feb 10, 2015 11:37:52 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:37:52 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:37:52 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1603 ms
+feb 10, 2015 11:37:52 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+feb 10, 2015 11:37:52 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.57
+feb 10, 2015 11:37:52 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml
+feb 10, 2015 11:37:53 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [391] milliseconds.
+feb 10, 2015 11:37:53 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml has finished in 1.015 ms
+feb 10, 2015 11:37:53 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml
+feb 10, 2015 11:37:53 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml has finished in 203 ms
+feb 10, 2015 11:37:53 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml has finished in 235 ms
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs de la aplicación web
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs has finished in 125 ms
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples de la aplicación web
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples has finished in 672 ms
+feb 10, 2015 11:37:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager de la aplicación web
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager has finished in 109 ms
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager de la aplicación web
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager has finished in 141 ms
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT de la aplicación web
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT has finished in 109 ms
+feb 10, 2015 11:37:55 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-apr-8080"]
+feb 10, 2015 11:37:55 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
+feb 10, 2015 11:37:55 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2701 ms
+feb 10, 2015 11:51:32 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:51:32 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 12:06:40 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 12:06:40 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 12:06:47 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 12:06:48 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 12:06:52 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 12:06:52 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:09:34 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:09:34 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:11:16 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:11:16 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:11:17 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:11:17 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:16:58 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:16:58 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:23:10 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:23:10 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 1:24:27 PM org.apache.catalina.startup.HostConfig reload
+INFORMACIÓN: Falló la recarga del contexto [/Chat_DeaadPool]
+feb 10, 2015 1:24:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 1:24:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:23:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:23:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:25:23 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:25:23 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:25:56 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:25:56 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:32:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:32:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:32:56 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:32:56 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:34:26 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:34:26 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:38:11 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:38:11 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 2:38:20 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 2:38:20 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 3:01:33 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 3:01:34 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:00:54 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:00:54 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:04:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:04:01 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:04:18 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:04:19 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:10:36 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:10:36 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:11:02 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:11:03 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:16:28 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:16:28 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:17:02 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:17:02 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:23:10 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:23:10 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:23:15 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:23:15 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:57:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:57:27 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:59:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:59:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 7:59:15 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 7:59:15 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 8:03:21 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 8:03:21 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 8:58:32 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 8:58:32 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:37:09 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:37:10 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:37:18 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:37:18 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:37:35 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:37:35 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:38:05 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:38:05 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:39:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:39:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:39:16 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:39:16 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:40:20 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:40:21 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:40:31 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:40:31 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:41:07 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:41:08 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:45:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:45:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:46:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:46:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:47:34 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:47:34 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:47:50 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:47:51 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:49:42 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:49:42 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+feb 10, 2015 11:54:02 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Chat_DeaadPool]
+feb 10, 2015 11:54:02 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto

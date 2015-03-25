@@ -1,0 +1,114 @@
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.57
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Nov 3 2014 08:39:16 UTC
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.57.0
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 8.1
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            6.3
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JAVA_HOME:             C:\Program Files\Java\jdk1.8.0_05\jre
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_05-b13
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\logging.properties
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.endorsed.dirs=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\endorsed
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57
+mar 10, 2015 11:09:08 AM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\temp
+mar 10, 2015 11:09:08 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.32 con la versión APR 1.5.1.
+mar 10, 2015 11:09:08 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+mar 10, 2015 11:09:09 AM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente (OpenSSL 1.0.1j 15 Oct 2014)
+mar 10, 2015 11:09:10 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-apr-8080"]
+mar 10, 2015 11:09:10 AM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-apr-8009"]
+mar 10, 2015 11:09:10 AM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 2461 ms
+mar 10, 2015 11:09:10 AM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+mar 10, 2015 11:09:10 AM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.57
+mar 10, 2015 11:09:10 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml
+mar 10, 2015 11:09:11 AM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFORMACIÓN: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [290] milliseconds.
+mar 10, 2015 11:09:11 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat.xml has finished in 1.199 ms
+mar 10, 2015 11:09:11 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\ChatDeadpool.xml has finished in 398 ms
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml has finished in 461 ms
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs de la aplicación web
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\docs has finished in 136 ms
+mar 10, 2015 11:09:12 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples de la aplicación web
+mar 10, 2015 11:09:14 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\examples has finished in 1.956 ms
+mar 10, 2015 11:09:14 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager de la aplicación web
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\host-manager has finished in 224 ms
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager de la aplicación web
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\manager has finished in 145 ms
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT de la aplicación web
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\webapps\ROOT has finished in 110 ms
+mar 10, 2015 11:09:15 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-apr-8080"]
+mar 10, 2015 11:09:15 AM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
+mar 10, 2015 11:09:15 AM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 4850 ms
+mar 10, 2015 11:09:17 AM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Chat_DeaadPool
+mar 10, 2015 11:09:17 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml
+mar 10, 2015 11:09:17 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\Chat_DeaadPool.xml has finished in 297 ms
+mar 10, 2015 11:09:17 AM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Chat_DeaadPool]] after start() had already been called. The second call will be ignored.
+mar 10, 2015 1:11:37 PM org.apache.catalina.core.StandardServer await
+INFORMACIÓN: Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+mar 10, 2015 1:11:37 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-apr-8080"]
+mar 10, 2015 1:11:37 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-apr-8009"]
+mar 10, 2015 1:11:37 PM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+mar 10, 2015 1:11:37 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-apr-8080"]
+mar 10, 2015 1:11:38 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-apr-8009"]
+mar 10, 2015 1:11:38 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-apr-8080"]
+mar 10, 2015 1:11:38 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-apr-8009"]
