@@ -112,7 +112,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	<form class="contact_form" action="" method="post">
+	<form class="contact_form" action="editarPublicaciones.do" method="post">
     <ul>
         <li>
             <label for="name">Titulo:</label>
