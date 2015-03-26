@@ -175,7 +175,7 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("</body>\r\n");
       out.write("<script>\r\n");
       out.write("           var inicio = getPublicaciones('');\r\n");
-      out.write("           var misPublicaciones = setInterval(function(){javascript:getPublicaciones('');},2000);  \r\n");
+      out.write("           var misPublicaciones = setInterval(function(){javascript:getPublicaciones('');},1500);  \r\n");
       out.write("                    \r\n");
       out.write("                    function getPublicaciones(message) {\r\n");
       out.write("                        $.ajax({\r\n");

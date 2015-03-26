@@ -198,5 +198,41 @@ public class AdministradorBD {
         }
         return rs;
     }
+    //inicia comprador
+    public ResultSet Ver_Anuncio(){
+        
+            ResultSet rs = null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "SELECT * FROM anuncios";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            return rs;
+    }
+    
+     public ResultSet Ver_info(String idAnuncio){
+        
+            ResultSet rs = null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "SELECT * FROM anuncios WHERE idAnuncio ='"+ idAnuncio+"'";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            return rs;
+    }
     
 }
