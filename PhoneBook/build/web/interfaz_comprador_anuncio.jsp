@@ -154,8 +154,8 @@
                                 </ul>
 
                             </div>
-                            </li></center><hr>
-                        <center> <li>
+                            </li></center>
+                                    <hr><center> <li>
                        <a href="#">MODELO<span ></span></a>
                             <div class="st-content"style="text-align: left; margin-left: 150px;" >
                                 <ul><br>
@@ -174,7 +174,7 @@
                                
                                 <br>
                             </div>
-                            </li></center><hr>
+                       <hr> </li></center>
                                 <center><li>
                             <a href="#">DATOS DE LA PUBLICACION<span ></span></a>
                             <div class="st-content" style="text-align: left; margin-left: 150px;">
@@ -186,7 +186,7 @@
                                 </ul>
                                          <br><br>
                             </div>
-                                    </li></center><hr>
+                                    </li></center>
 
 
                     </ul>

@@ -29,7 +29,9 @@
 	File file= null;
 	//Recorremos la lista.
 	Iterator it = lista.iterator();
-         String nombreMarca = null; 
+        String nombreMarca = null; 
+        String urlImage = null; 
+        String idMarca = null; 
 	while(it.hasNext()){
                 
                  
@@ -38,6 +40,13 @@
                  
                         if("nombreMarca".equals(item.getFieldName())){
                            nombreMarca = item.getString();
+                        }
+                        if("urlImage".equals(item.getFieldName())){
+                           urlImage = item.getString();
+                        }
+                        
+                         if("idMarca".equals(item.getFieldName())){
+                           idMarca = item.getString();
                         }
 		//Comprobamos si es un campo de formulario
 		if(item.isFormField())
@@ -61,12 +70,12 @@
                     
                         
                         
-			item.write(new File(destino,"img_"+sqlCode.getUltimoId()+".jpg"));
+			item.write(new File(destino,"img_"+idMarca+".jpg"));
 			out.println("Fichero subido");
                         
                        
-                        String urlImage = "img_"+sqlCode.getUltimoId()+".jpg";
-                        sqlCode.insertMarca(nombreMarca, urlImage);
+                        
+                        sqlCode.editarMarca(idMarca, nombreMarca, urlImage);
                         
 			
 		}

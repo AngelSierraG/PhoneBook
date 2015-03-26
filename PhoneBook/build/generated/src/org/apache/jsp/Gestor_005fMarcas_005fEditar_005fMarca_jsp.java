@@ -3,8 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import BaseDatos.AdministradorBD;
 
-public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Gestor_005fMarcas_005fEditar_005fMarca_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,14 +43,27 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("\r\n");
+
+String  idMarca = request.getParameter("idMarca"); 
+AdministradorBD sqlCode =  new AdministradorBD();
+ResultSet rs = sqlCode.thisMarca(idMarca); 
+String nombreMarca = ""; 
+String urlImage = ""; 
+if(rs.next()){
+nombreMarca = rs.getString("nombreMarca");
+urlImage = rs.getString("urlImage"); 
+}
+
+      out.write("\r\n");
       out.write("<!doctype html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("\r\n");
       out.write("<head>\r\n");
       out.write("\t<meta charset=\"utf-8\"/>\r\n");
-      out.write("\t<title>Phonebook</title>\r\n");
+      out.write("\t<title>Phonebook-Gestor Admin</title>\r\n");
       out.write("\t\t<link rel=\"stylesheet\" href=\"view/css/layout.css\" type=\"text/css\" media=\"screen\" />\r\n");
-      out.write("\t\t<link rel=\"stylesheet\" href=\"view/css/chat.css\" type=\"text/css\" media=\"screen\" />\r\n");
       out.write("\t<script src=\"view/js/jquery-1.5.2.min.js\" type=\"text/javascript\"></script>\r\n");
       out.write("\t<script src=\"view/js/hideshow.js\" type=\"text/javascript\"></script>\r\n");
       out.write("\t<script src=\"view/js/jquery.tablesorter.min.js\" type=\"text/javascript\"></script>\r\n");
@@ -105,19 +120,28 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t</section><!-- end of secondary bar -->\r\n");
       out.write("\t\r\n");
       out.write("\t<aside id=\"sidebar\" class=\"column\">\r\n");
-      out.write("\t\t<h2>Menú</h2>\r\n");
+      out.write("\t\t<h2>MenÃº</h2>\r\n");
       out.write("\t\t<hr/>\r\n");
-      out.write("\t\t<h3>Compras</h3>\r\n");
+      out.write("\t\t\r\n");
+      out.write("        <h3>Gestor_Marcas</h3>\r\n");
       out.write("\t\t<ul class=\"toggle\">\r\n");
-      out.write("\t\t\t<li class=\"icn_categories\"><a href=\"#\">Anuncios</a></li>\r\n");
+      out.write("\t\t\t<li class=\"icn_new_article\"><a href=\"Gestor_Marcas_Crear_Marcas.html\">Crear_Marcas</a></li>\r\n");
+      out.write("            <li class=\"icn_categories\"><a href=\"Gestor_Marcas_Lista_Marcas.html\">Lista_Marcas</a></li>\r\n");
+      out.write("            \r\n");
+      out.write("\t\t</ul>\r\n");
+      out.write("        \r\n");
+      out.write("\t\t<h3>Gestor_Modelos</h3>\r\n");
+      out.write("        \t<ul class=\"toggle\">\r\n");
+      out.write("\t\t\t<li class=\"icn_new_article\"><a href=\"Gestor_Modelos_Crear_Modelo.html\">Crear_Modelo</a></li>\r\n");
+      out.write("            <li class=\"icn_categories\"><a href=\"Gestor_Modelos_Lista_Modelos.html\">Lista_Modelos</a></li>\r\n");
+      out.write("\t\t\t\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t</ul>\r\n");
-      out.write("\t\t<h3>Ventas</h3>\r\n");
       out.write("        \r\n");
-      out.write("        \r\n");
+      out.write("        <h3>Gestor_Anuncios</h3>\r\n");
       out.write("        \t<ul class=\"toggle\">\r\n");
-      out.write("\t\t\t<li class=\"icn_categories\"><a href=\"http://localhost:8080/PhoneBook/interfaz_Vendedor.jsp\">Mis Anuncios</a></li>\r\n");
-      out.write("            <li class=\"icn_new_article\"><a href=\"http://localhost:8080/PhoneBook/interfaz_Vendedor_crearAnuncio.jsp\">Crear Anuncio</a></li>\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("            <li class=\"icn_categories\"><a href=\"Gestor_Anuncios_Lista_Anuncios.html\">Lista_Anuncios</a></li>\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t</ul>\r\n");
@@ -126,42 +150,45 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t</aside><!-- end of sidebar -->\r\n");
       out.write("\t\r\n");
       out.write("\t<section id=\"main\" class=\"column\">\r\n");
-      out.write("            ");
-
-              if(request.getAttribute("message")!=null){
-                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
-              }else{
-                  out.println("<h4 class='alert_info'>Bienvenido a PhoneBook</h4>");
-              }  
-            
-      out.write("\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t<article class=\"module width_3_quarter\">\r\n");
-      out.write("\t\t<header><h3 class=\"tabs_involved\">Mis Anuncios</h3>\r\n");
-      out.write("\t\t</header>\r\n");
-      out.write("\r\n");
-      out.write("\t\t<div class=\"tab_container\" >\r\n");
-      out.write("\t\t\t<div id=\"tab1\" class=\"tab_content\">\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t</div><!-- end of #tab1 -->\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t</div><!-- end of .tab_container -->\r\n");
+      out.write("\t\t<h4 class=\"alert_info\">Phonebook | Gestor_Marcas | Editar_Marcas</h4>\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t</article><!-- end of content manager article -->\r\n");
-      out.write("\t\r\n");
-      out.write("\t\t<article class=\"module width_quarter\">\r\n");
-      out.write("\t\t\t<header><h3>Chats </h3></header>\r\n");
-      out.write("\t\t\t<div class=\"message_list\">\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t<article class=\"module width_full\">\r\n");
+      out.write("\t\t\t<header><h3>Editar_Marca</h3></header>\r\n");
+      out.write("                        <form action=\"editaMarca.jsp\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
       out.write("\t\t\t\t<div class=\"module_content\">\r\n");
-      out.write("\t\t\t\t\t<input type=\"button\" value=\"Chat con Miguel\" onclick=\"javascript:chatWith(1,'Miguel')\" class=\"btnInvitRequest\"/>\r\n");
-      out.write("\t\t\t\t\t<input type=\"button\" value=\"Chat con Luis\" onclick=\"javascript:chatWith(2,'Luis')\" class=\"btnInvitRequest\"/>\r\n");
-      out.write("\t\t\t\t\t<input type=\"button\" value=\"Chat con Juan\" onclick=\"javascript:chatWith(3,'Juan')\" class=\"btnInvitRequest\"/>\r\n");
+      out.write("\t\t\t\t\t\t<fieldset>\r\n");
+      out.write("\t\t\t\t\t\t\t<label>Nombre Marca</label>\r\n");
+      out.write("                                                        <input type=\"text\" value=\"");
+ out.println(nombreMarca); 
+      out.write("\" name=\"nombreMarca\" required=\"\">\r\n");
+      out.write("\t\t\t\t\t\t</fieldset>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t<fieldset>\r\n");
+      out.write("                                                    <img src=\"images/Marcas/");
+out.println(urlImage);
+      out.write("\" width=\"150\" height=\"150\" />\r\n");
+      out.write("                                                    <input type=\"text\" value=\"");
+ out.println(urlImage); 
+      out.write("\" name=\"urlImage\" style=\"visibility: hidden;\">\r\n");
+      out.write("                                                     <input type=\"text\" value=\"");
+ out.println(idMarca); 
+      out.write("\" name=\"idMarca\" style=\"visibility: hidden;\">\r\n");
+      out.write("                                                    <input type=\"file\" name=\"fichero\" required=\"Actualiza Imagen\">\r\n");
+      out.write("\t\t\t\t\t\t</fieldset>\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\r\n");
+      out.write("\t\t\t<footer>\r\n");
+      out.write("\t\t\t\t<div class=\"submit_link\">\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t<input type=\"submit\" value=\"Editar_Marca\" class=\"alt_btn\">\r\n");
+      out.write("\t\t\t\t\r\n");
       out.write("\t\t\t\t</div>\r\n");
-      out.write("\t\t\t</div>\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t</article><!-- end of messages article -->\r\n");
+      out.write("                            </form>\r\n");
+      out.write("\t\t\t</footer>\r\n");
+      out.write("\t\t</article><!-- end of post new article -->\r\n");
+      out.write("\t\t\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t</section>\r\n");
       out.write("\r\n");
@@ -170,43 +197,7 @@ public final class interfaz_005fVendedor_jsp extends org.apache.jasper.runtime.H
       out.write("\t\t\t<p><strong>Copyright &copy; 2015 Phonebook</strong></p>\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t</footer>\r\n");
-      out.write("\t\t  <script type=\"text/javascript\" src=\"view/js/chat.js\"></script>   \r\n");
-      out.write("          \r\n");
       out.write("</body>\r\n");
-      out.write("<script>\r\n");
-      out.write("           var inicio = getPublicaciones('');\r\n");
-      out.write("           var misPublicaciones = setInterval(function(){javascript:getPublicaciones('');},1500);  \r\n");
-      out.write("                    \r\n");
-      out.write("                    function getPublicaciones(message) {\r\n");
-      out.write("                        $.ajax({\r\n");
-      out.write("                        type: 'GET',\r\n");
-      out.write("                        url: 'Editar_listar_publicaciones.do',\r\n");
-      out.write("                        data: {\r\n");
-      out.write("                        message: message\r\n");
-      out.write("                        }\r\n");
-      out.write("                        }).done(function(resp){\r\n");
-      out.write("                        $('#tab1').html(resp);\r\n");
-      out.write("                        });\r\n");
-      out.write("                        }\r\n");
-      out.write("                    \r\n");
-      out.write("                    function eliminar_publicacion(id) {\r\n");
-      out.write("                        $.ajax({\r\n");
-      out.write("                        type: 'GET',\r\n");
-      out.write("                        url: 'Crear_eliminar_publicacion.do',\r\n");
-      out.write("                        data: {\r\n");
-      out.write("                        id: id\r\n");
-      out.write("                        }\r\n");
-      out.write("                        }).done(function(resp){\r\n");
-      out.write("                        $('#X').html(resp);\r\n");
-      out.write("                        });\r\n");
-      out.write("                        }    \r\n");
-      out.write("                        \r\n");
-      out.write("                        \r\n");
-      out.write("                   function redireccion(x){\r\n");
-      out.write("                       window.location=\"http://localhost:8080/PhoneBook/interfaz_Vendedor_editaAnuncio.jsp?id=\"+x;\r\n");
-      out.write("                   }     \r\n");
-      out.write("    \r\n");
-      out.write("</script>\r\n");
       out.write("\r\n");
       out.write("</html>");
     } catch (Throwable t) {

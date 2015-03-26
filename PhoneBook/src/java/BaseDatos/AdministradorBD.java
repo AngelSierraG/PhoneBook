@@ -241,6 +241,95 @@ public class AdministradorBD {
         }
         return rs;
     }
+    
+    public String getUltimoId(){
+    String id = null; 
+    try {
+            Connection con;
+            ResultSet rs = null;  
+            con = ConexionBD.GetConnection();
+            String query = "SELECT count(`idMarca`) as contador FROM `marcas` ";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            if(rs.next()){
+            id=""+rs.getString("contador");  
+            
+            int id2 = Integer.parseInt(id) +1;
+            id= ""+id2;
+            
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return id; 
+    
+    }
+    
+    public void insertMarca(String nombreMarca, String urlImage){
+          try {
+            
+            Connection con;
+            
+            con = ConexionBD.GetConnection();
+            
+            
+            
+            String query="INSERT INTO `phonebook`.`marcas` ( `NombreMarca`, `urlImage`) VALUES ( ?, ?)";
+                  PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, nombreMarca);
+                    ps.setString(2, urlImage);
+                   
+                    ps.executeUpdate();
+                
+           con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    public ResultSet thisMarca(String idMarca){
+    ResultSet rs = null; 
+    
+     try {
+            Connection con;
+            
+            con = ConexionBD.GetConnection();
+            String query = "SELECT * FROM  marcas where idMarca = "+idMarca+"";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    return rs; 
+    }
+    public void editarMarca(String idMarca, String nombreMarca, String urlImage){
+    try {
+            
+            Connection con;
+            
+            con = ConexionBD.GetConnection();
+            
+            
+            
+            String query="UPDATE  `phonebook`.`marcas` SET  `NombreMarca` =  ?,`urlImage`=? WHERE  `marcas`.`idMarca` =?;";
+                  PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, nombreMarca);
+                    ps.setString(2, urlImage);
+                    ps.setInt(3, Integer.parseInt(idMarca));
+                    ps.executeUpdate();
+                
+           con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
     // Fin administrador
     
     
