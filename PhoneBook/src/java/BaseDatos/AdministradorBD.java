@@ -21,7 +21,35 @@ import java.util.logging.Logger;
  */
 public class AdministradorBD {
     
+    //Inicia Registro
+    public void agregarUsuario(String nickname, String pass, String nombre, String apellido, String estado, String ciudad, String direccion, String telefono){
+        try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query="INSERT INTO usuarios (Password,NickName,Nombre,Apellido,Estado,Ciudad,Direccion,Telefono) VALUES(?,?,?,?,?,?,?,?)";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, pass);
+                    ps.setString(2, nickname);
+                    ps.setString(3, nombre);
+                    ps.setString(4, apellido);
+                    ps.setString(5, estado);
+                    ps.setString(6, ciudad);
+                    ps.setString(7, direccion);
+                    ps.setString(8, telefono);
+                    ps.executeUpdate(); 
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
+    
+    //Fin Registro
+    ////Inicia Vendedor
     public ResultSet misPublicaciones(){
         ResultSet rs=null;
         try {
@@ -181,7 +209,8 @@ public class AdministradorBD {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+    ///Fin vendedor
+    // Inicia Administrador
     public ResultSet marcas_Imagen(){
          ResultSet rs=null;
         try {
@@ -198,6 +227,9 @@ public class AdministradorBD {
         }
         return rs;
     }
+    // Fin administrador
+    
+    
     //inicia comprador
     public ResultSet Ver_Publicacion(){
         
