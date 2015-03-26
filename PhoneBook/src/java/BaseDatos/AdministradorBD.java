@@ -249,14 +249,34 @@ public class AdministradorBD {
             return rs;
     }
     
-     public ResultSet Ver_info(String idAnuncio){
+     public ResultSet Ver_info(String idPublicacion){
+        
+           int id = Integer.parseInt(idPublicacion);
+        
+            ResultSet rs = null;
+        try {
+            
+            Connection con;
+            con = ConexionBD.GetConnection();
+            String query = "select titulo, Precio, Descripcion, publicaciones.urlImage, nombremodelo, nombremarca from publicaciones"
+                    + " inner join modelos on modelos_idmodelo = idmodelo inner join marcas on idmarca = marcas_idmarca where idpublicacion ="+id;
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+       
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return rs;
+    }
+     
+       public ResultSet Listar_publicacion(){
         
             ResultSet rs = null;
         try {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query = "SELECT * FROM anuncios WHERE idAnuncio ='"+ idAnuncio+"'";
+            String query = "SELECT * FROM publicaciones";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
             
@@ -266,5 +286,6 @@ public class AdministradorBD {
             
             return rs;
     }
+    
     
 }

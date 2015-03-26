@@ -153,7 +153,7 @@
                        
      function getInfo_Anuncio(x){
                             
-                            window.location.href = "interfaz_comprador_anuncio.jsp"+"#"+x;
+                            window.location.href = "interfaz_comprador_anuncio.jsp?id="+x;
                             
                         }
     

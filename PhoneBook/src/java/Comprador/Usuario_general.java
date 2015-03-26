@@ -6,8 +6,6 @@
 package Comprador;
 
 import BaseDatos.AdministradorBD;
-import Servlets.Ver_Publicacion;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -17,12 +15,12 @@ import java.util.logging.Logger;
  *
  * @author Dago
  */
-public class Ver_Publicaciones {
+public class Usuario_general {
     
-     public String listar_publicaciones(){
+     public String listar(){
         
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.Ver_Publicacion();
+        ResultSet rs = admi.Listar_publicacion();
         String String_publicaciones="";
          
             try {
@@ -51,7 +49,7 @@ public class Ver_Publicaciones {
                    
                     String_publicaciones = String_publicaciones + "<tr> \n" +
 
-"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" onclick=\"getInfo_Anuncio("+id+");\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
+"   					<td><input width=\"50px\" height=\"50px\" type=\"image\"  src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tpublicacion+"</td> \n" +
                             
 "    				<td>"+Precio+"</td> \n" +
@@ -65,11 +63,10 @@ public class Ver_Publicaciones {
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(Ver_Publicaciones.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Usuario_general.class.getName()).log(Level.SEVERE, null, ex);
             }
             return String_publicaciones;
     }
     
-     
-     
+    
 }

@@ -194,7 +194,7 @@ public final class interfaz_005fcomprador_jsp extends org.apache.jasper.runtime.
       out.write("                       \r\n");
       out.write("     function getInfo_Anuncio(x){\r\n");
       out.write("                            \r\n");
-      out.write("                            window.location.href = \"interfaz_comprador_anuncio.jsp\"+\"#\"+x;\r\n");
+      out.write("                            window.location.href = \"interfaz_comprador_anuncio.jsp?id=\"+x;\r\n");
       out.write("                            \r\n");
       out.write("                        }\r\n");
       out.write("    \r\n");

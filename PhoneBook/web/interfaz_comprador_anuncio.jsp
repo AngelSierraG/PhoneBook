@@ -1,9 +1,12 @@
 <%-- 
-    Document   : interfaz_comprador
-    Created on : 25/03/2015, 04:42:35 PM
+    Document   : interfaz_comprador_anuncio
+    Created on : 25/03/2015, 04:44:11 PM
     Author     : Dago
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="BaseDatos.AdministradorBD"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 
@@ -50,10 +53,24 @@
 </script>
 
 <body>
+    
+     <%
+        String id = request.getParameter("id");
+            AdministradorBD admi = new AdministradorBD();
+            ResultSet rs = admi.Ver_info(id);
+           rs.next();
+            String titulo = rs.getString("titulo");
+            int Precio = rs.getInt("Precio");
+            String Descripcion = rs.getString("Descripcion");
+            String urlImage = rs.getString("urlImage");
+           String modelo = rs.getString("nombremodelo");
+            String marca = rs.getString("nombremarca");
+            
+         %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
-			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#"><img src="images/angel.jpg" width="20" height="20"> Ángel Sierra</a></div>
+			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#"><img src="images/angel.jpg" width="20" height="20"> Ãngel Sierra</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
@@ -68,7 +85,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>Men�</h2>
+		<h2>Menú</h2>
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
@@ -103,7 +120,31 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-			
+				<form class="contact_form" action="Ver_Publicacion.do" method="post" enctype="multipart/form-data">
+                                  
+                                    <section style="margin-left: 250px; font-size: 20px; margin-top: 20px;">
+                                        <label ><strong><%=titulo%></strong></label> 
+                                       </section>
+                                        <section>
+                                        <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
+                                    </section>
+                                        <section style="margin-left: 80px; margin-top: 20px;">
+                                            
+                                            <label ><strong>Precio: </strong>$<%=Precio%></label>
+                                                                    
+                                            <label style="margin-left:50px;"><strong>Modelo: </strong><%=modelo%></label> 
+                                                
+                                            <label style="margin-left:60px;"><strong>Marca: </strong><%=marca%></label> 
+                                                
+                                                
+                                       </section>
+                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;" >
+                                        <label ><strong>Descripcion: </strong><%=Descripcion%></label> 
+                                      
+                                   
+                                   
+                                       
+                                </form>
 			</div><!-- end of #tab1 -->
 			
 			
@@ -135,27 +176,21 @@
           
 </body>
 <script>
-   var Ver_Publicaciones = Ver_Publicaciones('');
-         var x;
-                    
-                    function Ver_Publicaciones(message) {
-                        $.ajax({
-                        type: 'GET',
-                        url: 'Ver_Publicacion.do',
+                     
+                                
+                       function getId(idPublicaciones){
+                           $.ajax({
+                        type: 'POST',
+                        url: 'Ver_Referencia.do',
                         data: {
-                        message: message
+                        idPublicaciones: idPublicaciones
                         }
                         }).done(function(resp){
-                        $('#tab1').html(resp);
+                        $('#sel_modelo').html(resp);
                         });
-                        }
-                        
-                       
-     function getInfo_Anuncio(x){
-                            
-                            window.location.href = "interfaz_comprador_anuncio.jsp?id="+x;
-                            
-                        }
+                           
+                       }
+    
     
 </script>
 
