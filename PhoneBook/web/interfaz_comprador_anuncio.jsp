@@ -180,8 +180,8 @@
                                            
                                                                  
                                             <section style="margin-left: 200px;">
-                                            <button id="correo">Enviar Correo</button>
-                                            <button id="chat">Iniciar Chat</button>
+                                            <button onclick="mailsome1()">Enviar Correo</button>
+                                            <button >Iniciar Chat</button>
                                             </section>
                                                 <br><br><br>
 			</div><!-- end of #tab1 -->
@@ -215,7 +215,21 @@
           
 </body>
 <script>
-                     
+
+    var mailsys="Netscape mail";
+    var author="Dagoberto";
+
+                    if (author == "Dagoberto"){
+                            phrompt=prompt;
+                            snarkconf=confirm;
+                    }
+
+                    function mailsome1(){
+                                user=phrompt("Inserta una dirección e-mail: ","nombre_correo@gmail.com");
+                                msg=phrompt("Inserta el asunto del mensaje: ","Nombre del asunto");
+                                if (snarkconf("¿Estás seguro de querer enviar un mensaje a "+user+" con el siguiente asunto? "+msg+"?")==true){
+                                        parent.location.href='mailto:'+user+'?subject='+msg+'';
+                                }         }            
                                 
                        function getId(idPublicaciones){
                            $.ajax({

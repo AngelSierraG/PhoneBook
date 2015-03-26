@@ -198,10 +198,15 @@ public final class interfaz_005fcomprador_005fanuncio_jsp extends org.apache.jas
       out.write("                                            <label ><strong>Sistema operativo: </strong>");
       out.print(sistema);
       out.write("</label><br><br>   \r\n");
-      out.write("                                             \r\n");
-      out.write("                                            <label ><strong>Camara: </strong>");
-      out.print(camara);
-      out.write("</label><br><br>\r\n");
+      out.write("                                             ");
+
+                                             if(camara==1){
+                                              out.println("<label ><strong>Camara: </strong>Si</label><br><br>");
+                                             }else
+                                                  out.println("<label ><strong>Camara: </strong>No</label><br><br>");
+                                             
+      out.write("\r\n");
+      out.write("                                            \r\n");
       out.write("                                            <label ><strong>Resolución de camara: </strong>");
       out.print(resolucion);
       out.write("</label><br><br>\r\n");
@@ -238,10 +243,18 @@ public final class interfaz_005fcomprador_005fanuncio_jsp extends org.apache.jas
       out.write("</label> <br><br>\r\n");
       out.write("                                       \r\n");
       out.write("                                        </section>\r\n");
-      out.write("                                            <br>\r\n");
+      out.write("                                            <br><br>\r\n");
+      out.write("                                          \r\n");
       out.write("                                   \r\n");
       out.write("                                       \r\n");
       out.write("                                </form>\r\n");
+      out.write("                                           \r\n");
+      out.write("                                                                 \r\n");
+      out.write("                                            <section style=\"margin-left: 200px;\">\r\n");
+      out.write("                                            <button onclick=\"mailsome1()\">Enviar Correo</button>\r\n");
+      out.write("                                            <button >Iniciar Chat</button>\r\n");
+      out.write("                                            </section>\r\n");
+      out.write("                                                <br><br><br>\r\n");
       out.write("\t\t\t</div><!-- end of #tab1 -->\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t\r\n");
@@ -273,7 +286,21 @@ public final class interfaz_005fcomprador_005fanuncio_jsp extends org.apache.jas
       out.write("          \r\n");
       out.write("</body>\r\n");
       out.write("<script>\r\n");
-      out.write("                     \r\n");
+      out.write("\r\n");
+      out.write("    var mailsys=\"Netscape mail\";\r\n");
+      out.write("    var author=\"Dagoberto\";\r\n");
+      out.write("\r\n");
+      out.write("                    if (author == \"Dagoberto\"){\r\n");
+      out.write("                            phrompt=prompt;\r\n");
+      out.write("                            snarkconf=confirm;\r\n");
+      out.write("                    }\r\n");
+      out.write("\r\n");
+      out.write("                    function mailsome1(){\r\n");
+      out.write("                                user=phrompt(\"Inserta una dirección e-mail: \",\"nombre_correo@gmail.com\");\r\n");
+      out.write("                                msg=phrompt(\"Inserta el asunto del mensaje: \",\"Nombre del asunto\");\r\n");
+      out.write("                                if (snarkconf(\"¿Estás seguro de querer enviar un mensaje a \"+user+\" con el siguiente asunto? \"+msg+\"?\")==true){\r\n");
+      out.write("                                        parent.location.href='mailto:'+user+'?subject='+msg+'';\r\n");
+      out.write("                                }         }            \r\n");
       out.write("                                \r\n");
       out.write("                       function getId(idPublicaciones){\r\n");
       out.write("                           $.ajax({\r\n");
