@@ -92,7 +92,7 @@ public final class interfaz_005fuser_005fgeneral_jsp extends org.apache.jasper.r
       out.write("<body>\r\n");
       out.write("\t<header id=\"header\">\r\n");
       out.write("\t\t<hgroup>\r\n");
-      out.write("\t\t\t<h1 class=\"site_title\"><a href=\"index.html\"><img src=\"images/phonebookLogo1.png\" width=\"343\" height=\"80\"></a></h1>\r\n");
+      out.write("\t\t\t<h1 class=\"site_title\"><img src=\"images/phonebookLogo1.png\" width=\"343\" height=\"80\"></h1>\r\n");
       out.write("\t\t\t<h2 class=\"section_title\"><!--texto --></h2><div class=\"btn_view_site\"><a href=\"http://localhost:8080/PhoneBook/login.jsp\">Iniciar sesión o Registrarse </a></div>\r\n");
       out.write("\t\t</hgroup>\r\n");
       out.write("\t</header> <!-- end of header bar -->\r\n");

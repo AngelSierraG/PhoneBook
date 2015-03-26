@@ -64,6 +64,14 @@
             String Descripcion = rs.getString("Descripcion");
             String urlImage = rs.getString("urlImage");
            String modelo = rs.getString("nombremodelo");
+           int precionuevo = rs.getInt("PrecioNuevo");
+           String sistema = rs.getString("SisOperativo");
+           int camara = rs.getInt("Camara");
+           String resolucion = rs.getString("ResolucionC");
+           String memoria = rs.getString("MemoriaInterna");
+           
+           
+           
             String marca = rs.getString("nombremarca");
             
          %>
@@ -129,6 +137,7 @@
                                         <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
                                     </section>
                                         <section style="margin-left: 80px; margin-top: 20px;">
+                                            <label><strong>MODELO</strong></label>
                                             
                                             <label ><strong>Precio: </strong>$<%=Precio%></label>
                                                                     
@@ -139,8 +148,12 @@
                                                 
                                        </section>
                                         <section style="margin-left: 80px; margin-top: 20px; text-align: justify;" >
-                                        <label ><strong>Descripcion: </strong><%=Descripcion%></label> 
-                                      
+                                        <label ><strong>MARCA</strong></label> 
+                                        </section>
+                                            
+                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;" >
+                                        <label ><strong>PUBLICACION</strong></label> 
+                                        </section>
                                    
                                    
                                        
