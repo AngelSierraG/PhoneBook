@@ -36,7 +36,7 @@ public class Ver_Publicaciones {
 "    				<th>Titulo del Anuncio</th> \n" +
 "    				<th>Precio</th> \n" +
 "    				<th>Fecha Inicio</th>\n" +
-"                    <th>Fecha Final</th>  \n" +
+
 "                    <th></th> \n" +
 "				</tr> \n" +
 "			</thead>     \n" +
@@ -63,7 +63,7 @@ public class Ver_Publicaciones {
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(Ver_Publicacion.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ver_Publicaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
             return String_publicaciones;
     }

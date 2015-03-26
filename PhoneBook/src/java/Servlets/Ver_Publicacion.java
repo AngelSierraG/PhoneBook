@@ -23,7 +23,7 @@ public class Ver_Publicacion extends  HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Ver_Publicaciones CP = new Ver_Publicaciones();
+        Ver_Publicacion CP = new Ver_Publicacion();
        
     }
 @Override
