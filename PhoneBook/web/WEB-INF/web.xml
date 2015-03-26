@@ -9,8 +9,8 @@
         <servlet-class>Vendedor.GetModelos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GetPublicaciones_comprador</servlet-name>
-        <servlet-class>Comprador.GetPublicaciones_comprador</servlet-class>
+        <servlet-name>Ver_Publicacion</servlet-name>
+        <servlet-class>Servlets.Ver_Publicacion</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetInfo_Publicaciones</servlet-name>
@@ -33,8 +33,8 @@
         <url-pattern>/Crear_eliminar_publicacion.do</url-pattern>
     </servlet-mapping>
      <servlet-mapping>
-        <servlet-name>GetPublicaciones_comprador</servlet-name>
-        <url-pattern>/GetPublicaciones_comprador.do</url-pattern>
+        <servlet-name>Ver_Publicacion</servlet-name>
+        <url-pattern>/Ver_Publicacion.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetInfo_Publicaciones</servlet-name>

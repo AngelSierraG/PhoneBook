@@ -176,13 +176,13 @@ public final class interfaz_005fcomprador_jsp extends org.apache.jasper.runtime.
       out.write("          \r\n");
       out.write("</body>\r\n");
       out.write("<script>\r\n");
-      out.write("   var Ver_Anuncio = getPublicaciones_comprador('');\r\n");
+      out.write("   var Ver_Publicaciones = Ver_Publicaciones('');\r\n");
       out.write("         var x;\r\n");
       out.write("                    \r\n");
-      out.write("                    function getPublicaciones_comprador(message) {\r\n");
+      out.write("                    function Ver_Publicaciones(message) {\r\n");
       out.write("                        $.ajax({\r\n");
       out.write("                        type: 'POST',\r\n");
-      out.write("                        url: 'GetPublicaciones_comprador.do',\r\n");
+      out.write("                        url: 'Ver_Publicacion.do',\r\n");
       out.write("                        data: {\r\n");
       out.write("                        message: message\r\n");
       out.write("                        }\r\n");

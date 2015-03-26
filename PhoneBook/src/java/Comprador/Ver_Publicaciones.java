@@ -47,15 +47,15 @@ public class Ver_Publicaciones {
                     String Tpublicacion = rs.getString("titulo");
                     int Precio = rs.getInt("precio");
                     Date FechaI = rs.getDate("fechainicio");
-                    Date FechaF = rs.getDate("fechafinal");
+                   
                     String_publicaciones = String_publicaciones + "<tr> \n" +
 "   					<td>"+id+"</td> \n" +
 "   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tpublicacion+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +
 "    				<td>"+FechaI+"</td> \n" +
-"                    <td>"+FechaF+"</td> \n" +
-"    				<td><input type=\"image\" src=\"images/icn_edit.png\" onclick=\"redireccion("+id+");\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" onclick=\"eliminar_publicacion("+id+");\" title=\"Trash\"></td> \n" +
+
+
 "				</tr> ";
                         }
                  rs.close();

@@ -135,13 +135,13 @@
           
 </body>
 <script>
-   var Ver_Anuncio = getPublicaciones_comprador('');
+   var Ver_Publicaciones = Ver_Publicaciones('');
          var x;
                     
-                    function getPublicaciones_comprador(message) {
+                    function Ver_Publicaciones(message) {
                         $.ajax({
                         type: 'POST',
-                        url: 'GetPublicaciones_comprador.do',
+                        url: 'Ver_Publicacion.do',
                         data: {
                         message: message
                         }
