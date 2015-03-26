@@ -62,16 +62,16 @@
             String titulo = rs.getString("titulo");
             int Precio = rs.getInt("Precio");
             String Descripcion = rs.getString("Descripcion");
+            String usuario = rs.getString("Usuario");
             String urlImage = rs.getString("urlImage");
+            
            String modelo = rs.getString("nombremodelo");
            int precionuevo = rs.getInt("PrecioNuevo");
            String sistema = rs.getString("SisOperativo");
            int camara = rs.getInt("Camara");
            String resolucion = rs.getString("ResolucionC");
            String memoria = rs.getString("MemoriaInterna");
-           
-           
-           
+                  
             String marca = rs.getString("nombremarca");
             
          %>
@@ -136,25 +136,38 @@
                                         <section>
                                         <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
                                     </section>
-                                        <section style="margin-left: 80px; margin-top: 20px;">
-                                            <label><strong>MODELO</strong></label>
-                                            
-                                            <label ><strong>Precio: </strong>$<%=Precio%></label>
-                                                                    
-                                            <label style="margin-left:50px;"><strong>Modelo: </strong><%=modelo%></label> 
-                                                
-                                            <label style="margin-left:60px;"><strong>Marca: </strong><%=marca%></label> 
+                                     
+                                    <section style="margin-left: 80px; margin-top: 20px; border-style: outset; border-width: 4px;">
+                                            <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MODELO</strong></label><br><br>   
+                                            <section style="width:500px; height:100px; overflow: scroll;">
+                                            <label ><strong>Nombre del modelo: </strong><%=modelo%></label><br><br>
+                                            <label ><strong>Precio nuevo: </strong>$<%=precionuevo%></label><br><br>
+                                            <label ><strong>Sistema operativo: </strong><%=sistema%></label><br><br>   
+                                             
+                                            <label ><strong>Camara: </strong><%=camara%></label><br><br>
+                                            <label ><strong>Resolución de camara: </strong><%=resolucion%></label><br><br>
+                                            <label ><strong>Memoria interna: </strong><%=memoria%></label><br><br>
+                                            </section>
                                                 
                                                 
                                        </section>
-                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;" >
-                                        <label ><strong>MARCA</strong></label> 
+                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
+                                        <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
+                                        <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
+                                                
+                                        <label><strong>Marca: </strong><%=marca%></label> <BR><br>
                                         </section>
                                             
-                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;" >
-                                        <label ><strong>PUBLICACION</strong></label> 
+                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
+                                            <label style="margin-top: 40px;"><strong style="margin-left: 150px; ">DATOS DE LA PUBLICACION</strong></label><br><br>
+                                         
+                                        
+                                            <label ><strong>Precio: </strong>$<%=Precio%></label><br><br>
+                                            <label ><strong>Descripción: </strong><%=Descripcion%></label> <br><br>
+                                            <label ><strong>Nombre del vendedor: </strong><%=usuario%></label> <br><br>
+                                       
                                         </section>
-                                   
+                                            <br>
                                    
                                        
                                 </form>
