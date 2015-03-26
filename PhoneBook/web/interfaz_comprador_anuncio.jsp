@@ -141,7 +141,7 @@
                                         <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
                                         <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
                                                 
-                                        <label><strong>Marca: </strong><%=marca%></label> <BR><br>
+                                        
                                         </section>
                                     <section style="margin-left: 80px; margin-top: 20px; border-style: outset; border-width: 4px;">
                                             <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MODELO</strong></label><br><br>   
