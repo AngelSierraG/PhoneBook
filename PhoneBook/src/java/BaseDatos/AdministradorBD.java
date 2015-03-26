@@ -206,7 +206,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query = "SELECT * FROM anuncios";
+            String query = "SELECT * FROM publicaciones";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
             
