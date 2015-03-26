@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/src/java/Vendedor/Crear_Publicaciones.java</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/interfaz_Vendedor_editaAnuncio.jsp</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/src/java/Servlets/Editar_listar_publicaciones.java</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/src/java/Servlets/Crear_eliminar_publicacion.java</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/interfaz_Vendedor.jsp</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/src/java/Vendedor/GetModelos.java</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/src/java/BaseDatos/AdministradorBD.java</file>
-            <file>file:/C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/interfaz_Vendedor_crearAnuncio.jsp</file>
+            <file>file:/C:/Users/Dago/Documents/NetBeansProjects/Ultima/PhoneBook/PhoneBook/PhoneBook/src/java/Servlets/Usuario_general.java</file>
+            <file>file:/C:/Users/Dago/Documents/NetBeansProjects/Ultima/PhoneBook/PhoneBook/PhoneBook/src/java/BaseDatos/AdministradorBD.java</file>
+            <file>file:/C:/Users/Dago/Documents/NetBeansProjects/Ultima/PhoneBook/PhoneBook/PhoneBook/src/java/Comprador/Usuario_gral.java</file>
+            <file>file:/C:/Users/Dago/Documents/NetBeansProjects/Ultima/PhoneBook/PhoneBook/PhoneBook/web/interfaz_user_general.jsp</file>
         </group>
     </open-files>
 </project-private>

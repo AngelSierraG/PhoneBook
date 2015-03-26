@@ -143,8 +143,13 @@
                                             <label ><strong>Nombre del modelo: </strong><%=modelo%></label><br><br>
                                             <label ><strong>Precio nuevo: </strong>$<%=precionuevo%></label><br><br>
                                             <label ><strong>Sistema operativo: </strong><%=sistema%></label><br><br>   
-                                             
-                                            <label ><strong>Camara: </strong><%=camara%></label><br><br>
+                                             <%
+                                             if(camara==1){
+                                              out.println("<label ><strong>Camara: </strong>Si</label><br><br>");
+                                             }else
+                                                  out.println("<label ><strong>Camara: </strong>No</label><br><br>");
+                                             %>
+                                            
                                             <label ><strong>Resolución de camara: </strong><%=resolucion%></label><br><br>
                                             <label ><strong>Memoria interna: </strong><%=memoria%></label><br><br>
                                             </section>
