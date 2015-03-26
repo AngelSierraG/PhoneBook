@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <servlet>
-        <servlet-name>GetAnuncios</servlet-name>
-        <servlet-class>Servlets.Publicaciones</servlet-class>
+        <servlet-name>Editar_listar_publicaciones</servlet-name>
+        <servlet-class>Servlets.Editar_listar_publicaciones</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetModelos</servlet-name>
         <servlet-class>Vendedor.GetModelos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>creaAnuncio</servlet-name>
-        <servlet-class>Vendedor.creaAnuncio</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>editarPublicacion</servlet-name>
-        <servlet-class>Vendedor.editarPublicacion</servlet-class>
+        <servlet-name>Crear_eliminar_publicacion</servlet-name>
+        <servlet-class>Servlets.Crear_eliminar_publicacion</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetAnuncios</servlet-name>
-        <url-pattern>/GetAnuncios.do</url-pattern>
+        <servlet-name>Editar_listar_publicaciones</servlet-name>
+        <url-pattern>/Editar_listar_publicaciones.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetModelos</servlet-name>
         <url-pattern>/GetModelos.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>creaAnuncio</servlet-name>
-        <url-pattern>/creaAnuncio.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>editarPublicacion</servlet-name>
-        <url-pattern>/editarPublicacion.do</url-pattern>
+        <servlet-name>Crear_eliminar_publicacion</servlet-name>
+        <url-pattern>/Crear_eliminar_publicacion.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

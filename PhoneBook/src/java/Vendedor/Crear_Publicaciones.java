@@ -6,13 +6,22 @@
 
 package Vendedor;
 
-import Servlets.Publicaciones;
+import Servlets.Editar_listar_publicaciones;
 import BaseDatos.AdministradorBD;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -20,7 +29,8 @@ import java.util.logging.Logger;
  */
 public class Crear_Publicaciones {
     
-    
+    String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios\\";
+   
     public String listar_publicaciones(){
         
         AdministradorBD admi =new AdministradorBD();
@@ -65,14 +75,142 @@ public class Crear_Publicaciones {
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(Publicaciones.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Editar_listar_publicaciones.class.getName()).log(Level.SEVERE, null, ex);
             }
             return String_publicaciones;
     }
     
-    public void editar_publicacion(){
+    public void crear_publicacion(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
         
+         
+        String url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
+        
+              AdministradorBD admi = new AdministradorBD();
+              
+        if(ServletFileUpload.isMultipartContent(request)){
+            try {
+                List<FileItem> multiparts = new ServletFileUpload(
+                                         new DiskFileItemFactory()).parseRequest(request);
+              
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                        
+                        String name = "Img_"+admi.NumeroPublicaciones()+".jpg";
+                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                        url = name;    
+                    }else{
+                        if("titulo".equals(item.getFieldName())){
+                            titulo = item.getString();
+                        }
+                        if("precio".equals(item.getFieldName())){
+                            precio = item.getString();
+                        }
+                       
+                        if("sel_modelo".equals(item.getFieldName())){
+                            sel_modelo = item.getString();
+                        }
+                        if("fechaI".equals(item.getFieldName())){
+                            fechaI = item.getString();
+                        }
+                        if("fechaF".equals(item.getFieldName())){
+                            fechaF = item.getString();
+                        }
+                        if("descripcion".equals(item.getFieldName())){
+                            descripcion = item.getString();
+                        }
+                    }
+                }
+                
+               
+               admi.agregaPublicacion(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
+      
+               //File uploaded successfully
+               request.setAttribute("message", "Publicacion \""+titulo+"\" creada exitosamente.");
+               request.getRequestDispatcher("/interfaz_Vendedor.jsp").forward(request, response);
+            } catch (Exception ex) {
+               request.setAttribute("message", "File Upload Failed due to " + ex);
+            }          
+         
+        }else{
+            request.setAttribute("message",
+                                 "Sorry this Servlet only handles file upload request");
+        }
+    
+     
     }
+    
+    public void editar_publicacion(HttpServletRequest request,HttpServletResponse response){
+       
+       String id="",url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="",Aux="";
+        
+       System.out.println("Sii llego.....");
+       
+              AdministradorBD admi = new AdministradorBD();
+        if(ServletFileUpload.isMultipartContent(request)){
+            
+            try {
+                
+                List<FileItem> multiparts = new ServletFileUpload(
+                                         new DiskFileItemFactory()).parseRequest(request);
+              
+               for(FileItem item : multiparts){
+                   System.out.println("Legaaaaaaa");
+                    if(item.isFormField()){
+                        if("titulo".equals(item.getFieldName())){
+                            titulo = item.getString();
+                        }
+                        if("precio".equals(item.getFieldName())){
+                            precio = item.getString();
+                        }
+                        if("id".equals(item.getFieldName())){
+                            id = item.getString();
+                        }
+                       
+                        if("sel_modelo".equals(item.getFieldName())){
+                            sel_modelo = item.getString();
+                        }
+                        if("fechaI".equals(item.getFieldName())){
+                            fechaI = item.getString();
+                        }
+                        if("fechaF".equals(item.getFieldName())){
+                            fechaF = item.getString();
+                        }
+                        if("descripcion".equals(item.getFieldName())){
+                            descripcion = item.getString();
+                        }
+                        if("Aux".equals(item.getFieldName())){
+                            Aux = item.getString();
+                        }
+                    }
+                }
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                        System.out.println("titulo: "+titulo);
+                         String name = "Img_"+id+".jpg";
+                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                          url=name;
+                    }
+                }
+                
+//               if(cont!=0){
+               admi.editarPublicacion(id,url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
+//               }else{
+//                 admi.editarPublicacion(id,Aux, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);  
+//               }
+               //File uploaded successfully
+               request.setAttribute("message", "Publicacion \""+titulo+"\" editada exitosamente.");
+               request.getRequestDispatcher("/interfaz_Vendedor.jsp").forward(request, response); 
+            } catch (Exception ex) {
+               request.setAttribute("message", "File Upload Failed due to " + ex);
+            }          
+         
+        }else{
+            request.setAttribute("message",
+                                 "Sorry this Servlet only handles file upload url: "+url+" aux:"+Aux );
+        }
+         
+    }
+    
     public void eliminar_publicacion(){
         
     }

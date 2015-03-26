@@ -134,8 +134,8 @@
                     
                     function getAnuncios(message) {
                         $.ajax({
-                        type: 'POST',
-                        url: 'GetAnuncios.do',
+                        type: 'GET',
+                        url: 'Editar_listar_publicaciones.do',
                         data: {
                         message: message
                         }

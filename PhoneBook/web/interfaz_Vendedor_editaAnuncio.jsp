@@ -112,7 +112,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-	<form class="contact_form" action="editarPublicacion.do" method="post" enctype="multipart/form-data">
+	<form class="contact_form" action="Editar_listar_publicaciones.do" method="post" enctype="multipart/form-data">
     <ul>
         <li>
             <input type="hidden" name="id" value="<%=id%>">

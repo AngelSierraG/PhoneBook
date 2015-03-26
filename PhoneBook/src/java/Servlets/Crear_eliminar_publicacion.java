@@ -8,43 +8,33 @@ package Servlets;
 
 import BaseDatos.AdministradorBD;
 import Vendedor.Crear_Publicaciones;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
  * @author aC-Ma_000
  */
-public class Publicaciones extends HttpServlet {
-
-   
+public class Crear_eliminar_publicacion extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        Crear_Publicaciones CP = new Crear_Publicaciones();
+        CP.crear_publicacion(request, response);
         
-                Crear_Publicaciones CP = new Crear_Publicaciones();
-               String String_publicaciones = CP.listar_publicaciones();
-            
-            out.print(String_publicaciones);
-            out.flush();
-            out.close();
     }
-@Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
     }
 }

@@ -99,7 +99,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-         <form class="contact_form" action="creaAnuncio.do" method="post" enctype="multipart/form-data">
+         <form class="contact_form" action="Crear_eliminar_publicacion.do" method="post" enctype="multipart/form-data">
     <ul>
         <li>
             <label for="name">Titulo:</label>
