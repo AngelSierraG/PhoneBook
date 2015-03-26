@@ -1,3 +1,10 @@
+<%-- 
+    Document   : interfaz_user_general
+    Created on : 23/03/2015, 03:45:43 PM
+    Author     : Dago
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
 
@@ -214,3 +221,4 @@
 </body>
 
 </html>
+

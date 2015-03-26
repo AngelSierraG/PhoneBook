@@ -140,7 +140,7 @@
                     
                     function Ver_Publicaciones(message) {
                         $.ajax({
-                        type: 'POST',
+                        type: 'GET',
                         url: 'Ver_Publicacion.do',
                         data: {
                         message: message

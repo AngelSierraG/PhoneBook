@@ -21,11 +21,7 @@ public class Ver_Publicacion extends  HttpServlet {
  
     
     
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        Ver_Publicacion CP = new Ver_Publicacion();
-       
-    }
+   
 @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

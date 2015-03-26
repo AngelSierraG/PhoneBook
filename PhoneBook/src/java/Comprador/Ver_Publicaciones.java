@@ -31,29 +31,29 @@ public class Ver_Publicaciones {
 "			<thead> \n" +
 "				<tr> \n" +
 "   					\n" +
-"    				<th>ID</th> \n" +
+
 "    				<th>Imagen</th>\n" +
 "    				<th>Titulo del Anuncio</th> \n" +
 "    				<th>Precio</th> \n" +
-"    				<th>Fecha Inicio</th>\n" +
+
 
 "                    <th></th> \n" +
 "				</tr> \n" +
 "			</thead>     \n" +
 "            <tbody> ";    
                 while (rs.next()){
-                    int id = rs.getInt("idPublicacion");
+                    
                     String imagen = rs.getString("urlImage");
                     String Tpublicacion = rs.getString("titulo");
                     int Precio = rs.getInt("precio");
-                    Date FechaI = rs.getDate("fechainicio");
+        
                    
                     String_publicaciones = String_publicaciones + "<tr> \n" +
-"   					<td>"+id+"</td> \n" +
+
 "   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tpublicacion+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +
-"    				<td>"+FechaI+"</td> \n" +
+
 
 
 "				</tr> ";
