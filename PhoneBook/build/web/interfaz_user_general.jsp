@@ -72,7 +72,7 @@
               if(request.getAttribute("message")!=null){
                   out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
               }else{
-                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook</h4>");
+                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook, para acceder necesitas logearte!!</h4>");
               }  
             %>
 		

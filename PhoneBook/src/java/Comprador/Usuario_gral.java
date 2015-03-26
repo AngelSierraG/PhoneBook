@@ -44,7 +44,7 @@ public class Usuario_gral {
                      int id = rs.getInt("idPublicacion");
                     String imagen = rs.getString("urlImage");
                     String Tpublicacion = rs.getString("titulo");
-                    int Precio = rs.getInt("precio");
+                    String Precio ="$"+ rs.getString("precio");
         
                    
                     String_publicaciones = String_publicaciones + "<tr> \n" +

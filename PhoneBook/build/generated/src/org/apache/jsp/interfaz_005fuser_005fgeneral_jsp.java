@@ -98,15 +98,11 @@ public final class interfaz_005fuser_005fgeneral_jsp extends org.apache.jasper.r
       out.write("\t</header> <!-- end of header bar -->\r\n");
       out.write("\t\r\n");
       out.write("  <section id=\"secondary_bar\">\r\n");
-      out.write("\t\t<div class=\"user\">\r\n");
-      out.write("\t\t \r\n");
-      out.write("\t\t\t<!-- <a class=\"logout_user\" href=\"#\" title=\"Logout\">Logout</a> -->\r\n");
-      out.write("\t</div>\r\n");
+      out.write("\t\t\r\n");
       out.write("\t\t<div class=\"breadcrumbs_container\">\r\n");
       out.write("\t\t\r\n");
       out.write("\t</div>\r\n");
       out.write("\t</section><!-- end of secondary bar -->\r\n");
-      out.write("\t\r\n");
       out.write("\t\r\n");
       out.write("\t\r\n");
       out.write("\t<section id=\"main\" class=\"column\">\r\n");
@@ -116,14 +112,14 @@ public final class interfaz_005fuser_005fgeneral_jsp extends org.apache.jasper.r
               if(request.getAttribute("message")!=null){
                   out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
               }else{
-                  out.println("<h4 class='alert_info'>Bienvenido a PhoneBook</h4>");
+                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook, para acceder necesitas logearte!!</h4>");
               }  
             
       out.write("\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t<article class=\"module width_3_quarter\">\r\n");
+      out.write("\t\t<article class=\"module2 width_3_quarter\">\r\n");
       out.write("\t\t<header><h3 class=\"tabs_involved\">Anuncios más vistos</h3>\r\n");
       out.write("\t\t</header>\r\n");
       out.write("\r\n");
@@ -148,7 +144,7 @@ public final class interfaz_005fuser_005fgeneral_jsp extends org.apache.jasper.r
       out.write("\t\t\t</section>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\t\t\t<footer>\r\n");
+      out.write("\t\t\t<footer id=\"pie\">\r\n");
       out.write("\t\t\t<p><strong>Copyright &copy; 2015 Phonebook</strong></p>\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t</footer>\r\n");
