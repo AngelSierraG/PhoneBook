@@ -136,16 +136,56 @@
                                         <section>
                                         <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
                                     </section>
+                                    
+                                      <div class="container">
+
+
+
+            <div class="wrapper">
+                <div id="st-accordion" class="st-accordion">
+                    <ul>
+                        <li>
+                            <a href="#">MARCA<span ></span></a>
+                            <div class="st-content">
+                                <ul>
+                                    <li>Nombre de la </li>
                                      
-                                     <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
+                                    
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">MODELO<span ></span></a>
+                            <div class="st-content">
+                                
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">DATOS DE LA PUBLICACION<span ></span></a>
+                            <div class="st-content">
+                                
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+                                    
+                                    
+                                     <!--
+                                     <section style="margin-left: 80px; margin-top: 20px; text-align: justify; " >
                                         <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
                                         <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
                                                 
                                         
                                         </section>
-                                    <section style="margin-left: 80px; margin-top: 20px; border-style: outset; border-width: 4px;">
+                                    <section style="margin-left: 80px; margin-top: 20px; ">
                                             <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MODELO</strong></label><br><br>   
-                                            <section style="width:500px; height:100px; overflow: scroll;">
+                                            <section style="width:500px; height:100px; ">
                                             <label ><strong>Nombre del modelo: </strong><%=modelo%></label><br><br>
                                             <label ><strong>Precio nuevo: </strong>$<%=precionuevo%></label><br><br>
                                             <label ><strong>Sistema operativo: </strong><%=sistema%></label><br><br>   
@@ -164,7 +204,7 @@
                                        </section>
                                        
                                             
-                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
+                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify; " >
                                             <label style="margin-top: 40px;"><strong style="margin-left: 150px; ">DATOS DE LA PUBLICACION</strong></label><br><br>
                                          
                                         
@@ -174,7 +214,7 @@
                                        
                                         </section>
                                             <br><br>
-                                          
+                                          -->
                                    
                                        
                                 </form>
@@ -213,6 +253,8 @@
 			
 		</footer>
 		  <script type="text/javascript" src="view/js/chat.js"></script>   
+                  
+                
           
 </body>
 <script>
@@ -244,6 +286,8 @@
                         });
                            
                        }
+                       
+                      
     
     
 </script>
