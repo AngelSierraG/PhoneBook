@@ -2690,3 +2690,7 @@
 127.0.0.1 - - [25/Mar/2015:19:10:52 -0600] "GET /PhoneBook/Editar_listar_publicaciones.do?message= HTTP/1.1" 200 3235
 127.0.0.1 - - [25/Mar/2015:19:10:54 -0600] "GET /PhoneBook/Editar_listar_publicaciones.do?message= HTTP/1.1" 200 3235
 127.0.0.1 - - [25/Mar/2015:19:10:56 -0600] "GET /PhoneBook/Editar_listar_publicaciones.do?message= HTTP/1.1" 200 3235
+127.0.0.1 - - [25/Mar/2015:19:13:11 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [25/Mar/2015:19:13:11 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [25/Mar/2015:19:13:11 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [25/Mar/2015:19:13:12 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
