@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author Dago
  */
-public class Usuario_general {
+public class Usuario_gral {
     
      public String listar(){
         
@@ -63,7 +63,7 @@ public class Usuario_general {
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(Usuario_general.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Usuario_gral.class.getName()).log(Level.SEVERE, null, ex);
             }
             return String_publicaciones;
     }

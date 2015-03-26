@@ -90,7 +90,13 @@
 	
 	<section id="main" class="column">
 		
-		<h4 class="alert_info">Bienvenido a Phonebook</h4>
+		<%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }else{
+                  out.println("<h4 class='alert_info'>Bienvenido a PhoneBook</h4>");
+              }  
+            %>
 		
 		
 		
@@ -100,114 +106,21 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="1" cellpadding="1" id="reservations" > 
-			<thead> 
-				<tr> 
-   					
-    				 
-    				<th>Celular</th>
-    				<th>Modelo</th> 
-    				<th>Precio</th> 
-    				<th>Fecha de publicación</th>
-                     
-                    <th></th> 
-				</tr> 
-			</thead>     
-            <tbody> 
-				<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/galaxys5.jpg" title="MinImg" style = "border-radius: 10px;" ></td>
-    				<td>Vendo Galaxy s5</td> 
-    				<td>$8,000</td> 
-    				<td>5-03-2015</td> 
-                  
-    				
-				</tr> 
-					<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/motoG.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    
-    				
-				</tr> 
-					<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/Lg.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Lg 80</td> 
-    				<td>$3,500</td> 
-    				<td>2-01-2015</td> 
-                    
-    				
-				</tr>
-				<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/motoG.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    
-    				
-				</tr> 
-				<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/galaxys5.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                   
-    				
-				</tr> 
-				<tr> 
-   					
-   					<td><input width="100px" height="100px" type="image" src="images/Lg.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                    
-    				
-				</tr> 
-				<tr> 
-   					 
-   					<td><input width="100px" height="100px" type="image" src="images/motoG.jpg" title="MinImg" style = "border-radius: 10px;"></td>
-    				<td>Vendo Moto G</td> 
-    				<td>$500</td> 
-    				<td>17-02-2015</td> 
-                     
-    				
-				</tr> 
-			</tbody>  
-              
-			</tbody> 
-			</table>
+			
 			</div><!-- end of #tab1 -->
 			
 			
 			
 		</div><!-- end of .tab_container -->
+			
+			
+		
 		
 		</article><!-- end of content manager article -->
 	
 		<!-- end of messages article -->
 
-		<article class="module width_quarter">
-			<header><h3>Información</h3></header>
-			<div class="message_list">
-				<div class="module_content">
-					<div class="message">
-					<p><strong>Nota #1</strong><br>
-						Selecciona tu teléfono celular favorito junto con sus accesorios y prepárate para explorar las infinitas posibilidades del mundo móvil. </p>
-					</div>
-					<div class="message">
-					<p><strong>Nota #2</strong><br>
-						En venta las mejores ofertas de teléfonos celulares baratos para comunicarte con tu familia y amigos al mejor precio.</p>
-					</div>
-					
-				</div>
-			</div>
-			
-		</article>
+		
 			
 			</section>
 
@@ -219,6 +132,26 @@
 		  <script type="text/javascript" src="view/js/chat.js"></script>   
           
 </body>
+<script>
+   var Ver_Publicaciones = Ver_Publicaciones('');
+         var x;
+                    
+                    function Ver_Publicaciones(message) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Ver_Publicacion.do',
+                        data: {
+                        message: message
+                        }
+                        }).done(function(resp){
+                        $('#tab1').html(resp);
+                        });
+                        }
+                        
+                       
+     
+    
+</script>
 
 </html>
 
