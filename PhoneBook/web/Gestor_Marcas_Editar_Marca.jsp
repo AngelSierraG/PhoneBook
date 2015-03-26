@@ -1,3 +1,16 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="BaseDatos.AdministradorBD"%>
+<%
+String  idMarca = request.getParameter("idMarca"); 
+AdministradorBD sqlCode =  new AdministradorBD();
+ResultSet rs = sqlCode.thisMarca(idMarca); 
+String nombreMarca = ""; 
+String urlImage = ""; 
+if(rs.next()){
+nombreMarca = rs.getString("nombreMarca");
+urlImage = rs.getString("urlImage"); 
+}
+%>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +74,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>Menú</h2>
+		<h2>MenÃº</h2>
 		<hr/>
 		
         <h3>Gestor_Marcas</h3>
@@ -92,32 +105,34 @@
 	
 	<section id="main" class="column">
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Crar_Marcas</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Editar_Marcas</h4>
 		
 		
 	<article class="module width_full">
-			<header><h3>Crear_Marca</h3></header>
-                        <form action="insertNuevo.jsp" method="post" enctype="multipart/form-data">
+			<header><h3>Editar_Marca</h3></header>
+                        <form action="editaMarca.jsp" method="post" enctype="multipart/form-data">
 				<div class="module_content">
 						<fieldset>
 							<label>Nombre Marca</label>
-                                                        <input type="text" id="nombreMArca" name="nombreMarca">
+                                                        <input type="text" value="<% out.println(nombreMarca); %>" name="nombreMarca" required="">
 						</fieldset>
 
 						<fieldset>
-							<label>Elige Imagen</label>
-							<input type="file" id="urlImage" name="fichero">
+                                                    <img src="images/Marcas/<%out.println(urlImage);%>" width="150" height="150" />
+                                                    <input type="text" value="<% out.println(urlImage); %>" name="urlImage" style="visibility: hidden;">
+                                                     <input type="text" value="<% out.println(idMarca); %>" name="idMarca" style="visibility: hidden;">
+                                                    <input type="file" name="fichero" required="Actualiza Imagen">
 						</fieldset>
 					
 				
 			<footer>
 				<div class="submit_link">
 					
-                                    <input type="submit" value="Crear_Marca" class="alt_btn">
+					<input type="submit" value="Editar_Marca" class="alt_btn">
 				
 				</div>
                             </form>
-                        </footer>
+			</footer>
 		</article><!-- end of post new article -->
 		
 			
