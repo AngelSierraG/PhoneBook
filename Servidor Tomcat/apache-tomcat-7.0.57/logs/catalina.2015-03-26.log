@@ -4,3 +4,33 @@ mar 26, 2015 12:05:16 AM org.apache.catalina.loader.WebappClassLoader clearRefer
 GRAVE: La aplicación web [/PhoneBook] registró el conductor JDBC [com.mysql.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
 mar 26, 2015 12:05:17 AM org.apache.catalina.core.StandardContext reload
 INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:19:44 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:19:45 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:19:47 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:19:48 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:20:29 AM org.apache.catalina.startup.HostConfig reload
+INFORMACIÓN: Falló la recarga del contexto [/PhoneBook]
+mar 26, 2015 3:20:29 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:20:30 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:20:30 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:20:31 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:20:35 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:20:35 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:20:59 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:20:59 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 26, 2015 3:21:36 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 26, 2015 3:21:36 AM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
