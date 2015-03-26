@@ -3272,3 +3272,9 @@ mar 25, 2015 11:49:17 PM org.apache.catalina.loader.WebappClassLoader clearRefer
 GRAVE: La aplicación web [/PhoneBook] registró el conductor JDBC [com.mysql.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
 mar 25, 2015 11:49:17 PM org.apache.catalina.core.StandardContext reload
 INFORMACIÓN: Se ha completado la recarga de este Contexto
+mar 25, 2015 11:55:41 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PhoneBook]
+mar 25, 2015 11:55:41 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+GRAVE: La aplicación web [/PhoneBook] registró el conductor JDBC [com.mysql.jdbc.Driver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+mar 25, 2015 11:55:42 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
