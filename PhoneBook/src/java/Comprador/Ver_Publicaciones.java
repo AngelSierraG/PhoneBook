@@ -1,50 +1,29 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Comprador;
 
-/**
- *
- * @author Dago
- */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 import BaseDatos.AdministradorBD;
-import java.io.IOException;
-import java.io.PrintWriter;
+import Servlets.Ver_Publicacion;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-
-
-public class GetPublicaciones_comprador extends HttpServlet {
+/**
+ *
+ * @author Dago
+ */
+public class Ver_Publicaciones {
     
-    
-    
-  
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+     public String listar_publicaciones(){
         
         AdministradorBD admi =new AdministradorBD();
         ResultSet rs = admi.Ver_Publicacion();
-         String String_publicaciones="";
+        String String_publicaciones="";
          
             try {
                 
@@ -52,30 +31,31 @@ public class GetPublicaciones_comprador extends HttpServlet {
 "			<thead> \n" +
 "				<tr> \n" +
 "   					\n" +
-"    				<th>Celular</th>\n" +
+"    				<th>ID</th> \n" +
+"    				<th>Imagen</th>\n" +
 "    				<th>Titulo del Anuncio</th> \n" +
 "    				<th>Precio</th> \n" +
 "    				<th>Fecha Inicio</th>\n" +
-
+"                    <th>Fecha Final</th>  \n" +
 "                    <th></th> \n" +
 "				</tr> \n" +
 "			</thead>     \n" +
 "            <tbody> ";    
                 while (rs.next()){
                     int id = rs.getInt("idPublicacion");
-                    String celular = rs.getString("urlImage");
+                    String imagen = rs.getString("urlImage");
                     String Tpublicacion = rs.getString("titulo");
                     int Precio = rs.getInt("precio");
                     Date FechaI = rs.getDate("fechainicio");
-                   
+                    Date FechaF = rs.getDate("fechafinal");
                     String_publicaciones = String_publicaciones + "<tr> \n" +
-  					
-"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+celular+"\" title=\"MinImg\"></td>\n" +
+"   					<td>"+id+"</td> \n" +
+"   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tpublicacion+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +
 "    				<td>"+FechaI+"</td> \n" +
-
-
+"                    <td>"+FechaF+"</td> \n" +
+"    				<td><input type=\"image\" src=\"images/icn_edit.png\" onclick=\"redireccion("+id+");\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" onclick=\"eliminar_publicacion("+id+");\" title=\"Trash\"></td> \n" +
 "				</tr> ";
                         }
                  rs.close();
@@ -83,19 +63,11 @@ public class GetPublicaciones_comprador extends HttpServlet {
 "			</table>";
                 
             } catch (SQLException ex) {
-                Logger.getLogger(GetPublicaciones_comprador.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ver_Publicacion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-            out.print(String_publicaciones);
-            out.flush();
-            out.close();
+            return String_publicaciones;
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
+    
+     
+     
 }

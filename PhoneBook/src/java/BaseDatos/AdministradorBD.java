@@ -199,7 +199,7 @@ public class AdministradorBD {
         return rs;
     }
     //inicia comprador
-    public ResultSet Ver_Anuncio(){
+    public ResultSet Ver_Publicacion(){
         
             ResultSet rs = null;
         try {
