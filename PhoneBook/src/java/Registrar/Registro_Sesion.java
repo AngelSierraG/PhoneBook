@@ -2,6 +2,8 @@ package Registrar;
 
 import BaseDatos.AdministradorBD;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -34,6 +36,31 @@ public class Registro_Sesion {
         } catch (ServletException ex) {
             Logger.getLogger(Registro_Sesion.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
+            Logger.getLogger(Registro_Sesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void Login(HttpServletRequest request,HttpServletResponse response){
+        try {
+            ResultSet rs = null;
+            String user = new String(request.getParameter("user").getBytes("ISO-8859-1"), "UTF-8");
+            String pass = new String(request.getParameter("pass").getBytes("ISO-8859-1"), "UTF-8");
+            
+                AdministradorBD admi = new AdministradorBD();
+                rs =  admi.Login(user, pass);
+                if(rs.next()){
+                    request.getRequestDispatcher("/interfaz_comprador.jsp").forward(request, response);
+                }else{
+                   request.setAttribute("message", "El usuario o contraseña son incorrectos");
+                   request.getRequestDispatcher("/login.jsp").forward(request, response); 
+                }
+            
+            
+        } catch (ServletException ex) {
+            Logger.getLogger(Registro_Sesion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Registro_Sesion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(Registro_Sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

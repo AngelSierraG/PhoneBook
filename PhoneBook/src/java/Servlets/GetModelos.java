@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package Vendedor;
+package Servlets;
 
+import Vendedor.*;
 import BaseDatos.AdministradorBD;
 import java.io.IOException;
 import java.io.PrintWriter;

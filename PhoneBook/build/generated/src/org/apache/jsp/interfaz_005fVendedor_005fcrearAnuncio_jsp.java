@@ -144,7 +144,7 @@ public final class interfaz_005fVendedor_005fcrearAnuncio_jsp extends org.apache
       out.write("\r\n");
       out.write("\t\t<div class=\"tab_container\" >\r\n");
       out.write("\t\t\t<div id=\"tab1\" class=\"tab_content\">\r\n");
-      out.write("         <form class=\"contact_form\" action=\"Crear_editar_publicacion.do\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
+      out.write("         <form class=\"contact_form\" action=\"Crear_eliminar_publicacion.do\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
       out.write("    <ul>\r\n");
       out.write("        <li>\r\n");
       out.write("            <label for=\"name\">Titulo:</label>\r\n");

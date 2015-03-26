@@ -30,7 +30,8 @@ public class Inicar_Registrar_Sesion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+          Registro_Sesion RS = new Registro_Sesion();
+          RS.Login(request, response);
     }
 
  

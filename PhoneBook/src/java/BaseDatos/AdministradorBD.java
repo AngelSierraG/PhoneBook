@@ -7,7 +7,6 @@
 package BaseDatos;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,9 +46,21 @@ public class AdministradorBD {
         
     }
     
-    public void Login(){
+    public ResultSet Login(String nickname, String pass){
+         ResultSet rs=null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query= "SELECT nickname, password FROM usuarios WHERE nickname = '"+nickname+"' AND password='"+pass+"'";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    } 
         
-    }
     //Fin Registro
     
     ////Inicia Vendedor
