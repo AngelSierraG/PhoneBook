@@ -47,8 +47,11 @@ public class AdministradorBD {
         
     }
     
-    
+    public void Login(){
+        
+    }
     //Fin Registro
+    
     ////Inicia Vendedor
     public ResultSet misPublicaciones(){
         ResultSet rs=null;
