@@ -97,25 +97,27 @@
 		
 	<article class="module width_full">
 			<header><h3>Crear_Marca</h3></header>
+                        <form action="insertNuevo.jsp" method="post" enctype="multipart/form-data">
 				<div class="module_content">
 						<fieldset>
 							<label>Nombre Marca</label>
-                                                        <input type="text" id="nombreMArca">
+                                                        <input type="text" id="nombreMArca" name="nombreMarca">
 						</fieldset>
 
 						<fieldset>
 							<label>Imagen</label>
-							<input type="file" id="urlImage">
+							<input type="file" id="urlImage" name="file">
 						</fieldset>
 					
 				
 			<footer>
 				<div class="submit_link">
 					
-                                    <input type="button" value="Crear_Marca" class="alt_btn" onclick="crearMarcas()">
+                                    <input type="submit" value="Crear_Marca" class="alt_btn">
 				
 				</div>
-			</footer>
+                            </form>
+                        </footer>
 		</article><!-- end of post new article -->
 		
 			
