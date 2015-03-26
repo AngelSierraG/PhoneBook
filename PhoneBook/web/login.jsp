@@ -144,7 +144,7 @@
             <header>
 	
     <div class="profileLogo"> 
-    <p class="logoPlaceholder"><a href="index.php"><img src="001_TLLogo.jpg" height="50%"></a></div>
+        <p class="logoPlaceholder" style="background: #91BABC;"><img src="images/phonebookLogo1.png" height="50%"></div>
 </header>
             <section>				
                 <div id="container_demo" >

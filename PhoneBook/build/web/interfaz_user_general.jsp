@@ -53,8 +53,8 @@
 <body>
 	<header id="header">
 		<hgroup>
-			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
-			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#">Iniciar sesión </a></div>
+			<h1 class="site_title"><img src="images/phonebookLogo1.png" width="343" height="80"></h1>
+			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="http://localhost:8080/PhoneBook/login.jsp">Iniciar sesión o Registrarse </a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	

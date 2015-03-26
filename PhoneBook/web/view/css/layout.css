@@ -62,19 +62,19 @@ text-decoration: none;
 header#header h2.section_title {
 text-align: center;
 text-indent: 4.5%;
-width: 68%;
+width: 64%;
 
 }
 
 .btn_view_site {
 float: left;
-width: 9%;
+width: 13%;
 }
 
 .btn_view_site a {
 display: block;
 margin-top: 12px;
-width: 91px;
+width: 149px;
 height: 27px;
 
 text-align: center;
