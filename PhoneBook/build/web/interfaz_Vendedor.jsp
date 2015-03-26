@@ -129,10 +129,10 @@
           
 </body>
 <script>
-   var misAnuncios = getAnuncios('');
-             
+           var inicio = getPublicaciones('');
+           var misPublicaciones = setInterval(function(){javascript:getPublicaciones('');},1500);  
                     
-                    function getAnuncios(message) {
+                    function getPublicaciones(message) {
                         $.ajax({
                         type: 'GET',
                         url: 'Editar_listar_publicaciones.do',

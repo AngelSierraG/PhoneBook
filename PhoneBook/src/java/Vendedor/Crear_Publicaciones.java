@@ -211,7 +211,10 @@ public class Crear_Publicaciones {
          
     }
     
-    public void eliminar_publicacion(){
-        
+    public void eliminar_publicacion(String id){
+            
+            int ID = Integer.parseInt(id);
+            AdministradorBD admi =new AdministradorBD();
+            admi.eliminarPublicacion(ID);
     }
 }

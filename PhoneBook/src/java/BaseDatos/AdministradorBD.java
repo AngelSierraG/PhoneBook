@@ -166,16 +166,16 @@ public class AdministradorBD {
         }
     }
 
-    public void eliminarPublicacion(String id){
-        int ID = Integer.parseInt(id);
+    public void eliminarPublicacion(int id){
         try {
             ResultSet rs=null;
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query = "DELETE FROM publiciones WHERE idpublicacion = "+ID;
-            Statement st = con.createStatement();
-            rs = st.executeQuery(query);
+            String query = "DELETE FROM publicaciones WHERE idpublicacion =?";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setInt(1, id);
+            preparedStmt.execute();
             
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);

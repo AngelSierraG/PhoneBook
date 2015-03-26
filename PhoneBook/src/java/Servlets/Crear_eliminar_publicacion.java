@@ -38,6 +38,7 @@ public class Crear_eliminar_publicacion extends HttpServlet {
             throws ServletException, IOException {
         
         String id = new String(request.getParameter("id").getBytes("ISO-8859-1"), "UTF-8");
-        
+        Crear_Publicaciones CP = new Crear_Publicaciones();
+        CP.eliminar_publicacion(id);
     }
 }
