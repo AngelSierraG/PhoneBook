@@ -172,10 +172,18 @@
                                             <label ><strong>Nombre del vendedor: </strong><%=usuario%></label> <br><br>
                                        
                                         </section>
-                                            <br>
+                                            <br><br>
+                                          
                                    
                                        
                                 </form>
+                                           
+                                                                 
+                                            <section style="margin-left: 200px;">
+                                            <button id="correo">Enviar Correo</button>
+                                            <button id="chat">Iniciar Chat</button>
+                                            </section>
+                                                <br><br><br>
 			</div><!-- end of #tab1 -->
 			
 			

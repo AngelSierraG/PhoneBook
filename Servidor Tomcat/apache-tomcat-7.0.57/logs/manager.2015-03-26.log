@@ -376,3 +376,45 @@ mar 26, 2015 6:44:44 AM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: stop: Stopping web application '/PhoneBook'
 mar 26, 2015 6:44:44 AM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: start: Starting web application '/PhoneBook'
+mar 26, 2015 8:44:21 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+mar 26, 2015 8:44:21 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+mar 26, 2015 8:44:21 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:44:21 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:45:06 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:45:06 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:46:31 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:46:31 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:51:26 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:51:54 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:52:11 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:52:11 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:58:09 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:58:56 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:59:25 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 8:59:45 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 9:00:00 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 9:01:02 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 9:01:58 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 9:02:45 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 9:03:21 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
