@@ -226,8 +226,8 @@
                     }
 
                     function mailsome1(id){
-                                user=phrompt("Inserta una dirección e-mail: ","nombre_correo@gmail.com");
-                                msg=phrompt("Inserta el asunto del mensaje: ","Nombre del asunto");
+                                user=phrompt("La dirección e-mail es : ","nombre_correo@gmail.com");
+                                msg=phrompt("Ingresa el asunto del mensaje: ","Nombre del asunto");
                                 if (snarkconf("¿Estás seguro de querer enviar un mensaje a "+id+" con el siguiente asunto? "+msg+"?")==true){
                                         parent.location.href='mailto:'+user+'?subject='+msg+'';
                                 }         }            

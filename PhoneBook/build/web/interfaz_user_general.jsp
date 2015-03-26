@@ -59,34 +59,12 @@
 	</header> <!-- end of header bar -->
 	
   <section id="secondary_bar">
-		<div class="user">
-		 
-			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
-	</div>
+		
 		<div class="breadcrumbs_container">
 		
 	</div>
 	</section><!-- end of secondary bar -->
 	
-	<aside id="sidebar" class="column">
-		<h2>Menú</h2>
-		<hr/>
-		<h3>Compras</h3>
-		<ul class="toggle">
-			
-			
-		</ul>
-		<h3>Ventas</h3>
-        
-        
-        	<ul class="toggle">
-			
-			
-			
-		</ul>
-	
-
-	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
 		
@@ -94,13 +72,13 @@
               if(request.getAttribute("message")!=null){
                   out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
               }else{
-                  out.println("<h4 class='alert_info'>Bienvenido a PhoneBook</h4>");
+                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook</h4>");
               }  
             %>
 		
 		
 		
-		<article class="module width_3_quarter">
+		<article class="module2 width_3_quarter">
 		<header><h3 class="tabs_involved">Anuncios más vistos</h3>
 		</header>
 
@@ -125,7 +103,7 @@
 			</section>
 
 
-			<footer>
+			<footer id="pie">
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
