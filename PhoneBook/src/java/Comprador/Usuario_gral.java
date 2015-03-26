@@ -20,7 +20,7 @@ public class Usuario_gral {
      public String listar(){
         
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.Listar_publicacion();
+        ResultSet rs = admi.Ver_Publicacion();
         String String_publicaciones="";
          
             try {
