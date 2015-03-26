@@ -36,5 +36,8 @@ public class Crear_eliminar_publicacion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String id = new String(request.getParameter("id").getBytes("ISO-8859-1"), "UTF-8");
+        
     }
 }

@@ -143,6 +143,19 @@
                         $('#tab1').html(resp);
                         });
                         }
+                    
+                    function eliminar_publicacion(id) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Crear_eliminar_publicacion.do',
+                        data: {
+                        id: id
+                        }
+                        }).done(function(resp){
+                        $('#X').html(resp);
+                        });
+                        }    
+                        
                         
                    function redireccion(x){
                        window.location="http://localhost:8080/PhoneBook/interfaz_Vendedor_editaAnuncio.jsp?id="+x;

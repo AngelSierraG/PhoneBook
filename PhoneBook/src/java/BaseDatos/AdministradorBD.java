@@ -166,6 +166,22 @@ public class AdministradorBD {
         }
     }
 
+    public void eliminarPublicacion(String id){
+        int ID = Integer.parseInt(id);
+        try {
+            ResultSet rs=null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "DELETE FROM publiciones WHERE idpublicacion = "+ID;
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public ResultSet marcas_Imagen(){
          ResultSet rs=null;
         try {
