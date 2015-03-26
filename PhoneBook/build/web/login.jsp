@@ -9,15 +9,15 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>Iniciar SesiÃ³n</title>
+        <title>Iniciar Sesión</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style3.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="view/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="view/css/style3.css" />
+		<link rel="stylesheet" type="text/css" href="view/css/animate-custom.css" />
         <link href="aboutPageStyle.css" rel="stylesheet" type="text/css">
     </head>
     
@@ -160,16 +160,16 @@
                                     <input id="username" name="username" required="required" type="text" placeholder="minombredeusuario o miemail@mail.com"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Ingresa contraseÃ±a </label>
+                                    <label for="password" class="youpasswd" data-icon="p"> Ingresa contraseña </label>
                                     <input id="password" name="password" required="required" type="password" placeholder="Ej. X8df!90EO" /> 
                                 </p>
                                
-                              	<p id="divAjaxLogin">Tres Lagunas Login</p>
+                              	<p id="divAjaxLogin">Phonebook</p>
                                 <p class="login button"> 
                                     <input type="submit" value="Iniciar sesion"  /> 
 								</p>
                                 <p class="change_link">
-									Â¿AÃºn no estÃ¡s registrado?
+									¿Ya estás registrado?
 									<a href="#toregister" class="to_register">Crear una cuenta</a>
 								</p>
                             </form>
@@ -196,7 +196,7 @@
                                 </p>    
                                 <!-- Password -->
                                 <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Tu contraseÃ±a </label>
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Tu contraseña </label>
                                     <input id="password1" name="passwordsignup" required="required" type="password" placeholder="Ej. X8df!90EO"/>
                                 </p>
                                 <p> 
@@ -212,11 +212,11 @@
                                     </select>
                               	
                                 <!-- TelÃ©fono -->
-                                <p>TelÃ©fono
+                                <p>Teléfono
                                 <input type="tel" id="tel"><div id="etel" class="error"></div>
                                 </p>
                                 <!-- Lugar de Origen -->
-                                <p>PaÃ­s de Origen:
+                                <p>País de Origen:
                                 <select name="pais" id="lugar">
                                     <option value="AF">AfganistÃ¡n</option>
                                     <option value="AL">Albania</option>
@@ -553,8 +553,8 @@
                                 <!-- Idioma -->
                                 <p>Idioma:
                                 <select id="idioma">
-                                	<option value="ING">InglÃ©s</option>
-                                    <option value="ESP" selected>EspaÃ±ol</option>
+                                	<option value="ING">Inglés</option>
+                                    <option value="ESP" selected>Español</option>
                                 </select>
                                 </p>
                                 <!-- Tipo de Usuario -->
@@ -573,8 +573,8 @@
 									<input type="button" value="Registrarse"  onClick="crearUsuario()"/> 
 								</p>
                                 <p class="change_link">  
-									Â¿Ya eres un usuario?
-									<a href="#tologin" class="to_register"> Iniciar sesiÃ³n </a>
+									¿Ya eres un usuario?
+									<a href="#tologin" class="to_register"> Iniciar Sesión </a>
 								</p>
                             
                         </div>
