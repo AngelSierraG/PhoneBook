@@ -6,6 +6,7 @@
 
 package Servlets;
 
+import Registrar.Registro_Sesion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,11 +19,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author aC-Ma_000
  */
 public class Inicar_Registrar_Sesion extends HttpServlet {
-
+         
    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        Registro_Sesion RS = new Registro_Sesion();
+        RS.agregarUsuario(request, response);
     }
 
     @Override

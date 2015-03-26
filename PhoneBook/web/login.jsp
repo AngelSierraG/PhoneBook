@@ -16,6 +16,7 @@
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="view/css/demo.css" />
+        <link rel="stylesheet" href="view/css/layout.css" type="text/css" media="screen" />
         <link rel="stylesheet" type="text/css" href="view/css/style3.css" />
 		<link rel="stylesheet" type="text/css" href="view/css/animate-custom.css" />
         <link href="aboutPageStyle.css" rel="stylesheet" type="text/css">
@@ -146,6 +147,11 @@
     <div class="profileLogo"> 
         <p class="logoPlaceholder" style="background: #91BABC;"><img src="images/phonebookLogo1.png" height="50%"></div>
 </header>
+            <%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }
+            %>
             <section>				
                 <div id="container_demo" >
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
@@ -204,7 +210,7 @@
                                 </p>
                                 <!-- Sexo -->    
                                 <p>Estado: 
-                                    <select name="estados" required="required">
+                                    <select name="estado" required="required">
                                            <option value="0">Selecciona un Estado</option>
                                           <!--  <option value="Aguascalientes">Aguascalientes</option>
                                             <option value="Baja California">Baja California</option>
