@@ -180,7 +180,7 @@
 
 
                         <div id="register" class="animate form">
-                        <form>
+                            <form action="Inicar_Registrar_Sesion.do" method="get">
                             
                                 <h1> Crear Usuario </h1> 
                                 <!-- Nombre Usuario -->
@@ -192,7 +192,7 @@
                                 <!-- Password -->
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Tu contraseña </label>
-                                    <input id="password1" name="passwordRegistro" required="required" type="password" placeholder="Ej. X8df!90EO"/>
+                                    <input id="password1" name="passRegistro" required="required" type="password" placeholder="Ej. X8df!90EO"/>
                                 </p>
                                  <p> 
                                     <label  class="uname" >Nombre:</label>
@@ -204,7 +204,7 @@
                                 </p>
                                 <!-- Sexo -->    
                                 <p>Estado: 
-                                       <select name="estados">
+                                    <select name="estados" required="required">
                                            <option value="0">Selecciona un Estado</option>
                                           <!--  <option value="Aguascalientes">Aguascalientes</option>
                                             <option value="Baja California">Baja California</option>
@@ -241,7 +241,7 @@
                                     </select>
                                    </p>
                                   <p>Ciudad:
-                                      <select name="ciudad" id="lugar">
+                                      <select name="ciudad" id="lugar" required="required">
                                           <option value="0">Selecciona una Ciudad</option>
                                           <option value="Arriaga">Arriaga</option>
                                           <option value="Comitan de Dominguez">Comitan de Dominguez</option>
@@ -257,7 +257,7 @@
                                 </p>
                                 <!-- TelÃ©fono -->
                                 <p>Teléfono
-                                <input type="tel" id="tel" name="telefono">
+                                    <input type="tel" id="tel" name="telefono" required="required">
                                 </p>
                               
                                 
@@ -266,25 +266,21 @@
                                 
                                 <!-- CREAR USUARIO -->
                                 <p class="signin button"> 
-									<input type="button" value="Registrarse"  onClick="crearUsuario()"/> 
+									<input type="submit" value="Registrarse" /> 
 								</p>
+                                                                
                                 <p class="change_link">  
 									¿Ya eres un usuario?
 									<a href="#tologin" class="to_register"> Iniciar Sesión </a>
 								</p>
-                            
+                            </form>
                         </div>
-						</form>
+						
                     </div>
                 </div>  
             </section>
         </div>
-  
-  <footer>
-  <hr>
-  <p class="footerDisclaimer">2015  Copyrights - <span>Todos los Derechos Reservados</span></p>
-  <p class="footerNote">Phonebook - <span> info@Phonebook.com </span></p>
-  </footer>
+
 
     </body>
 </html>

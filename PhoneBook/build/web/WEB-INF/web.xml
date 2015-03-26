@@ -20,6 +20,10 @@
         <servlet-name>Crear_eliminar_publicacion</servlet-name>
         <servlet-class>Servlets.Crear_eliminar_publicacion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inicar_Registrar_Sesion</servlet-name>
+        <servlet-class>Servlets.Inicar_Registrar_Sesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Editar_listar_publicaciones</servlet-name>
         <url-pattern>/Editar_listar_publicaciones.do</url-pattern>
@@ -32,13 +36,17 @@
         <servlet-name>Crear_eliminar_publicacion</servlet-name>
         <url-pattern>/Crear_eliminar_publicacion.do</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Ver_Publicacion</servlet-name>
         <url-pattern>/Ver_Publicacion.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GetInfo_Publicaciones</servlet-name>
         <url-pattern>/GetInfo_Publicaciones.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inicar_Registrar_Sesion</servlet-name>
+        <url-pattern>/Inicar_Registrar_Sesion.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
