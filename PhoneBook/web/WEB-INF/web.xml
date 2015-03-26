@@ -25,11 +25,11 @@
         <servlet-class>Servlets.Inicar_Registrar_Sesion</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Usuario_gral</servlet-name>
-        <servlet-class>Servlets.Usuario_gral</servlet-class>
+        <servlet-name>Usuario_general</servlet-name>
+        <servlet-class>Servlets.Usuario_general</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Usuario_general</servlet-name>
+        <servlet-name>Usuario_gral</servlet-name>
         <servlet-class>Comprador.Usuario_gral</servlet-class>
     </servlet>
     <servlet-mapping>
