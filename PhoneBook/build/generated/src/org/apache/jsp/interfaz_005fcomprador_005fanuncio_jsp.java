@@ -295,10 +295,10 @@ public final class interfaz_005fcomprador_005fanuncio_jsp extends org.apache.jas
       out.write("                            snarkconf=confirm;\r\n");
       out.write("                    }\r\n");
       out.write("\r\n");
-      out.write("                    function mailsome1(){\r\n");
+      out.write("                    function mailsome1(id){\r\n");
       out.write("                                user=phrompt(\"Inserta una dirección e-mail: \",\"nombre_correo@gmail.com\");\r\n");
       out.write("                                msg=phrompt(\"Inserta el asunto del mensaje: \",\"Nombre del asunto\");\r\n");
-      out.write("                                if (snarkconf(\"¿Estás seguro de querer enviar un mensaje a \"+user+\" con el siguiente asunto? \"+msg+\"?\")==true){\r\n");
+      out.write("                                if (snarkconf(\"¿Estás seguro de querer enviar un mensaje a \"+id+\" con el siguiente asunto? \"+msg+\"?\")==true){\r\n");
       out.write("                                        parent.location.href='mailto:'+user+'?subject='+msg+'';\r\n");
       out.write("                                }         }            \r\n");
       out.write("                                \r\n");

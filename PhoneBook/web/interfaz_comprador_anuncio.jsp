@@ -137,6 +137,12 @@
                                         <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
                                     </section>
                                      
+                                     <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
+                                        <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
+                                        <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
+                                                
+                                        <label><strong>Marca: </strong><%=marca%></label> <BR><br>
+                                        </section>
                                     <section style="margin-left: 80px; margin-top: 20px; border-style: outset; border-width: 4px;">
                                             <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MODELO</strong></label><br><br>   
                                             <section style="width:500px; height:100px; overflow: scroll;">
@@ -156,12 +162,7 @@
                                                 
                                                 
                                        </section>
-                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
-                                        <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
-                                        <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
-                                                
-                                        <label><strong>Marca: </strong><%=marca%></label> <BR><br>
-                                        </section>
+                                       
                                             
                                         <section style="margin-left: 80px; margin-top: 20px; text-align: justify;  border-style: outset; border-width: 4px;" >
                                             <label style="margin-top: 40px;"><strong style="margin-left: 150px; ">DATOS DE LA PUBLICACION</strong></label><br><br>
@@ -224,10 +225,10 @@
                             snarkconf=confirm;
                     }
 
-                    function mailsome1(){
+                    function mailsome1(id){
                                 user=phrompt("Inserta una dirección e-mail: ","nombre_correo@gmail.com");
                                 msg=phrompt("Inserta el asunto del mensaje: ","Nombre del asunto");
-                                if (snarkconf("¿Estás seguro de querer enviar un mensaje a "+user+" con el siguiente asunto? "+msg+"?")==true){
+                                if (snarkconf("¿Estás seguro de querer enviar un mensaje a "+id+" con el siguiente asunto? "+msg+"?")==true){
                                         parent.location.href='mailto:'+user+'?subject='+msg+'';
                                 }         }            
                                 
