@@ -131,7 +131,7 @@
 				<form class="contact_form" action="Ver_Publicacion.do" method="post" enctype="multipart/form-data">
                                   
                                     <section style="margin-left: 250px; font-size: 20px; margin-top: 20px;">
-                                        <label ><strong><%=titulo%></strong></label> 
+                                        <label style="color: rgb(145,186,188);"><strong><%=titulo%></strong></label> 
                                        </section>
                                         <section>
                                         <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
@@ -143,31 +143,50 @@
 
             <div class="wrapper">
                 <div id="st-accordion" class="st-accordion">
-                    <ul>
-                        <li>
-                            <a href="#">MARCA<span ></span></a>
-                            <div class="st-content">
-                                <ul>
-                                    <li>Nombre de la </li>
+                    <ul><br>
+                        <hr><center><li>
+                            <a href="#">MARCA<span ></span></a><br>
+                            <div class="st-content"style="text-align: left; margin-left: 150px;">
+                                <ul><br>
+                                    <li>Nombre de la marca: <strong><%=marca%></strong></li>
                                      
                                     
                                 </ul>
 
                             </div>
-                        </li>
-                        <li>
-                            <a href="#">MODELO<span ></span></a>
-                            <div class="st-content">
-                                
-
+                            </li></center><hr>
+                        <center> <li>
+                       <a href="#">MODELO<span ></span></a>
+                            <div class="st-content"style="text-align: left; margin-left: 150px;" >
+                                <ul><br>
+                                    <li>Nombre del modelo: <strong><%=modelo%></strong></li><br>
+                                    <li>Nuevo precio: <strong>$<%=precionuevo%></strong></li><br>
+                                    <li>Sistema operativo: <strong><%=sistema%></strong></li><br>
+                                  <%
+                                             if(camara==1){
+                                              out.println("<li>Cuenta con camara: <strong>Si</strong></li><br>");
+                                             }else
+                                                  out.println("<li>Cuenta con camara: <strong>No</strong></li><br>");
+                                             %>
+                                    <li>Resolución de camara: <strong><%=resolucion%></strong></li><br>
+                                    <li>Memoria Interna: <strong><%=memoria%></strong></li><br>
+                                </ul>
+                               
+                                <br>
                             </div>
-                        </li>
-                        <li>
+                            </li></center><hr>
+                                <center><li>
                             <a href="#">DATOS DE LA PUBLICACION<span ></span></a>
-                            <div class="st-content">
-                                
+                            <div class="st-content" style="text-align: left; margin-left: 150px;">
+                                <ul><br>
+                                    <li>Precio de publicación: <strong>$<%=Precio%></strong></li><br>
+                                    <li>Descripcion del celular: <strong><%=Descripcion%></strong></li><br>
+                                    <li>Nombre del vendedor: <strong><%=usuario%></strong></li><br>
+                                    
+                                </ul>
+                                         <br><br>
                             </div>
-                        </li>
+                                    </li></center><hr>
 
 
                     </ul>
@@ -176,46 +195,7 @@
         </div>
                                     
                                     
-                                     <!--
-                                     <section style="margin-left: 80px; margin-top: 20px; text-align: justify; " >
-                                        <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MARCA</strong></label><br><br>  
-                                        <label><strong>Nombre de la marca: </strong><%=marca%></label> <BR><br>
-                                                
-                                        
-                                        </section>
-                                    <section style="margin-left: 80px; margin-top: 20px; ">
-                                            <label style="margin-top: 40px;"><strong style="margin-left: 200px; ">MODELO</strong></label><br><br>   
-                                            <section style="width:500px; height:100px; ">
-                                            <label ><strong>Nombre del modelo: </strong><%=modelo%></label><br><br>
-                                            <label ><strong>Precio nuevo: </strong>$<%=precionuevo%></label><br><br>
-                                            <label ><strong>Sistema operativo: </strong><%=sistema%></label><br><br>   
-                                             <%
-                                             if(camara==1){
-                                              out.println("<label ><strong>Camara: </strong>Si</label><br><br>");
-                                             }else
-                                                  out.println("<label ><strong>Camara: </strong>No</label><br><br>");
-                                             %>
-                                            
-                                            <label ><strong>Resolución de camara: </strong><%=resolucion%></label><br><br>
-                                            <label ><strong>Memoria interna: </strong><%=memoria%></label><br><br>
-                                            </section>
-                                                
-                                                
-                                       </section>
-                                       
-                                            
-                                        <section style="margin-left: 80px; margin-top: 20px; text-align: justify; " >
-                                            <label style="margin-top: 40px;"><strong style="margin-left: 150px; ">DATOS DE LA PUBLICACION</strong></label><br><br>
-                                         
-                                        
-                                            <label ><strong>Precio: </strong>$<%=Precio%></label><br><br>
-                                            <label ><strong>Descripción: </strong><%=Descripcion%></label> <br><br>
-                                            <label ><strong>Nombre del vendedor: </strong><%=usuario%></label> <br><br>
-                                       
-                                        </section>
-                                            <br><br>
-                                          -->
-                                   
+                                    
                                        
                                 </form>
                                            
