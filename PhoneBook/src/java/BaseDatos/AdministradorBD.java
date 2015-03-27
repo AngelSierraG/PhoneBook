@@ -39,6 +39,9 @@ public class AdministradorBD {
                     ps.setString(7, direccion);
                     ps.setString(8, telefono);
                     ps.executeUpdate(); 
+                   
+                    ps.close();
+                    con.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -134,6 +137,9 @@ public class AdministradorBD {
                     ps.setString(7, usuarii);
                     ps.setInt(8, Integer.parseInt(modelo));
                     ps.executeUpdate(); 
+                   
+                    ps.close();
+                    con.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -156,6 +162,8 @@ public class AdministradorBD {
             while (rs.next()){
                 totalPublicaciones = rs.getInt("contador");
             }
+            rs.close();
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -202,6 +210,9 @@ public class AdministradorBD {
                     ps.setInt(7, Integer.parseInt(sel_modelo));
                     ps.setInt(8, Integer.parseInt(id));
                     ps.executeUpdate(); 
+                    
+                    ps.close();
+                    con.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -219,6 +230,8 @@ public class AdministradorBD {
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
             
+            preparedStmt.close();
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -281,6 +294,8 @@ public class AdministradorBD {
                     ps.setString(2, urlImage);
                    
                     ps.executeUpdate();
+                    ps.close();
+                    con.close();
                 
            con.close();
         } catch (SQLException ex) {
@@ -322,12 +337,43 @@ public class AdministradorBD {
                     ps.setString(2, urlImage);
                     ps.setInt(3, Integer.parseInt(idMarca));
                     ps.executeUpdate();
+            ps.close();
+            con.close();
                 
            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    
+    public void crearModelo(String nombreModelo, int precioNuevo, String sistemaO, int sel_marca, int sel_camara, String sel_resolucion, String sel_memoria){
+         try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            String usuarii="Usuario";
+            
+            String query="INSERT INTO modelos (NombreModelo,PrecioNuevo,SisOperativo,Marcas_idMarca,Camara,ResolucionC,MemoriaInterna) VALUES(?,?,?,?,?,?,?)";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, nombreModelo);
+                    ps.setInt(2, precioNuevo);
+                    ps.setString(3, sistemaO);
+                    ps.setInt(4, sel_marca);
+                    ps.setInt(5, sel_camara);
+                    ps.setString(6, sel_resolucion);
+                    ps.setString(7, sel_memoria);
+                    ps.executeUpdate(); 
+                    
+                    ps.close();
+                    con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+     
     }
     
     // Fin administrador

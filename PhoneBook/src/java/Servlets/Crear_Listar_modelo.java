@@ -6,6 +6,7 @@
 
 package Servlets;
 
+import Administrador.GestorModelos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,7 +24,8 @@ public class Crear_Listar_modelo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+            GestorModelos GM = new GestorModelos();
+            GM.crearModelo(request, response);
     }
 
     @Override

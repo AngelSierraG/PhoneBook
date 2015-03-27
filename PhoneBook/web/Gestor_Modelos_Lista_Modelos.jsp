@@ -91,6 +91,11 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
+                <%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }
+            %>    
 		
 		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
 		
