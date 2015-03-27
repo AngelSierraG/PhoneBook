@@ -720,3 +720,19 @@ mar 27, 2015 5:35:00 PM org.apache.catalina.startup.HostConfig deployDescriptor
 INFORMACIÓN: Deployment of configuration descriptor C:\Users\aC-Ma_000\Documents\ultimo4\PhoneBook\Servidor Tomcat\apache-tomcat-7.0.57\conf\Catalina\localhost\PhoneBook.xml has finished in 461 ms
 mar 27, 2015 5:35:00 PM org.apache.catalina.util.LifecycleBase start
 INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/PhoneBook]] after start() had already been called. The second call will be ignored.
+mar 27, 2015 5:42:52 PM org.apache.catalina.core.StandardServer await
+INFORMACIÓN: Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+mar 27, 2015 5:42:52 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["http-apr-8080"]
+mar 27, 2015 5:42:52 PM org.apache.coyote.AbstractProtocol pause
+INFORMACIÓN: Pausing ProtocolHandler ["ajp-apr-8009"]
+mar 27, 2015 5:42:52 PM org.apache.catalina.core.StandardService stopInternal
+INFORMACIÓN: Parando servicio Catalina
+mar 27, 2015 5:42:53 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["http-apr-8080"]
+mar 27, 2015 5:42:53 PM org.apache.coyote.AbstractProtocol stop
+INFORMACIÓN: Stopping ProtocolHandler ["ajp-apr-8009"]
+mar 27, 2015 5:42:53 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["http-apr-8080"]
+mar 27, 2015 5:42:53 PM org.apache.coyote.AbstractProtocol destroy
+INFORMACIÓN: Destroying ProtocolHandler ["ajp-apr-8009"]

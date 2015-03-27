@@ -5184,3 +5184,9 @@
 127.0.0.1 - root [27/Mar/2015:17:35:20 -0600] "GET /manager/text/list HTTP/1.1" 200 643
 127.0.0.1 - - [27/Mar/2015:17:35:23 -0600] "GET /PhoneBook/login.jsp HTTP/1.1" 200 10412
 127.0.0.1 - - [27/Mar/2015:17:35:24 -0600] "GET /PhoneBook/aboutPageStyle.css HTTP/1.1" 404 1017
+127.0.0.1 - - [27/Mar/2015:17:42:49 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [27/Mar/2015:17:42:49 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [27/Mar/2015:17:42:49 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [27/Mar/2015:17:42:50 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [27/Mar/2015:17:42:51 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [27/Mar/2015:17:42:52 -0600] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
