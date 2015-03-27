@@ -32,6 +32,10 @@
         <servlet-name>Usuario_gral</servlet-name>
         <servlet-class>Comprador.Usuario_gral</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Crear_Listar_modelo</servlet-name>
+        <servlet-class>Servlets.Crear_Listar_modelo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetModelos</servlet-name>
         <url-pattern>/GetModelos.do</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Inicar_Registrar_Sesion</servlet-name>
         <url-pattern>/Inicar_Registrar_Sesion.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Crear_Listar_modelo</servlet-name>
+        <url-pattern>/Crear_Listar_modelo.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
