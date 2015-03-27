@@ -91,31 +91,114 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-                <%
-              if(request.getAttribute("message")!=null){
-                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
-              }
-            %>    
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Editar_Modelo</h4>
 		
 		
-		
-		<article class="module width_3_quarter">
-		<header><h3 class="tabs_involved">Modelos</h3>
-		</header>
-
-		<div class="tab_container" >
+	<article class="module width_full">
+			<header><h3>Editar_Modelo</h3></header>
+			<div class="tab_container" style="">
 			<div id="tab1" class="tab_content">
-			
-			</div><!-- end of #tab1 -->
-			
-			
-			
-		</div><!-- end of .tab_container -->
-		
-		</article><!-- end of content manager article -->
-	
+				<div class="module_content">
+						<fieldset>
+							<label>Nombre Modelo</label>
+							<input type="text" value="Moto G">
+						</fieldset>
+
+						<fieldset>
+							<label>Imagen</label>
+							<input type="file">
+						</fieldset>
+
+						<fieldset>
+							<label>Precio Nuevo</label>
+							<input type="text" value="4000">
+						</fieldset>
+
+						<fieldset>
+							<label>Sistema Operativo</label>
+							<input type="text" value="Android">
+						</fieldset>
+
+						<fieldset>
+							<label>Vida Util(años)</label>
+							<input type="text" value="5">
+						</fieldset>
+
+						<fieldset>
+							<label>Cámara</label>
+							<input type="checkbox">
+						</fieldset>
+
+						<fieldset>
+							<label>Resolución Cámara</label>
+							<input type="text" value="5mpx">
+						</fieldset>
+
+						<fieldset>
+							<label>Cámara Frontal</label>
+							<input type="checkbox">
+						</fieldset>
+
+						<fieldset>
+							<label>resolución Cámara Frontal</label>
+							<input type="text" value="3mpx"> 
+						</fieldset>
+
+						<fieldset>
+							<label>Touch</label>
+							<input type="checkbox">
+						</fieldset>
+
+						<fieldset>
+							<label>Dimensiones</label>
+							<input type="text" value="15x6cm">
+						</fieldset>
+
+						<fieldset>
+							<label>Peso en Gramos</label>
+							<input type="text" value="360gr">
+						</fieldset>
+
+						<fieldset>
+							<label>GPS</label>
+							<input type="checkbox">
+						</fieldset>
+
+						<fieldset>
+							<label>Procesador</label>
+							<input type="text" value="Intel">
+						</fieldset>
+
+						<fieldset>
+							<label>Memoria Interna(GB)</label>
+							<input type="text">
+						</fieldset>
+
+						<fieldset>
+							<label>WI-FI</label>
+							<input type="checkbox">
+						</fieldset>
+
+						<fieldset>
+							<label>Colores</label>
+							<input type="text">
+						</fieldset>
+
+						<fieldset>
+							<label>Bloetooth</label>
+							<input type="checkbox">
+						</fieldset>
+					
+				
+			<footer>
+				<div class="submit_link">
+					
+					<input type="submit" value="Editar_Modelo" class="alt_btn">
+				</div></div>
+				</div>
+			</footer>
+		</article><!-- end of post new article -->
 		
 			
 			</section>
@@ -125,41 +208,6 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
-            <script>
-                
-           var inicio = getModelos('');
-           var misModelos = setInterval(function(){javascript:getModelos('');},1500);  
-                    
-                    function getModelos(message) {
-                        $.ajax({
-                        type: 'POST',
-                        url: 'Crear_Listar_modelo.do',
-                        data: {
-                        message: message
-                        }
-                        }).done(function(resp){
-                        $('#tab1').html(resp);
-                        });
-                        }
-                    function eliminar_modelo(id) {
-                        $.ajax({
-                        type: 'GET',
-                        url: 'Eliminar_Editar_modelo.do',
-                        data: {
-                        id: id
-                        }
-                        }).done(function(resp){
-                        $('#X').html(resp);
-                        });
-                        }    
-                        
-                        
-                   function redireccion(x){
-                       window.location="http://localhost:8080/PhoneBook/Gestor_Modelos_Editar_Modelo.jsp?id="+x;
-                   }      
-                
-            </script>      
-            
 </body>
 
 </html>

@@ -390,7 +390,23 @@ public class AdministradorBD {
         }
         return rs;
     }
-      
+    public void eliminarModelos(int id){
+      try {
+            ResultSet rs=null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "DELETE FROM modelos WHERE idmodelo =?";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setInt(1, id);
+            preparedStmt.execute();
+            
+            preparedStmt.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+    }  
 // Fin administrador
     
     

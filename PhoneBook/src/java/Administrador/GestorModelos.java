@@ -48,8 +48,11 @@ public class GestorModelos {
     public void editarModelo(){
         
     }
-    public void eliminarModelo(){
-        
+    public void eliminarModelo(String id){
+            int ID = Integer.parseInt(id);
+            AdministradorBD admi =new AdministradorBD();
+            admi.eliminarModelos(ID);
+       
     }
     public String listarModelo(){
         AdministradorBD admi = new AdministradorBD();

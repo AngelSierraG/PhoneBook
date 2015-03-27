@@ -141,6 +141,22 @@
                         $('#tab1').html(resp);
                         });
                         }
+                    function eliminar_modelo(id) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Eliminar_Editar_modelo.do',
+                        data: {
+                        id: id
+                        }
+                        }).done(function(resp){
+                        $('#X').html(resp);
+                        });
+                        }    
+                        
+                        
+                   function redireccion(x){
+                       window.location="http://localhost:8080/PhoneBook/Gestor_Modelos_Editar_Modelo.jsp?id="+x;
+                   }      
                 
             </script>      
             
