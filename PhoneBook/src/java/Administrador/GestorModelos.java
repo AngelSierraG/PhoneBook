@@ -8,16 +8,21 @@ package Administrador;
 
 import BaseDatos.AdministradorBD;
 import Servlets.Editar_listar_publicaciones;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -45,9 +50,34 @@ public class GestorModelos {
             Logger.getLogger(GestorModelos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void editarModelo(){
-        
+    public void editarModelo(HttpServletRequest request, HttpServletResponse response){
+        try {
+            String id= new String(request.getParameter("id").getBytes("ISO-8859-1"), "UTF-8");
+            String nombreModelo = new String(request.getParameter("nombreModelo").getBytes("ISO-8859-1"), "UTF-8");
+            String precioNuevo = new String(request.getParameter("precioNuevo").getBytes("ISO-8859-1"), "UTF-8");
+            String sistemaO = new String(request.getParameter("sistemaO").getBytes("ISO-8859-1"), "UTF-8");
+            String sel_marca = new String(request.getParameter("sel_marca").getBytes("ISO-8859-1"), "UTF-8");
+            String sel_camara = new String(request.getParameter("sel_camara").getBytes("ISO-8859-1"), "UTF-8");
+            String sel_resolucion = new String(request.getParameter("sel_resolucion").getBytes("ISO-8859-1"), "UTF-8");
+            String sel_memoria = new String(request.getParameter("sel_memoria").getBytes("ISO-8859-1"), "UTF-8");
+            
+                AdministradorBD admi = new AdministradorBD();
+               admi.editarModelo(Integer.parseInt(id), nombreModelo, Integer.parseInt(precioNuevo), sistemaO, Integer.parseInt(sel_marca), Integer.parseInt(sel_camara), sel_resolucion, sel_memoria);
+            //File uploaded successfully
+            request.setAttribute("message", "Modelo \""+nombreModelo+"\" editado exitosamente.");
+            try { 
+                request.getRequestDispatcher("/Gestor_Modelos_Lista_Modelos.jsp").forward(request, response);
+            } catch (ServletException ex) {
+                Logger.getLogger(GestorModelos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(GestorModelos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(GestorModelos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
     }
+    
     public void eliminarModelo(String id){
             int ID = Integer.parseInt(id);
             AdministradorBD admi =new AdministradorBD();

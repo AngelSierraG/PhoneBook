@@ -37,7 +37,8 @@ public class Eliminar_Editar_modelo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        GestorModelos GM = new GestorModelos();
+        GM.editarModelo(request, response);
     }
 
    

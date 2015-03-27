@@ -407,6 +407,52 @@ public class AdministradorBD {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }  
     }  
+    public ResultSet Modelo_a_editar(String idmodelo){
+            
+            int id = Integer.parseInt(idmodelo);
+        
+            ResultSet rs = null;
+        try {
+            
+            Connection con;
+            con = ConexionBD.GetConnection();
+            String query = "SELECT idmodelo, nombremodelo, precionuevo, sisoperativo, nombremarca, camara, resolucionC, memoriainterna from modelos"
+                    + " inner join marcas on marcas_idmarca = idmarca where idmodelo ="+id;
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+       
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return rs;
+    }
+    public void editarModelo(int id,String nombreModelo,int precioNuevo,String sistemaO,int sel_marca,int sel_camara,String resolucion,String memoria){
+         try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query="UPDATE modelos SET NombreModelo=?,PrecioNuevo=?, SisOperativo=?"
+                    + ", Marcas_idMarca=?, Camara=?, ResolucionC=?, MemoriaInterna=? WHERE idModelo=?";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, nombreModelo);
+                    ps.setInt(2, precioNuevo);
+                    ps.setString(3, sistemaO);
+                    ps.setInt(4, sel_marca);
+                    ps.setInt(5, sel_camara);
+                    ps.setString(6, resolucion);
+                    ps.setString(7, memoria);
+                    ps.setInt(8, id);
+                    ps.executeUpdate(); 
+                    
+                    ps.close();
+                    con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 // Fin administrador
     
     
