@@ -1008,3 +1008,33 @@ mar 26, 2015 4:55:56 PM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
 mar 26, 2015 4:55:56 PM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:17:40 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+mar 26, 2015 10:17:40 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+mar 26, 2015 10:17:40 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:17:40 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/PhoneBook'
+mar 26, 2015 10:17:40 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/AC-MA_~1/AppData/Local/Temp/context2821058978595190072.xml'
+mar 26, 2015 10:17:41 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: start: Starting web application '/PhoneBook'
+mar 26, 2015 10:18:10 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:18:10 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:20:55 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:21:43 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:27:16 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:27:16 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 26, 2015 10:27:16 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/PhoneBook'
+mar 26, 2015 10:27:17 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/AC-MA_~1/AppData/Local/Temp/context6452543606630952635.xml'
+mar 26, 2015 10:27:18 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: start: Starting web application '/PhoneBook'

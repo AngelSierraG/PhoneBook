@@ -404,3 +404,9 @@ Caused by: java.io.FileNotFoundException: C:\xampp3\htdocs\PhoneBook\PhoneBook\w
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
 	... 24 more
 
+mar 26, 2015 10:16:59 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextInitialized()
+mar 26, 2015 10:16:59 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextInitialized()
+mar 26, 2015 10:16:59 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: attributeAdded('org.apache.jasper.compiler.TldLocationsCache', 'org.apache.jasper.compiler.TldLocationsCache@79f49160')

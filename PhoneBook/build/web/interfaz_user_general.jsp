@@ -72,14 +72,14 @@
               if(request.getAttribute("message")!=null){
                   out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
               }else{
-                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook, para acceder necesitas logearte!!</h4>");
+                  out.println("<h4 class='alert_info2'>Bienvenido a PhoneBook, para acceder necesitas Iniciar Sesion o Registrarte</h4>");
               }  
             %>
 		
 		
 		
 		<article class="module2 width_3_quarter">
-		<header><h3 class="tabs_involved">Anuncios más vistos</h3>
+		<header><h3 class="tabs_involved">Publicaciones más vistas</h3>
 		</header>
 
 		<div class="tab_container" >
