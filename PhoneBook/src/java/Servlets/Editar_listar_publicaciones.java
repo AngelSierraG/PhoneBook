@@ -19,6 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -41,9 +42,10 @@ public class Editar_listar_publicaciones extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-     Crear_Publicaciones CP = new Crear_Publicaciones();
-               String String_publicaciones = CP.listar_publicaciones();
+              HttpSession session = request.getSession();
+              String user = (String)session.getAttribute("sesion_usuario");
+                Crear_Publicaciones CP = new Crear_Publicaciones();
+               String String_publicaciones = CP.listar_publicaciones(user);
             
             out.print(String_publicaciones);
             out.flush();

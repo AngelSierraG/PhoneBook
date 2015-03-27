@@ -440,3 +440,59 @@ mar 27, 2015 8:36:26 AM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
 mar 27, 2015 8:36:26 AM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:52:42 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+mar 27, 2015 10:52:42 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+mar 27, 2015 10:52:42 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:52:42 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:52:42 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:55:20 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:55:20 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:55:40 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:55:40 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:55:44 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:55:44 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:56:35 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:56:35 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:56:51 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:56:51 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:56:52 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 10:59:10 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 10:59:10 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 11:02:22 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:02:22 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 11:03:39 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:04:23 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:04:23 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:04:24 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 11:08:50 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:09:48 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+mar 27, 2015 11:09:48 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application '/PhoneBook'
+mar 27, 2015 11:10:44 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'

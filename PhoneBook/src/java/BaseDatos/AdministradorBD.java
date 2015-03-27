@@ -67,13 +67,13 @@ public class AdministradorBD {
     //Fin Registro
     
     ////Inicia Vendedor
-    public ResultSet misPublicaciones(){
+    public ResultSet misPublicaciones(String usuario){
         ResultSet rs=null;
         try {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query= "select idpublicacion,urlImage, titulo, precio, fechainicio, fechafinal from publicaciones";
+            String query= "select idpublicacion,urlImage, titulo, precio, fechainicio, fechafinal from publicaciones where usuario='"+usuario+"'";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
         } catch (SQLException ex) {
@@ -118,12 +118,12 @@ public class AdministradorBD {
             return rs;
     }
     
-    public void agregaPublicacion(String url,String titulo, String modelo, String precio, String fechaI, String fechaF, String descripcion){
+    public void agregaPublicacion(String url,String usuario,String titulo, String modelo, String precio, String fechaI, String fechaF, String descripcion){
         try {
             ResultSet rs = null;
             Connection con;
             con = ConexionBD.GetConnection();
-            String usuarii="Usuario";
+           
             
             String query="INSERT INTO publicaciones (Titulo,FechaInicio,FechaFinal,Precio,Descripcion,urlImage,Usuario,Modelos_idModelo) VALUES(?,?,?,?,?,?,?,?)";
             
@@ -134,7 +134,7 @@ public class AdministradorBD {
                     ps.setInt(4, Integer.parseInt(precio));
                     ps.setString(5, descripcion);
                     ps.setString(6, url);
-                    ps.setString(7, usuarii);
+                    ps.setString(7, usuario);
                     ps.setInt(8, Integer.parseInt(modelo));
                     ps.executeUpdate(); 
                    

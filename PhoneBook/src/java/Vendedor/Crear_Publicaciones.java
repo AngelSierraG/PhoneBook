@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -29,12 +30,12 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 public class Crear_Publicaciones {
     
-    String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\PhoneBook\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios\\";
+    String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\ultimo4\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios";
    
-    public String listar_publicaciones(){
+    public String listar_publicaciones(String usuario){
         
         AdministradorBD admi =new AdministradorBD();
-        ResultSet rs = admi.misPublicaciones();
+        ResultSet rs = admi.misPublicaciones(usuario);
         String String_publicaciones="";
          
             try {
@@ -81,9 +82,10 @@ public class Crear_Publicaciones {
     public void crear_publicacion(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
         
          
-        String url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
+        String url="",usuario="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
         
               AdministradorBD admi = new AdministradorBD();
+              
               
         if(ServletFileUpload.isMultipartContent(request)){
             try {
@@ -97,6 +99,9 @@ public class Crear_Publicaciones {
                         item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
                         url = name;    
                     }else{
+                      if("usuario".equals(item.getFieldName())){
+                            usuario = item.getString();
+                        }
                         if("titulo".equals(item.getFieldName())){
                             titulo = item.getString();
                         }
@@ -120,7 +125,7 @@ public class Crear_Publicaciones {
                 }
                 
                
-               admi.agregaPublicacion(url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
+               admi.agregaPublicacion(url,usuario, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
       
                //File uploaded successfully
                request.setAttribute("message", "Publicacion \""+titulo+"\" creada exitosamente.");

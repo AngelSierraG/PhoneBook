@@ -110,6 +110,7 @@
          <form class="contact_form" action="Crear_eliminar_publicacion.do" method="post" enctype="multipart/form-data">
     <ul>
         <li>
+            <input type="hidden" name="usuario" value="<%=User%>"/>
             <label for="name">Titulo:</label>
             <input type="text" name="titulo" placeholder="Titulo de tu publicacion" required />
         </li>
