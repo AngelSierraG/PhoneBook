@@ -107,71 +107,7 @@
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="1" cellpadding="1" id="reservations" > 
-			<thead> 
-				<tr> 
-   					
-    				<th>ID</th> 
-    				<th>Imagen</th>
-    				<th>Nombre Modelo</th> 
-    				 
-                    <th></th> 
-				</tr> 
-			</thead>     
-            <tbody> 
-				<tr> 
-   					<td>1</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-					<tr> 
-   					<td>2</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-					<tr> 
-   					<td>3</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr>
-				<tr> 
-   					<td>4</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    			
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-				<tr> 
-   					<td>5</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				 
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-				<tr> 
-   					<td>6</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-				<tr> 
-   					<td>7</td> 
-   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
-    				<td>Moto G</td> 
-    				
-    				<td><input type="image" src="images/icn_edit.png" title="Editar_Modelo"><input type="image" src="images/icn_trash.png" title="Eliminar_Modelo"></td> 
-				</tr> 
-			</tbody>  
-              
-			</tbody> 
-			</table>
+			
 			</div><!-- end of #tab1 -->
 			
 			
@@ -189,6 +125,25 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
+            <script>
+                
+           var inicio = getModelos('');
+           var misModelos = setInterval(function(){javascript:getModelos('');},1500);  
+                    
+                    function getModelos(message) {
+                        $.ajax({
+                        type: 'POST',
+                        url: 'Crear_Listar_modelo.do',
+                        data: {
+                        message: message
+                        }
+                        }).done(function(resp){
+                        $('#tab1').html(resp);
+                        });
+                        }
+                
+            </script>      
+            
 </body>
 
 </html>

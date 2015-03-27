@@ -347,6 +347,7 @@ public class AdministradorBD {
         
     }
     
+    //Marlon
     public void crearModelo(String nombreModelo, int precioNuevo, String sistemaO, int sel_marca, int sel_camara, String sel_resolucion, String sel_memoria){
          try {
             ResultSet rs = null;
@@ -375,8 +376,22 @@ public class AdministradorBD {
         
      
     }
-    
-    // Fin administrador
+    public ResultSet listaModelos(){
+         ResultSet rs=null;
+        try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query= "select idModelo, NombreModelo from modelos";
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+      
+// Fin administrador
     
     
     //inicia comprador

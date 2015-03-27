@@ -7,8 +7,12 @@
 package Administrador;
 
 import BaseDatos.AdministradorBD;
+import Servlets.Editar_listar_publicaciones;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -47,8 +51,41 @@ public class GestorModelos {
     public void eliminarModelo(){
         
     }
-    public void listarModelo(){
+    public String listarModelo(){
+        AdministradorBD admi = new AdministradorBD();
+        ResultSet rs = admi.listaModelos();
+        String String_modelos="";
+         
+            try {
+                
+            String_modelos="<table class=\"tablesorter\" cellspacing=\"1\" cellpadding=\"1\" id=\"reservations\" > \n" +
+"			<thead> \n" +
+"				<tr> \n" +
+"   					\n" +
+"    				<th>ID</th>\n" +
+"    				<th>Nombre del Modelo</th> \n" +
+"                    <th></th> \n" +
+"				</tr> \n" +
+"			</thead>     \n" +
+"            <tbody> ";    
+                while (rs.next()){
+                    int id = rs.getInt("idModelo");
+                    String Tmodelo = rs.getString("NombreModelo");
+                    String_modelos = String_modelos + "<tr> \n" +
+                            "<td>"+id+"</td> \n" +
+"   				<td>"+Tmodelo+"</td> \n" +
         
+"    				<td><input type=\"image\" src=\"images/icn_edit.png\" onclick=\"redireccion("+id+");\" title=\"Edit\"><input type=\"image\" src=\"images/icn_trash.png\" onclick=\"eliminar_modelo("+id+");\" title=\"Trash\"></td> \n" +
+"				</tr> ";
+                        }
+                 rs.close();
+                String_modelos = String_modelos + "</tbody> \n" +
+"			</table>";
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Editar_listar_publicaciones.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return String_modelos;
     }
     
 }
