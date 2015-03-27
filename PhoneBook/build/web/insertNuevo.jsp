@@ -10,7 +10,7 @@
 
 <%
 	//Ruta donde se guardara el fichero
-	File destino=new File("C:\\xampp3\\htdocs\\PhoneBook\\PhoneBook\\web\\images\\Marcas\\");
+	File destino=new File("C:\\Users\\aC-Ma_000\\Documents\\ultimo3\\PhoneBook\\PhoneBook\\web\\images\\Marcas");
 	// Convertimos el HTTPRequest en un ContextRequest,
 	// este paso es necesario en la ultima version,
 	// ya que los metodos de las versiones anteriores

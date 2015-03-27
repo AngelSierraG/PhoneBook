@@ -34,7 +34,7 @@ public class Ver_Publicaciones {
 
 "    				<th>Imagen</th>\n" +
                     
-"    				<th>Titulo del Anuncio</th> \n" +
+"    				<th>Titulo de la Publicacion</th> \n" +
 "    				<th>Precio</th> \n" +
 
 
@@ -46,7 +46,7 @@ public class Ver_Publicaciones {
                      int id = rs.getInt("idPublicacion");
                     String imagen = rs.getString("urlImage");
                     String Tpublicacion = rs.getString("titulo");
-                    String Precio = "$"+rs.getInt("precio");
+                    String Precio = "$ "+rs.getInt("precio");
         
                    
                     String_publicaciones = String_publicaciones + "<tr> \n" +

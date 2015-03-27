@@ -50,10 +50,18 @@
 </script>
 
 <body>
+     <%! String User;%>
+    <%
+        if(session.getAttribute("sesion_usuario")==null){
+       response.sendRedirect("login.jsp");
+         }else{
+            User = (String)session.getAttribute("sesion_usuario");
+        }
+    %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
-			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#"><img src="images/angel.jpg" width="20" height="20"> Ángel Sierra</a></div>
+			<h2 class="section_title"><!--texto --></h2><div class="btn_view_site"><a href="#"><img src="images/icn_profile.png" width="20" height="20" style="margin-right: 5px;"><%=User%></a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
@@ -72,15 +80,15 @@
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
-			<li class="icn_categories"><a href="interfaz_comprador.jsp">Anuncios</a></li>
+			<li class="icn_categories"><a href="interfaz_comprador.jsp">Publicaciones</a></li>
 			
 		</ul>
 		<h3>Ventas</h3>
         
         
         	<ul class="toggle">
-			<li class="icn_categories"><a href="interfaz_Vendedor.jsp">Mis Anuncios</a></li>
-            <li class="icn_new_article"><a href="interfaz_Vendedor_crearAnuncio.jsp">Crear Anuncio</a></li>
+			<li class="icn_categories"><a href="interfaz_Vendedor.jsp">Mis Publicaciones</a></li>
+            <li class="icn_new_article"><a href="interfaz_Vendedor_crearAnuncio.jsp">Crear Publicacion</a></li>
 			
 			
 		</ul>
@@ -98,7 +106,7 @@
             %>
 		
 		<article class="module width_3_quarter">
-		<header><h3 class="tabs_involved">Mis Anuncios</h3>
+		<header><h3 class="tabs_involved">Publicaciones</h3>
 		</header>
 
 		<div class="tab_container" >

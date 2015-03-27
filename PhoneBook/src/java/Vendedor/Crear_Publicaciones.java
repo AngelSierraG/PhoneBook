@@ -43,9 +43,8 @@ public class Crear_Publicaciones {
 "			<thead> \n" +
 "				<tr> \n" +
 "   					\n" +
-"    				<th>ID</th> \n" +
 "    				<th>Imagen</th>\n" +
-"    				<th>Titulo del Anuncio</th> \n" +
+"    				<th>Titulo de la Publicacion</th> \n" +
 "    				<th>Precio</th> \n" +
 "    				<th>Fecha Inicio</th>\n" +
 "                    <th>Fecha Final</th>  \n" +
@@ -57,11 +56,10 @@ public class Crear_Publicaciones {
                     int id = rs.getInt("idPublicacion");
                     String imagen = rs.getString("urlImage");
                     String Tpublicacion = rs.getString("titulo");
-                    int Precio = rs.getInt("precio");
+                    String Precio = "$ "+ rs.getString("precio");
                     Date FechaI = rs.getDate("fechainicio");
                     Date FechaF = rs.getDate("fechafinal");
                     String_publicaciones = String_publicaciones + "<tr> \n" +
-"   					<td>"+id+"</td> \n" +
 "   					<td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"BDImagenes_Usuarios/"+imagen+"\" title=\"MinImg\"></td>\n" +
 "    				<td>"+Tpublicacion+"</td> \n" +
 "    				<td>"+Precio+"</td> \n" +

@@ -1,14 +1,17 @@
 package Registrar;
 
 import BaseDatos.AdministradorBD;
+import Chat.Usuario;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -49,6 +52,12 @@ public class Registro_Sesion {
                 AdministradorBD admi = new AdministradorBD();
                 rs =  admi.Login(user, pass);
                 if(rs.next()){
+                ArrayList USUARIOS;
+                    Usuario usuario = new Usuario();
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("sesion_usuario",  user);
+                    usuario.addUsuarios(user);
+                    
                     request.getRequestDispatcher("/interfaz_comprador.jsp").forward(request, response);
                 }else{
                    request.setAttribute("message", "El usuario o contraseña son incorrectos");

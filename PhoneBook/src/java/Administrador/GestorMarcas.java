@@ -35,7 +35,7 @@ public class GestorMarcas {
           String NombreMarca = rst.getString("NombreMarca");
           String urlImage= rst.getString("urlImage");
                 
-                listaMarca =  listaMarca +"<tr><td>"+idMarca+"</td><td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"images/Marcas/"+urlImage+"\" title=\"MinImg\"></td><td>"+NombreMarca+"</td><td><a href=\"Gestor_Marcas_Crear_Marcas.jsp?idMarca="+idMarca+"\"><input type=\"image\" src=\"images/icn_edit.png\" title=\"Editar_Marca\"></a><a onclick=\"eliminarMarca("+idMarca+")\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Eliminar_Marca\"></a></td></tr>";
+                listaMarca =  listaMarca +"<tr><td>"+idMarca+"</td><td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"images/Marcas/"+urlImage+"\" title=\"MinImg\"></td><td>"+NombreMarca+"</td><td><a href=\"Gestor_Marcas_Editar_Marcas.jsp?idMarca="+idMarca+"\"><input type=\"image\" src=\"images/icn_edit.png\" title=\"Editar_Marca\"></a><a onclick=\"eliminarMarca("+idMarca+")\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Eliminar_Marca\"></a></td></tr>";
                
             }
             //Conexion.close
@@ -55,4 +55,10 @@ public class GestorMarcas {
         return crearMarcas; 
     }
     
+    public void editarMarcas(){
+        
+    }
+    public void eliminarMarcas(){
+        
+    }
 }
