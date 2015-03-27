@@ -43,6 +43,15 @@
 </script>
 
 <body>
+    <%! String User;%>
+    <%
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
+          User = (String)session.getAttribute("sesion_usuario");
+         }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+    %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
@@ -61,7 +70,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		
         <h3>Gestor_Marcas</h3>

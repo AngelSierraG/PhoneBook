@@ -55,7 +55,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query= "SELECT nickname, password FROM usuarios WHERE nickname = '"+nickname+"' AND password='"+pass+"'";
+            String query= "SELECT nickname, password , tipo FROM usuarios WHERE nickname = '"+nickname+"' AND password='"+pass+"'";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
         } catch (SQLException ex) {

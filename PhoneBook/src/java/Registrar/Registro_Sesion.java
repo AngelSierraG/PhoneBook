@@ -55,10 +55,18 @@ public class Registro_Sesion {
                 ArrayList USUARIOS;
                     Usuario usuario = new Usuario();
                     HttpSession session = request.getSession(true);
+                    HttpSession session_tipo = request.getSession(true);
                     session.setAttribute("sesion_usuario",  user);
-                    usuario.addUsuarios(user);
                     
-                    request.getRequestDispatcher("/interfaz_comprador.jsp").forward(request, response);
+                    usuario.addUsuarios(user);
+                    int tipo = rs.getInt("tipo");
+                        if(tipo==0){
+                            session_tipo.setAttribute("sesion_tipo", "0");
+                            request.getRequestDispatcher("/interfaz_comprador.jsp").forward(request, response);
+                        }else{
+                            session_tipo.setAttribute("sesion_tipo", "1");
+                            request.getRequestDispatcher("/Gestor_Anuncios_Lista_Anuncios.jsp").forward(request, response);
+                        }
                 }else{
                    request.setAttribute("message", "El usuario o contraseña son incorrectos");
                    request.getRequestDispatcher("/login.jsp").forward(request, response); 

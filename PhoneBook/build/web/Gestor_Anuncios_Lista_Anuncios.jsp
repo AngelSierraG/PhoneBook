@@ -43,15 +43,6 @@
 </script>
 
 <body>
-    <%! String User;%>
-    <%
-        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
-          User = (String)session.getAttribute("sesion_usuario");
-         }else{
-            response.sendRedirect("login.jsp");
-            
-        }
-    %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
@@ -70,7 +61,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>Men�</h2>
+		<h2>Menú</h2>
 		<hr/>
 		
         <h3>Gestor_Marcas</h3>
@@ -100,23 +91,82 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-                <%
-              if(request.getAttribute("message")!=null){
-                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
-              }
-            %>    
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Anuncios</h4>
 		
 		
 		
 		<article class="module width_3_quarter">
-		<header><h3 class="tabs_involved">Modelos</h3>
+		<header><h3 class="tabs_involved">Anuncios</h3>
 		</header>
 
 		<div class="tab_container" >
 			<div id="tab1" class="tab_content">
-			
+			<table class="tablesorter" cellspacing="1" cellpadding="1" id="reservations" > 
+			<thead> 
+				<tr> 
+   					
+    				<th>ID</th> 
+    				<th>Imagen</th>
+    				<th>Título Anuncio</th> 
+    				 
+                    <th></th> 
+				</tr> 
+			</thead>     
+            <tbody> 
+				<tr> 
+   					<td>1</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+					<tr> 
+   					<td>2</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+					<tr> 
+   					<td>3</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr>
+				<tr> 
+   					<td>4</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    			
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+				<tr> 
+   					<td>5</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				 
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+				<tr> 
+   					<td>6</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+				<tr> 
+   					<td>7</td> 
+   					<td><input width="50px" height="50px" type="image" src="images/Motog.jpg" title="MinImg"></td>
+    				<td>Vendo Moto G</td> 
+    				
+    				<td><input type="image" src="images/icn_settings.png" title="Confirmar_Anuncio"><input type="image" src="images/icn_trash.png" title="Eliminar_Anuncio"></td> 
+				</tr> 
+			</tbody>  
+              
+			</tbody> 
+			</table>
 			</div><!-- end of #tab1 -->
 			
 			
@@ -134,41 +184,6 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
-            <script>
-                
-           var inicio = getModelos('');
-           var misModelos = setInterval(function(){javascript:getModelos('');},1500);  
-                    
-                    function getModelos(message) {
-                        $.ajax({
-                        type: 'POST',
-                        url: 'Crear_Listar_modelo.do',
-                        data: {
-                        message: message
-                        }
-                        }).done(function(resp){
-                        $('#tab1').html(resp);
-                        });
-                        }
-                    function eliminar_modelo(id) {
-                        $.ajax({
-                        type: 'GET',
-                        url: 'Eliminar_Editar_modelo.do',
-                        data: {
-                        id: id
-                        }
-                        }).done(function(resp){
-                        $('#X').html(resp);
-                        });
-                        }    
-                        
-                        
-                   function redireccion(x){
-                       window.location="http://localhost:8080/PhoneBook/Gestor_Modelos_Editar_Modelo.jsp?id="+x;
-                   }      
-                
-            </script>      
-            
 </body>
 
 </html>

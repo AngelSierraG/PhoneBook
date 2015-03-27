@@ -49,11 +49,9 @@
 <body>
     <%! String User;%>
     <%
-        if(session.getAttribute("sesion_usuario")==null){
-       response.sendRedirect("login.jsp");
-         }else{
-            User = (String)session.getAttribute("sesion_usuario");
-        }
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("0")){
+          User = (String)session.getAttribute("sesion_usuario");
+         
     %>
     <%
         String id = request.getParameter("id");
@@ -68,7 +66,7 @@
             String urlImage = rs.getString("urlImage");
             String modelo = rs.getString("nombremodelo");
             String marca = rs.getString("nombremarca");
-            
+        
          %>
 	<header id="header">
 		<hgroup>
@@ -209,7 +207,7 @@
 
 			<footer>
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
-			
+		
 		</footer>
 		  <script type="text/javascript" src="view/js/chat.js"></script> 
                   <script>
@@ -245,7 +243,12 @@
                   }      
     
                   </script>
-          
+          <%
+        }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+        %>
 </body>
 
 </html>

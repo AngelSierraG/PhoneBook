@@ -45,6 +45,12 @@
 </script>
 
 <body>
+    <%! String User;%>
+    <%
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
+          User = (String)session.getAttribute("sesion_usuario");
+         
+    %>
     <%
         String id = request.getParameter("id");
             AdministradorBD admi = new AdministradorBD();
@@ -197,7 +203,12 @@
                                                         </select>
 						</fieldset>
 
-				
+		<%
+                }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+                %>		
 			<footer>
 				<div class="submit_link">
 					

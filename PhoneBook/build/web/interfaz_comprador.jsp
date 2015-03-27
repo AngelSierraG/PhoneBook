@@ -52,10 +52,11 @@
 <body>
      <%! String User;%>
     <%
-        if(session.getAttribute("sesion_usuario")==null){
-       response.sendRedirect("login.jsp");
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("0")){
+          User = (String)session.getAttribute("sesion_usuario");
          }else{
-            User = (String)session.getAttribute("sesion_usuario");
+            response.sendRedirect("login.jsp");
+            
         }
     %>
 	<header id="header">
