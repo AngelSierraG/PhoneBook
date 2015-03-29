@@ -43,6 +43,15 @@
 </script>
 
 <body>
+    <%! String User;%>
+    <%
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
+          User = (String)session.getAttribute("sesion_usuario");
+         }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+    %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
@@ -61,7 +70,7 @@
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		
         <h3>Gestor_Marcas</h3>
@@ -91,32 +100,31 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
+                <%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }
+            %>    
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Editar_Marcas</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
 		
 		
-	<article class="module width_full">
-			<header><h3>Editar_Marca</h3></header>
-				<div class="module_content">
-						<fieldset>
-							<label>Nombre Marca</label>
-							<input type="text" value="Motorola">
-						</fieldset>
+		
+		<article class="module width_3_quarter">
+		<header><h3 class="tabs_involved">Modelos</h3>
+		</header>
 
-						<fieldset>
-							<label>Imagen</label>
-							<input type="file">
-						</fieldset>
-					
-				
-			<footer>
-				<div class="submit_link">
-					
-					<input type="submit" value="Editar_Marca" class="alt_btn">
-				
-				</div>
-			</footer>
-		</article><!-- end of post new article -->
+		<div class="tab_container" >
+			<div id="tab1" class="tab_content">
+			
+			</div><!-- end of #tab1 -->
+			
+			
+			
+		</div><!-- end of .tab_container -->
+		
+		</article><!-- end of content manager article -->
+	
 		
 			
 			</section>
@@ -126,6 +134,41 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
+            <script>
+                
+           var inicio = getModelos('');
+           var misModelos = setInterval(function(){javascript:getModelos('');},1500);  
+                    
+                    function getModelos(message) {
+                        $.ajax({
+                        type: 'POST',
+                        url: 'Crear_Listar_modelo.do',
+                        data: {
+                        message: message
+                        }
+                        }).done(function(resp){
+                        $('#tab1').html(resp);
+                        });
+                        }
+                    function eliminar_modelo(id) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Eliminar_Editar_modelo.do',
+                        data: {
+                        id: id
+                        }
+                        }).done(function(resp){
+                        $('#X').html(resp);
+                        });
+                        }    
+                        
+                        
+                   function redireccion(x){
+                       window.location="http://localhost:8080/PhoneBook/Gestor_Modelos_Editar_Modelo.jsp?id="+x;
+                   }      
+                
+            </script>      
+            
 </body>
 
 </html>

@@ -1,16 +1,3 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="BaseDatos.AdministradorBD"%>
-<%
-String  idMarca = request.getParameter("idMarca"); 
-AdministradorBD sqlCode =  new AdministradorBD();
-ResultSet rs = sqlCode.thisMarca(idMarca); 
-String nombreMarca = ""; 
-String urlImage = ""; 
-if(rs.next()){
-nombreMarca = rs.getString("nombreMarca");
-urlImage = rs.getString("urlImage"); 
-}
-%>
 <!doctype html>
 <html lang="en">
 
@@ -56,6 +43,15 @@ urlImage = rs.getString("urlImage");
 </script>
 
 <body>
+    <%! String User;%>
+    <%
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
+          User = (String)session.getAttribute("sesion_usuario");
+         }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+    %>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><a href="index.html"><img src="images/phonebookLogo1.png" width="343" height="80"></a></h1>
@@ -74,7 +70,7 @@ urlImage = rs.getString("urlImage");
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
-		<h2>MenÃº</h2>
+		<h2>Menú</h2>
 		<hr/>
 		
         <h3>Gestor_Marcas</h3>
@@ -104,36 +100,31 @@ urlImage = rs.getString("urlImage");
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
+                <%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }
+            %>    
 		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Editar_Marcas</h4>
+		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Modelos</h4>
 		
 		
-	<article class="module width_full">
-			<header><h3>Editar_Marca</h3></header>
-                        <form action="editaMarca.jsp" method="post" enctype="multipart/form-data">
-				<div class="module_content">
-						<fieldset>
-							<label>Nombre Marca</label>
-                                                        <input type="text" value="<% out.println(nombreMarca); %>" name="nombreMarca" required="">
-						</fieldset>
+		
+		<article class="module width_3_quarter">
+		<header><h3 class="tabs_involved">Modelos</h3>
+		</header>
 
-						<fieldset>
-                                                    <img src="images/Marcas/<%out.println(urlImage);%>" width="150" height="150" />
-                                                    <input type="text" value="<% out.println(urlImage); %>" name="urlImage" style="visibility: hidden;">
-                                                     <input type="text" value="<% out.println(idMarca); %>" name="idMarca" style="visibility: hidden;">
-                                                    <input type="file" name="fichero" required="Actualiza Imagen">
-						</fieldset>
-					
-				
-			<footer>
-				<div class="submit_link">
-					
-					<input type="submit" value="Editar_Marca" class="alt_btn">
-				
-				</div>
-                            </form>
-			</footer>
-		</article><!-- end of post new article -->
+		<div class="tab_container" >
+			<div id="tab1" class="tab_content">
+			
+			</div><!-- end of #tab1 -->
+			
+			
+			
+		</div><!-- end of .tab_container -->
+		
+		</article><!-- end of content manager article -->
+	
 		
 			
 			</section>
@@ -143,6 +134,41 @@ urlImage = rs.getString("urlImage");
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
+            <script>
+                
+           var inicio = getModelos('');
+           var misModelos = setInterval(function(){javascript:getModelos('');},1500);  
+                    
+                    function getModelos(message) {
+                        $.ajax({
+                        type: 'POST',
+                        url: 'Crear_Listar_modelo.do',
+                        data: {
+                        message: message
+                        }
+                        }).done(function(resp){
+                        $('#tab1').html(resp);
+                        });
+                        }
+                    function eliminar_modelo(id) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Eliminar_Editar_modelo.do',
+                        data: {
+                        id: id
+                        }
+                        }).done(function(resp){
+                        $('#X').html(resp);
+                        });
+                        }    
+                        
+                        
+                   function redireccion(x){
+                       window.location="http://localhost:8080/PhoneBook/Gestor_Modelos_Editar_Modelo.jsp?id="+x;
+                   }      
+                
+            </script>      
+            
 </body>
 
 </html>
