@@ -75,7 +75,7 @@
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
-			<li class="icn_categories"><a href="http://localhost:8080/PhoneBook/interfaz_comprador.jsp">Publicaciones</a></li>
+			<li class="icn_categories"><a href="interfaz_comprador.jsp">Publicaciones</a></li>
 			
 		</ul>
 		<h3>Ventas</h3>
@@ -83,7 +83,7 @@
         
         	<ul class="toggle">
 			<li class="icn_categories"><a href="http://localhost:8080/PhoneBook/interfaz_Vendedor.jsp">Mis Publicaciones</a></li>
-            <li class="icn_new_article"><a href="http://localhost:8080/PhoneBook/interfaz_Vendedor_crearAnuncio.jsp">Crear Publicacion</a></li>
+            <li class="icn_new_article"><a href="interfaz_Vendedor_crearAnuncio.jsp">Crear Publicacion</a></li>
 			
 			
 		</ul>

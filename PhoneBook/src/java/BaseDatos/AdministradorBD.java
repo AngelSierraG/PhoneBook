@@ -534,7 +534,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query = "SELECT * FROM publicaciones";
+            String query = "SELECT * FROM publicaciones where activo = 1";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
             

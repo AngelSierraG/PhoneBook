@@ -80,7 +80,7 @@
 		<hr/>
 		<h3>Compras</h3>
 		<ul class="toggle">
-			<li class="icn_categories"><a href="http://localhost:8080/PhoneBook/interfaz_comprador.jsp">Publicaciones</a></li>
+			<li class="icn_categories"><a href="interfaz_comprador.jsp">Publicaciones</a></li>
 			
 		</ul>
 		<h3>Ventas</h3>
@@ -161,7 +161,7 @@
             <textarea name="descripcion" cols="40" rows="6" required placeholder="Una breve descripcion acerca de tu publicacion."></textarea>
         </li>
         <li>
-        	<label>Imagen:</label><input name="imagen" type="file"/>
+            <label>Imagen:</label><input name="imagen" type="file"  required="required"/>
         </li>
         <li>
         	<button class="submit" type="submit">Crear Publicacion</button><button class="submit" type="reset">Reinicar</button>
