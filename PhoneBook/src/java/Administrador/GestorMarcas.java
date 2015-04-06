@@ -6,7 +6,16 @@
 package Administrador;
 
 import BaseDatos.AdministradorBD;
+import java.io.File;
 import java.sql.ResultSet;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -35,7 +44,7 @@ public class GestorMarcas {
           String NombreMarca = rst.getString("NombreMarca");
           String urlImage= rst.getString("urlImage");
                 
-                listaMarca =  listaMarca +"<tr><td>"+idMarca+"</td><td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"images/Marcas/"+urlImage+"\" title=\"MinImg\"></td><td>"+NombreMarca+"</td><td><a href=\"Gestor_Marcas_Editar_Marcas.jsp?idMarca="+idMarca+"\"><input type=\"image\" src=\"images/icn_edit.png\" title=\"Editar_Marca\"></a><a onclick=\"eliminarMarca("+idMarca+")\"><input type=\"image\" src=\"images/icn_trash.png\" title=\"Eliminar_Marca\"></a></td></tr>";
+                listaMarca =  listaMarca +"<tr><td>"+idMarca+"</td><td><input width=\"50px\" height=\"50px\" type=\"image\" src=\"images/Marcas/"+urlImage+"\" title=\"MinImg\"></td><td>"+NombreMarca+"</td><td><input type=\"image\" src=\"images/icn_edit.png\" onclick=\"redireccion("+idMarca+")\" title=\"Editar_Marca\"><input type=\"image\" src=\"images/icn_trash.png\" onclick=\"eliminar_marca("+idMarca+");\" title=\"Eliminar_Marca\"></td></tr>";
                
             }
             //Conexion.close
@@ -48,17 +57,93 @@ public class GestorMarcas {
         return listaMarca;
 }
     
-    public String crearMarcas(String marca, String urlImage)
-    {
-        String crearMarcas = null; 
-        
-        return crearMarcas; 
+    public void crearMarcas(HttpServletRequest request,HttpServletResponse response,String ruta){
+        AdministradorBD admi = new AdministradorBD();
+        String url="",marca="";      
+              
+        if(ServletFileUpload.isMultipartContent(request)){
+            try {
+                List<FileItem> multiparts = new ServletFileUpload(
+                                         new DiskFileItemFactory()).parseRequest(request);
+              
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                        
+                        String name = "img_"+admi.getUltimoId()+".jpg";
+                        item.write( new File(ruta + File.separator + name));
+                        url = name;    
+                    }else{
+                      if("nombreMarca".equals(item.getFieldName())){
+                            marca = item.getString();
+                        }
+                        
+                    }
+                }
+                        admi.crearMarca(url, marca);
+
+               request.setAttribute("message", "Marca \""+marca+"\" creada exitosamente.");
+               request.getRequestDispatcher("/Gestor_Marcas_Lista_Marcas.jsp").forward(request, response); 
+            } catch (Exception ex) {
+               request.setAttribute("message", "File Upload Failed due to " + ex);
+            }          
+         
+        }else{
+            request.setAttribute("message",
+                                 "Sorry this Servlet only handles file upload url: "+url );
+        }
     }
     
-    public void editarMarcas(){
+    public void editarMarcas(HttpServletRequest request,HttpServletResponse response,String ruta){
+        String id="",url="",marca="";
         
+        
+              AdministradorBD admi = new AdministradorBD();
+              Calendar calendario = new GregorianCalendar();
+              int seg = calendario.get(Calendar.SECOND);
+        if(ServletFileUpload.isMultipartContent(request)){
+            
+            try {
+                
+                List<FileItem> multiparts = new ServletFileUpload(
+                                         new DiskFileItemFactory()).parseRequest(request);
+              
+               for(FileItem item : multiparts){
+                    if(item.isFormField()){
+                        if("nombreMarca".equals(item.getFieldName())){
+                            marca = item.getString();
+                        }
+                        
+                        if("idMarca".equals(item.getFieldName())){
+                            id = item.getString();
+                        }
+                       
+                    }
+                }
+                for(FileItem item : multiparts){
+                    if(!item.isFormField()){
+                         String name = "img_"+id+seg+".jpg";
+                         item.write( new File(ruta + File.separator + name));
+                          url=name;
+                    }
+                }
+               admi.editarMarca(url, marca, Integer.parseInt(id));
+
+               request.setAttribute("message", "Marca \""+marca+"\" editada exitosamente.");
+               request.getRequestDispatcher("/Gestor_Marcas_Lista_Marcas.jsp").forward(request, response); 
+            } catch (Exception ex) {
+               request.setAttribute("message", "File Upload Failed due to " + ex);
+            }          
+         
+        }else{
+            request.setAttribute("message",
+                                 "Sorry this Servlet only handles file upload ");
+        }
     }
-    public void eliminarMarcas(){
-        
+    
+  public void eliminar_marca(String id){
+            
+            int ID = Integer.parseInt(id);
+            AdministradorBD admi =new AdministradorBD();
+            admi.eliminarMarca(ID);
     }
 }

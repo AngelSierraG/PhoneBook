@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,8 +31,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  * @author aC-Ma_000
  */
 public class Crear_Publicaciones {
-    
-    String UPLOAD_DIRECTORY = "C:\\Users\\aC-Ma_000\\Documents\\ultimo4\\PhoneBook\\PhoneBook\\web\\BDImagenes_Usuarios";
+//    
+//    String UPLOAD_DIRECTORY = "BDImagenes_Usuarios";
    
     public String listar_publicaciones(String usuario){
         
@@ -79,13 +81,13 @@ public class Crear_Publicaciones {
             return String_publicaciones;
     }
     
-    public void crear_publicacion(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
+    public void crear_publicacion(HttpServletRequest request,HttpServletResponse response,String ruta) throws ServletException, IOException{
         
          
         String url="",usuario="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="";
         
               AdministradorBD admi = new AdministradorBD();
-              
+             
               
         if(ServletFileUpload.isMultipartContent(request)){
             try {
@@ -96,7 +98,7 @@ public class Crear_Publicaciones {
                     if(!item.isFormField()){
                         
                         String name = "Img_"+admi.NumeroPublicaciones()+".jpg";
-                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                        item.write( new File(ruta + File.separator + name));
                         url = name;    
                     }else{
                       if("usuario".equals(item.getFieldName())){
@@ -142,13 +144,16 @@ public class Crear_Publicaciones {
      
     }
     
-    public void editar_publicacion(HttpServletRequest request,HttpServletResponse response){
+    public void editar_publicacion(HttpServletRequest request,HttpServletResponse response,String ruta){
        
-       String id="",url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="",Aux="";
+       String id="",url="",titulo="",precio="",sel_modelo="",fechaI="",fechaF="",descripcion="",Aux="",name="";
         
        System.out.println("Sii llego.....");
        
               AdministradorBD admi = new AdministradorBD();
+              Calendar calendario = new GregorianCalendar();
+              int seg = calendario.get(Calendar.SECOND);
+              
         if(ServletFileUpload.isMultipartContent(request)){
             
             try {
@@ -186,21 +191,17 @@ public class Crear_Publicaciones {
                         }
                     }
                 }
+               
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
-                        System.out.println("titulo: "+titulo);
-                         String name = "Img_"+id+".jpg";
-                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                         name = "Img_"+id+seg+".jpg";
+                         item.write( new File(ruta + File.separator + name));
                           url=name;
                     }
                 }
                 
-//               if(cont!=0){
                admi.editarPublicacion(id,url, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);
-//               }else{
-//                 admi.editarPublicacion(id,Aux, titulo, sel_modelo, precio, fechaI, fechaF, descripcion);  
-//               }
-               //File uploaded successfully
+
                request.setAttribute("message", "Publicacion \""+titulo+"\" editada exitosamente.");
                request.getRequestDispatcher("/interfaz_Vendedor.jsp").forward(request, response); 
             } catch (Exception ex) {

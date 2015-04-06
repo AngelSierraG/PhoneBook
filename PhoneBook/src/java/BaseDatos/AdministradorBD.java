@@ -195,12 +195,13 @@ public class AdministradorBD {
             ResultSet rs = null;
             Connection con;
             con = ConexionBD.GetConnection();
-            String usuarii="Usuario";
+            String query="";
+            PreparedStatement  ps = null;
             
-            String query="UPDATE publicaciones SET titulo=?,FechaInicio=?, FechaFinal=?"
+            if(!url.equals("")){
+             query="UPDATE publicaciones SET titulo=?,FechaInicio=?, FechaFinal=?"
                     + ", Precio=?, Descripcion=?, urlImage=?, Modelos_idModelo=? WHERE idPublicacion=?";
-            
-            PreparedStatement  ps = con.prepareStatement(query);
+                    ps = con.prepareStatement(query);
                     ps.setString(1, titulo);
                     ps.setString(2, fechaI);
                     ps.setString(3, fechaF);
@@ -209,6 +210,20 @@ public class AdministradorBD {
                     ps.setString(6, url);
                     ps.setInt(7, Integer.parseInt(sel_modelo));
                     ps.setInt(8, Integer.parseInt(id));
+            }else{
+             query="UPDATE publicaciones SET titulo=?,FechaInicio=?, FechaFinal=?"
+                    + ", Precio=?, Descripcion=?, Modelos_idModelo=? WHERE idPublicacion=?";  
+                    ps = con.prepareStatement(query);
+                    ps.setString(1, titulo);
+                    ps.setString(2, fechaI);
+                    ps.setString(3, fechaF);
+                    ps.setInt(4, Integer.parseInt(precio));
+                    ps.setString(5, descripcion);
+                    ps.setInt(6, Integer.parseInt(sel_modelo));
+                    ps.setInt(7, Integer.parseInt(id));
+            }
+            
+            
                     ps.executeUpdate(); 
                     
                     ps.close();
@@ -271,6 +286,7 @@ public class AdministradorBD {
             id= ""+id2;
             
             }
+            st.close();
             con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -322,38 +338,52 @@ public class AdministradorBD {
     
     return rs; 
     }
-    public void editarMarca(String idMarca, String nombreMarca, String urlImage){
-    try {
+    public ResultSet Marca_a_editar(String idmarca){
+        int id = Integer.parseInt(idmarca);
+        
+            ResultSet rs = null;
+        try {
             
             Connection con;
-            
             con = ConexionBD.GetConnection();
-            
-            
-            
-            String query="UPDATE  `phonebook`.`marcas` SET  `NombreMarca` =  ?,`urlImage`=? WHERE  `marcas`.`idMarca` =?;";
-                  PreparedStatement  ps = con.prepareStatement(query);
-                    ps.setString(1, nombreMarca);
-                    ps.setString(2, urlImage);
-                    ps.setInt(3, Integer.parseInt(idMarca));
-                    ps.executeUpdate();
-            ps.close();
-            con.close();
-                
-           con.close();
+            String query = "select NombreMarca, urlImage from marcas where idmarca ="+id;
+                   
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+       
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+            return rs;
     }
-    
+    public void editarMarca(String url,String nombreMarca, int id){
+         try {
+            ResultSet rs = null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            
+            String query="UPDATE marcas SET NombreMarca=?, urlImage=? WHERE idMarca=?";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, nombreMarca);
+                    ps.setString(2, url);
+                    ps.setInt(3, id);
+                    ps.executeUpdate(); 
+                    
+                    ps.close();
+                    con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     //Marlon
     public void crearModelo(String nombreModelo, int precioNuevo, String sistemaO, int sel_marca, int sel_camara, String sel_resolucion, String sel_memoria){
          try {
             ResultSet rs = null;
             Connection con;
             con = ConexionBD.GetConnection();
-            String usuarii="Usuario";
             
             String query="INSERT INTO modelos (NombreModelo,PrecioNuevo,SisOperativo,Marcas_idMarca,Camara,ResolucionC,MemoriaInterna) VALUES(?,?,?,?,?,?,?)";
             
@@ -449,6 +479,46 @@ public class AdministradorBD {
                     ps.close();
                     con.close();
             
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void crearMarca(String url, String marca){
+         try {
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query="INSERT INTO marcas (NombreMarca,urlImage) VALUES(?,?)";
+            
+            PreparedStatement  ps = con.prepareStatement(query);
+                    ps.setString(1, marca);
+                    ps.setString(2, url);
+                    ps.executeUpdate(); 
+                    
+                    ps.close();
+                    con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+     
+    }
+    
+      public void eliminarMarca(int id){
+        try {
+            ResultSet rs=null;
+            Connection con;
+            con = ConexionBD.GetConnection();
+            
+            String query = "DELETE FROM marcas WHERE idmarca =?";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setInt(1, id);
+            preparedStmt.execute();
+            
+            preparedStmt.close();
+            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
         }

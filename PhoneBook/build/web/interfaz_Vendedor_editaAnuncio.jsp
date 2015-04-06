@@ -172,8 +172,7 @@
         </li>
         <li>
             <input style="margin-left: 50px;" width="150px" height="150px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg">
-            <input type="hidden" value="<%=urlImage%>" name="Aux" />
-            <label>Imagen:</label><p><input style="margin-left: 100px;" name="imagen" type="file" value="C:/Users/aC-Ma_000/Documents/PhoneBook/PhoneBook/PhoneBook/web/BDImagenes_Usuarios/<%=urlImage%>" /></p>
+            <label>Imagen:</label><p><input style="margin-left: 100px;" name="file" required="required" type="file"  /></p>
         </li>
         <li>
         	<button class="submit" type="submit">Editar</button><button type="button" class="submit" onclick="href();">Salir</button>

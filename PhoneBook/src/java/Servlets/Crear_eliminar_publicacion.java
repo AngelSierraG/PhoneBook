@@ -7,6 +7,7 @@
 package Servlets;
 
 import Vendedor.Crear_Publicaciones;
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,9 @@ public class Crear_eliminar_publicacion extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Crear_Publicaciones CP = new Crear_Publicaciones();
-        CP.crear_publicacion(request, response);
+       String ruta = getServletContext().getRealPath("")
+                + File.separator + "BDImagenes_Usuarios";
+        CP.crear_publicacion(request, response, ruta);
         
     }
     @Override

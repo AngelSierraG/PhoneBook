@@ -40,6 +40,14 @@
         <servlet-name>Eliminar_Editar_modelo</servlet-name>
         <servlet-class>Servlets.Eliminar_Editar_modelo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Crear_Lista_Marcas</servlet-name>
+        <servlet-class>Servlets.Crear_Lista_Marcas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Editar_Eliminar_Marcas</servlet-name>
+        <servlet-class>Servlets.Editar_Eliminar_Marcas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GetModelos</servlet-name>
         <url-pattern>/GetModelos.do</url-pattern>
@@ -71,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>Eliminar_Editar_modelo</servlet-name>
         <url-pattern>/Eliminar_Editar_modelo.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Crear_Lista_Marcas</servlet-name>
+        <url-pattern>/Crear_Lista_Marcas.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Editar_Eliminar_Marcas</servlet-name>
+        <url-pattern>/Editar_Eliminar_Marcas.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

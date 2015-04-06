@@ -52,15 +52,15 @@ public class Registro_Sesion {
                 AdministradorBD admi = new AdministradorBD();
                 rs =  admi.Login(user, pass);
                 if(rs.next()){
-                ArrayList USUARIOS;
-                    Usuario usuario = new Usuario();
+                
                     HttpSession session = request.getSession(true);
                     HttpSession session_tipo = request.getSession(true);
                     session.setAttribute("sesion_usuario",  user);
                     
-                    usuario.addUsuarios(user);
                     int tipo = rs.getInt("tipo");
                         if(tipo==0){
+                            Usuario usuario = new Usuario();
+                            usuario.addUsuarios(user);
                             session_tipo.setAttribute("sesion_tipo", "0");
                             request.getRequestDispatcher("/interfaz_comprador.jsp").forward(request, response);
                         }else{

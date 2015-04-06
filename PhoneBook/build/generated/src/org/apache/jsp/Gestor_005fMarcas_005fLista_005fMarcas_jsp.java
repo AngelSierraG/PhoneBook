@@ -7,6 +7,7 @@ import javax.servlet.jsp.*;
 public final class Gestor_005fMarcas_005fLista_005fMarcas_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+ String User;
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
@@ -87,7 +88,20 @@ public final class Gestor_005fMarcas_005fLista_005fMarcas_jsp extends org.apache
       out.write("    });\r\n");
       out.write("</script>\r\n");
       out.write("\r\n");
-      out.write("<body onload=\"listarMarcas()\">\r\n");
+      out.write("<body>\r\n");
+      out.write("    \r\n");
+      out.write("    ");
+      out.write("\r\n");
+      out.write("    ");
+
+        if(session.getAttribute("sesion_usuario")!=null && session.getAttribute("sesion_tipo").equals("1")){
+          User = (String)session.getAttribute("sesion_usuario");
+         }else{
+            response.sendRedirect("login.jsp");
+            
+        }
+    
+      out.write("\r\n");
       out.write("\t<header id=\"header\">\r\n");
       out.write("\t\t<hgroup>\r\n");
       out.write("\t\t\t<h1 class=\"site_title\"><a href=\"index.jsp\"><img src=\"images/phonebookLogo1.png\" width=\"343\" height=\"80\"></a></h1>\r\n");
@@ -136,17 +150,19 @@ public final class Gestor_005fMarcas_005fLista_005fMarcas_jsp extends org.apache
       out.write("\t</aside><!-- end of sidebar -->\r\n");
       out.write("\t\r\n");
       out.write("\t<section id=\"main\" class=\"column\">\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\t<h4 class=\"alert_info\">Phonebook | Gestor_Marcas | Lista_Marcas</h4>\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\t\r\n");
+      out.write("\t\t");
+
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }  
+            
+      out.write("\r\n");
       out.write("\t\t<article class=\"module width_3_quarter\">\r\n");
       out.write("\t\t<header><h3 class=\"tabs_involved\">Marcas</h3>\r\n");
       out.write("\t\t</header>\r\n");
       out.write("\r\n");
       out.write("\t\t<div class=\"tab_container\" >\r\n");
-      out.write("\t\t\t<div id=\"tab1\" class=\"tab_content\">\r\n");
+      out.write("\t\t\t<div id=\"tab2\" class=\"tab_content\">\r\n");
       out.write("\t\t\t<!-- #tab1 to contend of ajax -->\r\n");
       out.write("\t\t\t</div><!-- end of #tab1 -->\r\n");
       out.write("\t\t\t\r\n");
@@ -165,6 +181,38 @@ public final class Gestor_005fMarcas_005fLista_005fMarcas_jsp extends org.apache
       out.write("\t\t\t<p><strong>Copyright &copy; 2015 Phonebook</strong></p>\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t</footer>\r\n");
+      out.write("        <script>\r\n");
+      out.write("            var inicio = getMarcas('');\r\n");
+      out.write("           var misMarcas = setInterval(function(){javascript:getMarcas('');},1500);  \r\n");
+      out.write("                    \r\n");
+      out.write("                    function getMarcas(message) {\r\n");
+      out.write("                        $.ajax({\r\n");
+      out.write("                        type: 'GET',\r\n");
+      out.write("                        url: 'Crear_Lista_Marcas.do',\r\n");
+      out.write("                        data: {\r\n");
+      out.write("                        message: message\r\n");
+      out.write("                        }\r\n");
+      out.write("                        }).done(function(resp){\r\n");
+      out.write("                        $('#tab2').html(resp);\r\n");
+      out.write("                        });\r\n");
+      out.write("                        }\r\n");
+      out.write("                        \r\n");
+      out.write("                        function redireccion(x){\r\n");
+      out.write("                       window.location=\"Gestor_Marcas_Editar_Marca.jsp?id=\"+x;\r\n");
+      out.write("                   } \r\n");
+      out.write("                   \r\n");
+      out.write("                   function eliminar_marca(id) {\r\n");
+      out.write("                        $.ajax({\r\n");
+      out.write("                        type: 'GET',\r\n");
+      out.write("                        url: 'Editar_Eliminar_Marcas.do',\r\n");
+      out.write("                        data: {\r\n");
+      out.write("                        id: id\r\n");
+      out.write("                        }\r\n");
+      out.write("                        }).done(function(resp){\r\n");
+      out.write("                        $('#X').html(resp);\r\n");
+      out.write("                        });\r\n");
+      out.write("                        }  \r\n");
+      out.write("        </script>\r\n");
       out.write("</body>\r\n");
       out.write("\r\n");
       out.write("</html>");

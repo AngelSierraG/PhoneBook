@@ -167,7 +167,7 @@
                         
                         
                    function redireccion(x){
-                       window.location="http://localhost:8080/PhoneBook/interfaz_Vendedor_editaAnuncio.jsp?id="+x;
+                       window.location="interfaz_Vendedor_editaAnuncio.jsp?id="+x;
                    }     
     
 </script>

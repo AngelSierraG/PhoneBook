@@ -44,7 +44,7 @@
     });
 </script>
 
-<body onload="listarMarcas()">
+<body>
     
     <%! String User;%>
     <%
@@ -103,17 +103,17 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-		
-		<h4 class="alert_info">Phonebook | Gestor_Marcas | Lista_Marcas</h4>
-		
-		
-		
+		<%
+              if(request.getAttribute("message")!=null){
+                  out.println("<h4 class='alert_success'>"+request.getAttribute("message")+"</h4>");
+              }  
+            %>
 		<article class="module width_3_quarter">
 		<header><h3 class="tabs_involved">Marcas</h3>
 		</header>
 
 		<div class="tab_container" >
-			<div id="tab1" class="tab_content">
+			<div id="tab2" class="tab_content">
 			<!-- #tab1 to contend of ajax -->
 			</div><!-- end of #tab1 -->
 			
@@ -132,6 +132,38 @@
 			<p><strong>Copyright &copy; 2015 Phonebook</strong></p>
 			
 		</footer>
+        <script>
+            var inicio = getMarcas('');
+           var misMarcas = setInterval(function(){javascript:getMarcas('');},1500);  
+                    
+                    function getMarcas(message) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Crear_Lista_Marcas.do',
+                        data: {
+                        message: message
+                        }
+                        }).done(function(resp){
+                        $('#tab2').html(resp);
+                        });
+                        }
+                        
+                        function redireccion(x){
+                       window.location="Gestor_Marcas_Editar_Marca.jsp?id="+x;
+                   } 
+                   
+                   function eliminar_marca(id) {
+                        $.ajax({
+                        type: 'GET',
+                        url: 'Editar_Eliminar_Marcas.do',
+                        data: {
+                        id: id
+                        }
+                        }).done(function(resp){
+                        $('#X').html(resp);
+                        });
+                        }  
+        </script>
 </body>
 
 </html>
