@@ -132,7 +132,8 @@
                 out.println("<option value='"+idMarca+"'>"+marca+"</option>");
                         }
                 rs.close();
-                %>       
+                %> 
+               
 		</select>
 		</header>
 
@@ -144,6 +145,7 @@
 			
 			
 		</div><!-- end of .tab_container -->
+               
 		
 		</article><!-- end of content manager article -->
 	
@@ -185,6 +187,17 @@
                         });
                         }
                         
+                         function filtro(idmarca){
+                        $.ajax({
+                        type: 'POST',
+                        url: 'filtro.do',
+                        data: {
+                        idmarca: idmarca
+                        }
+                        }).done(function(resp){
+                        $('#tab1').html(resp);
+                        });
+                        } 
                        
      function getInfo_Anuncio(x){
                             

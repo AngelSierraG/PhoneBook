@@ -566,16 +566,17 @@ public class AdministradorBD {
             return rs;
     }
     
-      public ResultSet filtro(String nombremarca){
+      public ResultSet filtro(String idmarca){
         
-           int marca = Integer.parseInt(nombremarca);
+           int marca = Integer.parseInt(idmarca);
         
             ResultSet rs = null;
         try {
             
              Connection con;
             con = ConexionBD.GetConnection();
-            String query = "select * from publicacion where marca ="+marca;
+            String query = "select titulo, Precio,Usuario, PrecioNuevo,Descripcion, SisOperativo,Camara,ResolucionC,PixelCamara,Hd,MemoriaInterna,Touch, publicaciones.urlImage as 'urlpublicacion', marcas.urlImage as 'urlmarca', nombremodelo, nombremarca from publicaciones"
+                    + " inner join modelos on modelos_idmodelo = idmodelo inner join marcas on idmarca = marcas_idmarca where idpublicacion ="+marca;
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
        
