@@ -114,16 +114,21 @@
                     <%
            AdministradorBD admi = new AdministradorBD();
            ResultSet rs = admi.marcas();
+          
+           
+           
            
         %>    
             
             <label>Marcas :</label>
             <select id="Field9" name="sel_marca" onchange="seleccion_marca(this.value);">
-                <option value='0'>Selecciona una marca</option>
+                <option value='0'>Elige la marca</option>
                 <%
                 while (rs.next()){
                 int idMarca = rs.getInt("idMarca");
                 String marca = rs.getString("NombreMarca");
+                
+               
                 out.println("<option value='"+idMarca+"'>"+marca+"</option>");
                         }
                 rs.close();
@@ -180,17 +185,6 @@
                         });
                         }
                         
-                         function seleccion_marca(idmarca){
-                        $.ajax({
-                        type: 'POST',
-                        url: 'GetModelos.do',
-                        data: {
-                        idmarca: idmarca
-                        }
-                        }).done(function(resp){
-                        $('#sel_modelo').html(resp);
-                        });
-                        } 
                        
      function getInfo_Anuncio(x){
                             

@@ -566,5 +566,24 @@ public class AdministradorBD {
             return rs;
     }
     
+      public ResultSet filtro(String nombremarca){
+        
+           int marca = Integer.parseInt(nombremarca);
+        
+            ResultSet rs = null;
+        try {
+            
+             Connection con;
+            con = ConexionBD.GetConnection();
+            String query = "select * from publicacion where marca ="+marca;
+            Statement st = con.createStatement();
+            rs = st.executeQuery(query);
+       
+       
+        } catch (SQLException ex) {
+            Logger.getLogger(AdministradorBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return rs;
+    }
     
 }
