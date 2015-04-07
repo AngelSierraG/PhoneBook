@@ -75,9 +75,12 @@
             String urlImage = rs.getString("urlpublicacion");
             
            String modelo = rs.getString("nombremodelo");
+           int touch = rs.getInt("Touch");
            int precionuevo = rs.getInt("PrecioNuevo");
            String sistema = rs.getString("SisOperativo");
            int camara = rs.getInt("Camara");
+           String pixel = rs.getString("PixelCamara");
+           int hd = rs.getInt("Hd");
            String resolucion = rs.getString("ResolucionC");
            String memoria = rs.getString("MemoriaInterna");
                   
@@ -181,6 +184,12 @@
                                         <tr>
                                             <td >
                                     <p>Nombre del modelo: <strong><%=modelo%></strong></p>
+                                    <%
+                                             if(touch==1){
+                                              out.println("<p>Es touch: <strong>Si</strong></p>");
+                                             }else
+                                                  out.println("<p>Es touch: <strong>No</strong></p>");
+                                             %>
                                     <p>Nuevo precio: <strong>$<%=precionuevo%></strong><p>
                                     <p>Sistema operativo: <strong><%=sistema%></strong></p>
                                             </td>
@@ -192,7 +201,13 @@
                                              }else
                                                   out.println("<p>Cuenta con camara: <strong>No</strong></p>");
                                              %>
-                                             
+                                             <p>Pixel de camara:<strong><%=pixel%></strong> </p>
+                                     <%
+                                             if(hd==1){
+                                              out.println("<p>Grabación HD: <strong>Si</strong></p>");
+                                             }else
+                                                  out.println("<p>Grabación HD: <strong>No</strong></p>");
+                                             %>  
                                     <p>Resolución de camara: <strong><%=resolucion%></strong></p>
                                     <p>Memoria Interna: <strong><%=memoria%></strong></p>
                                             </td>
