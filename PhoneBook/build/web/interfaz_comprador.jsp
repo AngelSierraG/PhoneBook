@@ -4,6 +4,8 @@
     Author     : Dago
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="BaseDatos.AdministradorBD"%>
 <!doctype html>
 <html lang="en">
 
@@ -108,6 +110,25 @@
 		
 		<article class="module width_3_quarter">
 		<header><h3 class="tabs_involved">Publicaciones</h3>
+                 
+                    <%
+           AdministradorBD admi = new AdministradorBD();
+           ResultSet rs = admi.marcas();
+           
+        %>    
+            
+            <label>Marcas :</label>
+            <select id="Field9" name="sel_marca" onchange="seleccion_marca(this.value);">
+                <option value='0'>Selecciona una marca</option>
+                <%
+                while (rs.next()){
+                int idMarca = rs.getInt("idMarca");
+                String marca = rs.getString("NombreMarca");
+                out.println("<option value='"+idMarca+"'>"+marca+"</option>");
+                        }
+                rs.close();
+                %>       
+		</select>
 		</header>
 
 		<div class="tab_container" >
@@ -159,6 +180,17 @@
                         });
                         }
                         
+                         function seleccion_marca(idmarca){
+                        $.ajax({
+                        type: 'POST',
+                        url: 'GetModelos.do',
+                        data: {
+                        idmarca: idmarca
+                        }
+                        }).done(function(resp){
+                        $('#sel_modelo').html(resp);
+                        });
+                        } 
                        
      function getInfo_Anuncio(x){
                             
