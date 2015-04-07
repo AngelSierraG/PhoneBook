@@ -534,7 +534,7 @@ public class AdministradorBD {
             Connection con;
             con = ConexionBD.GetConnection();
             
-            String query = "SELECT * FROM publicaciones";
+            String query = "SELECT * FROM publicaciones where activo = 1";
             Statement st = con.createStatement();
             rs = st.executeQuery(query);
             
@@ -554,7 +554,7 @@ public class AdministradorBD {
             
              Connection con;
             con = ConexionBD.GetConnection();
-            String query = "select titulo, Precio,Usuario, PrecioNuevo,Descripcion, SisOperativo,Camara,ResolucionC,MemoriaInterna, publicaciones.urlImage, nombremodelo, nombremarca from publicaciones"
+            String query = "select titulo, Precio,Usuario, PrecioNuevo,Descripcion, SisOperativo,Camara,ResolucionC,MemoriaInterna, publicaciones.urlImage as 'urlpublicacion', marcas.urlImage as 'urlmarca', nombremodelo, nombremarca from publicaciones"
                     + " inner join modelos on modelos_idmodelo = idmodelo inner join marcas on idmarca = marcas_idmarca where idpublicacion ="+id;
             Statement st = con.createStatement();
             rs = st.executeQuery(query);

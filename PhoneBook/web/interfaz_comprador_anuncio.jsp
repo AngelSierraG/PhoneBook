@@ -72,7 +72,7 @@
             int Precio = rs.getInt("Precio");
             String Descripcion = rs.getString("Descripcion");
             String usuario = rs.getString("Usuario");
-            String urlImage = rs.getString("urlImage");
+            String urlImage = rs.getString("urlpublicacion");
             
            String modelo = rs.getString("nombremodelo");
            int precionuevo = rs.getInt("PrecioNuevo");
@@ -81,7 +81,7 @@
            String resolucion = rs.getString("ResolucionC");
            String memoria = rs.getString("MemoriaInterna");
                   
-            String marca = rs.getString("nombremarca");
+            String urlmarca = rs.getString("urlmarca");
             
          %>
 	<header id="header">
@@ -139,66 +139,103 @@
 			<div id="tab1" class="tab_content">
 				<form class="contact_form" action="Ver_Publicacion.do" method="post" enctype="multipart/form-data">
                                   
-                                    <section style="margin-left: 250px; font-size: 20px; margin-top: 20px;">
-                                        <label style="color: rgb(145,186,188);"><strong><%=titulo%></strong></label> 
+                                    <section style="margin-left: 200px; font-size: 20px; margin-top: 20px;">
+                                        <label style="color: rgb(6,106,117)"><strong><%=titulo%></strong></label> 
                                        </section>
                                         <section>
-                                        <input style="margin-left: 190px; margin-top: 20px; border-radius:5px;" width="250px" height="250px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
-                                    </section>
+                                            <input style="margin-left: 160px; margin-top: 20px; border-radius:5px; box-shadow: 3px 2px #ccffcc;" width="350px" height="350px" type="image" src="BDImagenes_Usuarios/<%=urlImage%>" title="MaxImg"/>
                                     
+                                      </section>
                                       <div class="container">
 
 
 
             <div class="wrapper">
-                <div id="st-accordion" class="st-accordion">
-                    <ul><br>
-                        <hr><center><li>
-                            <a href="#">MARCA<span ></span></a><br>
-                            <div class="st-content"style="text-align: left; margin-left: 150px;">
-                                <ul><br>
-                                    <li>Nombre de la marca: <strong><%=marca%></strong></li>
-                                     
-                                    
-                                </ul>
-
-                            </div>
-                            </li></center>
-                                    <hr><center> <li>
-                       <a href="#">MODELO<span ></span></a>
-                            <div class="st-content"style="text-align: left; margin-left: 150px;" >
-                                <ul><br>
-                                    <li>Nombre del modelo: <strong><%=modelo%></strong></li><br>
-                                    <li>Nuevo precio: <strong>$<%=precionuevo%></strong></li><br>
-                                    <li>Sistema operativo: <strong><%=sistema%></strong></li><br>
-                                  <%
-                                             if(camara==1){
-                                              out.println("<li>Cuenta con camara: <strong>Si</strong></li><br>");
-                                             }else
-                                                  out.println("<li>Cuenta con camara: <strong>No</strong></li><br>");
-                                             %>
-                                    <li>Resolución de camara: <strong><%=resolucion%></strong></li><br>
-                                    <li>Memoria Interna: <strong><%=memoria%></strong></li><br>
-                                </ul>
-                               
+                <div >
+                            
+                           
+                            <div class="st-content"style="  font-family: cursive; text-align: left; margin-left: 5px;">
+                                 
                                 <br>
-                            </div>
-                       <hr> </li></center>
-                                <center><li>
-                            <a href="#">DATOS DE LA PUBLICACION<span ></span></a>
-                            <div class="st-content" style="text-align: left; margin-left: 150px;">
-                                <ul><br>
-                                    <li>Precio de publicación: <strong>$<%=Precio%></strong></li><br>
-                                    <li>Descripcion del celular: <strong><%=Descripcion%></strong></li><br>
-                                    <li>Nombre del vendedor: <strong><%=usuario%></strong></li><br>
+                                <div style=" margin-right: 2px; border-radius:3px; box-shadow: 2px 2px 10px rgb(145,186,188);"><br>
+                                    <p style="text-align: center; font-family: cursive;   font-size: 16pt; color: rgb(74,178,197);">MARCA</p><br>
                                     
-                                </ul>
-                                         <br><br>
+                                    <input style="margin-left: 280px;" width="50px" height="50px" type="image" src="images/Marcas/<%=urlmarca%>" title="MaxImg"/>
+                                    <br>
+                                </div><br>
+                                    
+                                
+
                             </div>
-                                    </li></center>
+                            
+                                  
+                                   
+                       
+                            <div class="st-content"style="text-align: left; margin-left: 5px;" >
+                                
+                                <div style=" font-size: 8pt; font-family: cursive; margin-right: 2px; border-radius:5px; box-shadow: 2px 2px 10px rgb(145,186,188);"><br>
+                                    
+                                        
+                                    <p style="text-align: center; font-family: cursive;   font-size: 16pt; color: rgb(74,178,197);">MODELO</p>
+                                    <table style="border-spacing:  50px; border-collapse: separate; margin-left: 50px;">
+                                        <tr>
+                                            <td >
+                                    <p>Nombre del modelo: <strong><%=modelo%></strong></p>
+                                    <p>Nuevo precio: <strong>$<%=precionuevo%></strong><p>
+                                    <p>Sistema operativo: <strong><%=sistema%></strong></p>
+                                            </td>
+                                            
+                                            <td>
+                                    <%
+                                             if(camara==1){
+                                              out.println("<p>Cuenta con camara: <strong>Si</strong></p>");
+                                             }else
+                                                  out.println("<p>Cuenta con camara: <strong>No</strong></p>");
+                                             %>
+                                             
+                                    <p>Resolución de camara: <strong><%=resolucion%></strong></p>
+                                    <p>Memoria Interna: <strong><%=memoria%></strong></p>
+                                            </td>
+                                        </tr>
+                               </table>
+                                </div>
+                                            <br>
+                            </div>
+                       
+                               
+                            
+                                    <div class="st-content" style="text-align: left; margin-left: 5px;">
+                                
+                                        <div style="  font-size: 8pt; font-family: cursive; margin-right: 2px; border-radius:3px; box-shadow: 2px 2px 10px rgb(145,186,188);"><br>
+                                            <p style="text-align: center;   font-size: 16pt; color: rgb(74,178,197);">DATOS DE LA PUBLICACION</p><br>
+                                            <table style="border-spacing:  20px;  margin-left: 50px;">
+                                                <tr>
+                                                    <td>
+                                    <p>Nombre del vendedor: <strong><%=usuario%></strong> </p>
+                                                    </td>
+                                                    <td>
+                                    <p >Precio de publicación: <strong>$<%=Precio%></strong>  </p>
+                                                    </td>   
+                                                   
+                                    </tr>
+                                     
+                                            </table>
+                                   
+                                    <p style="margin-left: 70px;">Descripcion del celular: <strong><%=Descripcion%></strong></p><br>
+                                
+                                         <br><br>
+                            
+                                     <section style="margin-left: 200px;">
+                                             <div id="botones">
+                                            </div>
+                                            </section>
+                                     <br><br><br>
+                                        </div>
+                                    </div>
+                                
 
 
-                    </ul>
+                   
                 </div>
             </div>
         </div>
@@ -209,10 +246,7 @@
                                 </form>
                                            
                                                                  
-                                            <section style="margin-left: 200px;">
-                                             <div id="botones">
-                                            </div>
-                                            </section>
+                                            
                                                 <br><br><br>
 			</div><!-- end of #tab1 -->
 			
